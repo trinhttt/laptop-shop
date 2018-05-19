@@ -295,6 +295,28 @@
 <!-- DataTables -->
 <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- lap phieu -->
+<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="dist/js/autoNumeric.min.js"></script>
+<script src="dist/js/sweetalert2.all.js"></script>
+<script src="dist/js/jquery-1.12.4.js"></script>
+<script src="dist/js/back-to-top.js"></script>
+<script src="dist/js/jquery-ui.js"></script>
+<!-- lich giao hang -->
+<!-- Sparkline -->
+<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!-- jvectormap  -->
+<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/vi.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+<!-- phieu giu hang -->
+<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+
+
 @yield('content2')
 </body>
 </html>
+        
+        
