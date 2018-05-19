@@ -1,5 +1,7 @@
 @extends('main')
-
+@section('content3')
+   <title>Danh sách sản phẩm</title>
+@endsection
 @section('content')
     <style>
         #example1 {
@@ -200,8 +202,10 @@
                                                         <td colspan="10">
                                                             <div class="container-fluid">
                                                                 <div class="row">
+
+
                                                                     <div class="col-md-6">
-                                                                        <label></label>
+                                                                        <label>Tên laptop</label>
                                                                         <div class="input-group">
 																						<span class="input-group-addon">
 																							<i class="fa fa-codepen" aria-hidden="true"></i>
@@ -209,8 +213,9 @@
                                                                             <input type="text" class="form-control" value="HĐ T07-1">
                                                                         </div>
                                                                     </div>
+
                                                                     <div class="col-md-6">
-                                                                        <label>Địa chỉ</label>
+                                                                        <label>Hãng sản xuất</label>
                                                                         <div class="input-group">
 																						<span class="input-group-addon">
 																							<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
@@ -219,9 +224,47 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+
                                                                 <div class="row">
                                                                     <div class="col-md-6">
-                                                                        <label>Mã số thuế</label>
+                                                                        <label>Màn hình</label>
+                                                                        <div class="input-group">
+																						<span class="input-group-addon">
+																							<i class="fa fa-codepen" aria-hidden="true"></i>
+																						</span>
+                                                                            <input type="text" class="form-control" value="{{$stt}}">
+                                                                        </div>
+                                                                    </div>
+
+
+
+                                                                    <div class="col-md-6">
+                                                                        <label>Ram</label>
+                                                                        <div class="input-group">
+																						<span class="input-group-addon">
+																							<i class="fa fa-codepen" aria-hidden="true"></i>
+																						</span>
+                                                                            <input type="text" class="form-control" value="{{$stt}}">
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <label>Rom</label>
+                                                                        <div class="input-group">
+																						<span class="input-group-addon">
+																							<i class="fa fa-codepen" aria-hidden="true"></i>
+																						</span>
+                                                                            <input type="text" class="form-control" value="{{$stt}}">
+                                                                        </div>
+                                                                    </div>
+
+
+
+                                                                    <div class="col-md-6">
+                                                                        <label>CPU</label>
                                                                         <div class="input-group">
 																						<span class="input-group-addon">
 																							<i class="fa fa-codepen" aria-hidden="true"></i>
@@ -230,6 +273,22 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <label>SL còn lại</label>
+                                                                        <div class="input-group">
+																						<span class="input-group-addon">
+																							<i class="fa fa-codepen" aria-hidden="true"></i>
+																						</span>
+                                                                            <input type="text" class="form-control" value="{{$stt}}">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+
                                                                 <br>
                                                                 <div class="row">
                                                                     <div class="">
