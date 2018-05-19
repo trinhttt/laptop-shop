@@ -274,7 +274,7 @@
         <!-- /.sidebar -->
     </aside>
 
-@yield('content1')
+    @yield('content1')
     <footer class="main-footer">
     </footer>
 </div>
@@ -317,6 +317,10 @@
 
 @yield('content2')
 </body>
+<<<<<<< HEAD
 </html>
         
         
+=======
+</html>
+>>>>>>> 72445c0f0dfc9e8ec767b30a082a9a1b7178eace
