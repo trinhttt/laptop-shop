@@ -1,33 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Giá hàng hóa</title>
-        <!-- Tell the browser to be responsive to screen width -->
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <!-- Bootstrap 3.3.7 -->
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-        <!-- Ionicons -->
-        <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-        <!-- Theme style -->
-        <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-        <!-- AdminLTE Skins. Choose a skin from the css/skins
-             folder instead of downloading all of them to reduce the load. -->
-        <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-        <!-- DataTables -->
-        <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-        <!-- Google Font -->
-        <link rel="stylesheet" href="dist/css/font/GoogleFont.css">
+@extend('main')
+@section('content3')
+<title>Gía hàng hóa</title>
+@endsection
+@section('content')
         <style>
             #example1 {
                 background-color: rgb(240, 240, 240);
@@ -59,258 +34,8 @@
                 height: 40px;
             }
         </style>
-    </head>
-    <body class="hold-transition skin-blue-light sidebar-mini fixed">
-        <div class="wrapper">
-
-            <header class="main-header">
-
-                <!-- Logo -->
-                <a href="phanphoi_index.html" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini">LAP</span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg" style="margin-left: -15px;">
-                        <img style="width:60px; height:50px;margin-top: 5px" class="img-responsive pull-left" src="dist/img/logo.png" alt="Photo">
-                        <div style="margin-top: -5px">
-                        <b style="margin-right: 35px;margin-bottom: 20px">Quản lý</b>
-                        <span style="position: absolute; margin-top: 15px; margin-left: -100px; font-size: 14px;font-weight: bold"><small>Cửa hàng Laptop</small></span>
-                        </div>
-                    </span>
-
-                </a>
-
-                <!-- Header Navbar: style can be found in header.less -->
-                <nav class="navbar navbar-static-top">
-                    <!-- Sidebar toggle button-->
-                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                        <span class="sr-only">Toggle navigation</span>
-
-                    </a>
-
-                    <!-- Navbar Right Menu -->
-                    <div class="navbar-custom-menu">
-                        <ul class="nav navbar-nav">
-                            <!-- Notifications: style can be found in dropdown.less -->
-                            <li class="dropdown notifications-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-bell-o"></i>
-                                    <!--<span class="label label-warning">-->
-                                    <!--0-->
-                                    <!--</span>-->
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="header">Bạn có 0 thông báo mới</li>
-                                    <li>
-                                        <ul class="menu">
-                                            <!--<li>-->
-                                            <!--<a href="phanphoi_donhang_chi-tiet-phieu-giao-nhieu-lan.html">-->
-                                            <!--<i class="fa fa-shopping-cart text-green"></i> Lô hàng số 81264-1#1 đã hoàn thành-->
-                                            <!--<div class="pull-right">1 phút trước</div>-->
-                                            <!--</a>-->
-                                            <!--</li>-->
-                                            <!--<li>-->
-                                            <!--<a href="phanphoi_donhang_danh-sach-phieu-giu-hang.html">-->
-                                            <!--<i class="fa fa-shopping-cart text-green"></i> Lô hàng số 89665-0 đang chờ xử lý-->
-                                            <!--<div class="pull-right">8 phút trước</div>-->
-                                            <!--</a>-->
-                                            <!--</li>-->
-                                            <!--<li>-->
-                                            <!--<a href="sua_phieu_0.html">-->
-                                            <!--<i class="fa fa-shopping-cart text-green"></i> Lô hàng số 89659-0 đang chờ xử lý <p/> đổi trả-->
-                                            <!--<div class="pull-right">55 phút trước</div>-->
-                                            <!--</a>-->
-                                            <!--</li>-->
-                                            <!--<li>-->
-                                            <!--<a href="phanphoi_donhang_chi-tiet-phieu-giao-mot-lan.html">-->
-                                            <!--<i class="fa fa-shopping-cart text-green"></i> Lô hàng số 89664-0 đang chờ xử lý -->
-                                            <!--<div class="pull-right">1 giờ trước</div>-->
-                                            <!--</a>-->
-                                            <!--</li>-->
-                                            <!--<li>-->
-                                            <!--<a href="phanphoi_donhang_chi-tiet-phieu-giao-nhieu-lan.html">-->
-                                            <!--<i class="fa fa-shopping-cart text-green"></i> Lô hàng số 81264-1#2 đang xử lý-->
-                                            <!--<div class="pull-right">1 giờ trước</div>-->
-                                            <!--</a>-->
-                                            <!--</li>-->
-                                        </ul>
-                                    </li>
-                                    <li class="footer">
-                                        <a href="#">Xem tất cả</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- User Account: style can be found in dropdown.less -->
-                            <li class="dropdown user user-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="dist/img/user.jpeg" class="user-image" alt="User Image">
-                                    <span class="hidden-xs">Trinh Thai</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <!-- User image -->
-                                    <li class="user-header">
-                                        <img src="dist/img/user.jpeg" class="img-circle" alt="User Image">
-
-                                        <p>Trinh Thai<small>Admin</small>
-                                        </p>
-                                    </li>
-                                    <!-- Menu Footer-->
-                                    <li class="user-footer">
-                                        <div class="pull-left">
-                                            <a href="phanphoi_nguoidung_thong-tin-nguoi-dung.html" class="btn btn-default btn-flat">Hồ sơ</a>
-                                        </div>
-                                        <div class="pull-right">
-                                            <a href="login.html" class="btn btn-default btn-flat">Thoát</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <a href="#" id="scrollContainer" class="navbar-custom-menu pull-left" data-toggle="modal" data-target="#noteModal">
-                        <div id="scrollBox">
-                            <!--<p>Ngày 31/12/2017: Inbox để biết thêm chi tiết</p>-->
-                            <!--<p>Ngày 05/01/2018: Hãy sử lý đơn hàng HD-83157-1</p>-->
-                        </div>
-                    </a>
-                </nav>
-            </header>
-            <!-- Left side column. contains the logo and sidebar -->
-            <aside class="main-sidebar">
-                <!-- sidebar: style can be found in sidebar.less -->
-                <section class="sidebar">
-                    <!-- Sidebar user panel -->
-                    <div class="user-panel">
-                        <div class="pull-left image">
-                            <img src="dist/img/user.jpeg" class="img-circle" alt="User Image">
-                        </div>
-                        <div class="pull-left info">
-                            <p>Trinh Thai</p>
-                            <a href="#"><i class="fa fa-circle text-success"></i> Trực tuyến</a>
-                        </div>
-                    </div>
-
-                    <ul class="sidebar-menu" data-widget="tree">
-                        <li class="active">
-                            <a href="phanphoi_index.html">
-                                <i class="fa fa-dashboard"></i> <span>Trang chủ</span>
-                            </a>
-                        </li>
-
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-file-o"></i> <span>Đơn hàng</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class=""><a href="phanphoi_donhang_lap-phieu.html"><i class="fa fa-edit"></i> Lập Phiếu</a></li>
-
-                                <li class="">
-                                    <a href="phanphoi_donhang_danh-sach-phieu-dang-xu-ly.html">
-                                        <i class="fa fa-list-alt"></i>
-                                        <span>Phiếu đang xử lý</span>
-                                        <span class="pull-right-container">
-                                            <span class="label label-primary bg-green">1</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="phanphoi_donhang_danh-sach-phieu-hoan-thanh.html">
-                                        <i class="fa fa-files-o"></i>
-                                        <span>Phiếu đã hoàn thành</span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="phanphoi_donhang_danh-sach-phieu-giu-hang.html">
-                                        <i class="fa fa-book"></i>
-                                        <span>Phiếu giữ hàng</span>
-                                        <!--<span class="pull-right-container">-->
-                                            <!--<span class="label pull-right bg-green">new</span>-->
-                                            <!--<span class="label pull-right bg-red">2</span>-->
-                                        <!--</span>-->
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="phanphoi_donhang_lich-giao-hang-tong.html">
-                                        <i class="fa fa-calendar-minus-o"></i>
-                                        <span>Lịch giao hàng</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-folder"></i> <span>Hàng hoá</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class=""><a href="phanphoi_hanghoa_gia-hang-hoa.html"><i class="fa fa-dollar"></i> Giá hàng hóa</a></li>
-                                <li class=""><a href="phanphoi_hanghoa_ton-kho.html"><i class="fa fa-dropbox"></i> Hàng tồn kho</a></li>
-
-                                <li class="treeview">
-                                    <a href="#"><i class="fa fa-hand-o-right"></i> Nhập hàng
-                                        <span class="pull-right-container">
-                                            <i class="fa fa-angle-left pull-right"></i>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li class=""><a href="phanphoi_hanghoa_tao-dot-nhap-kho.html"><i class="fa fa-edit"></i> Tạo đợt nhập mới</a></li>
-                                        <li class=""><a href="phanphoi_hanghoa_lich-su-nhap-hang.html"><i class="fa fa-table"></i> Lịch sử nhập hàng</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-
-
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-pencil-square"></i> <span>Báo cáo</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class="">
-                                    <a href="bao-cao/phanphoi_baocao_doanh-thu.html"><i class="fa fa-line-chart"></i> Doanh thu</a>
-                                </li>
-
-
-                            </ul>
-                        </li>
-
-                        <li class="treeview ">
-                            <a href="#">
-                                <i class="fa fa-database"></i> <span>Quản trị</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class="">
-                                    <a href="phanphoi_khachhang_danh-sach-khach-hang.html"><i class="fa fa-users"></i> Danh sách khách hàng</a>
-                                </li>
-                                <li class="">
-                                    <a href="phanphoi_cungcap_danh-sach-nha-cung-cap.html"><i class="fa fa-users"></i> Danh sách nhà cung cấp</a>
-                                </li>
-
-
-                            </ul>
-                        </li>
-                        <!--<li class="">-->
-                        <!--<a href="phanphoi_quy-trinh-xu-ly.html">-->
-                        <!--<i class="fa fa-question-circle"></i> <span>Help</span>-->
-                        <!--</a>-->
-                        <!--</li>						-->
-                    </ul>
-                </section>
-                <!-- /.sidebar -->
-            </aside>
+ @endsection       
+ @section('content1')
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
@@ -611,27 +336,9 @@
                 </section>
                 <!-- /.content -->
             </div>
-            <!-- /.content-wrapper -->
-            <footer class="main-footer">
-            </footer>
-        </div>
-        <!-- ./wrapper -->
-
-        <!-- jQuery 3 -->
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <!-- Bootstrap 3.3.7 -->
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!-- FastClick -->
-        <script src="bower_components/fastclick/lib/fastclick.js"></script>
-        <!-- SlimScroll -->
-        <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-        <!-- AdminLTE App -->
-        <script src="dist/js/adminlte.min.js"></script>
-        <!-- AdminLTE for demo purposes -->
-        <script src="dist/js/demo.js"></script>
-        <!-- DataTables -->
-        <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+ @endsection 
+          
+ @section('content2')
         <script>
            $('#row1').hide();
 			$('#btn_row1').click(function(){
@@ -672,5 +379,5 @@
 				
 			</div>
 		</div>
-    </body>
-</html>
+@endsection
+   

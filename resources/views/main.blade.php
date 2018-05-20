@@ -29,6 +29,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
     <!-- phieu dang xu lý -->
     <link rel="stylesheet" href="dist/css/font/GoogleFont.css">
+    <!-- lich giao hang -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <!-- lich su nhap hang -->
+    <link rel="stylesheet" href="bower_components/select2/dist/css/select2.min.css">
+    <link href="dist/css/bootstrap-toggle.min.css" rel="stylesheet">
 
 
 
@@ -274,7 +279,7 @@
         <!-- /.sidebar -->
     </aside>
 
-    @yield('content1')
+@yield('content1')
     <footer class="main-footer">
     </footer>
 </div>
@@ -313,14 +318,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 <!-- phieu giu hang -->
 <script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+<!-- lich su nhap hang -->
+<script src="dist/js/bootstrap-toggle.min.js"></script>
+<!-- tao dot nhap kho -->
+<script src="dist/js/sweetalert2.all.js"></script>
 
 
 @yield('content2')
 </body>
-<<<<<<< HEAD
 </html>
         
         
-=======
-</html>
->>>>>>> 72445c0f0dfc9e8ec767b30a082a9a1b7178eace
