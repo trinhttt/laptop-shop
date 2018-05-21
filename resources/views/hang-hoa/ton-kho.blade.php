@@ -1,24 +1,8 @@
-﻿<!DOCTYPE html>
-<html>
-
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hàng hóa tồn kho</title>
-        <!-- Tell the browser to be responsive to screen width -->
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <!-- Bootstrap 3.3.7 -->
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-        <!-- Ionicons -->
-        <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-        <!-- DataTables -->
-        <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-		<link rel="stylesheet" href="dist/css/back-to-top.css">
-        <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-        <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-        <link rel="stylesheet" href="dist/css/font/GoogleFont.css">
+﻿@extend('main')
+@section('content3')
+<title>Tồn kho</title>
+@endsection
+@section('content')
         <style>
             #example1 {
                 background-color: rgb(240, 240, 240);
@@ -85,220 +69,8 @@
                 font-weight: 500 !important;
             }
         </style>
-    </head>
-
-    <body class="hold-transition skin-blue-light sidebar-mini fixed">
-        <div class="wrapper">
-
-            <header class="main-header">
-
-                <!-- Logo -->
-                <a href="phanphoi_index.html" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini">LAP</span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg" style="margin-left: -15px;">
-                        <img style="width:60px; height:50px;margin-top: 5px" class="img-responsive pull-left" src="dist/img/logo.png" alt="Photo">
-                        <div style="margin-top: -5px">
-                        <b style="margin-right: 35px;margin-bottom: 20px">Quản lý</b>
-                        <span style="position: absolute; margin-top: 15px; margin-left: -100px; font-size: 14px;font-weight: bold"><small>Cửa hàng Laptop</small></span>
-                        </div>
-                    </span>
-
-                </a>
-
-                <nav class="navbar navbar-static-top">
-                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                        <span class="sr-only">Toggle navigation</span>
-
-                    </a>
-
-                    <div class="navbar-custom-menu">
-                        <ul class="nav navbar-nav">
-                            <li class="dropdown notifications-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-bell-o"></i>
-
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="header">Bạn có 0 thông báo mới</li>
-                                    <li>
-                                        <ul class="menu">
-
-                                        </ul>
-                                    </li>
-                                    <li class="footer">
-                                        <a href="#">Xem tất cả</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- User Account: style can be found in dropdown.less -->
-                            <li class="dropdown user user-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="dist/img/user.jpeg" class="user-image" alt="User Image">
-                                    <span class="hidden-xs">Trinh Thai</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <!-- User image -->
-                                    <li class="user-header">
-                                        <img src="dist/img/user.jpeg" class="img-circle" alt="User Image">
-
-                                        <p>Trinh Thai<small>Admin</small>
-                                        </p>
-                                    </li>
-                                    <!-- Menu Footer-->
-                                    <li class="user-footer">
-                                        <div class="pull-left">
-                                            <a href="phanphoi_nguoidung_thong-tin-nguoi-dung.html" class="btn btn-default btn-flat">Hồ sơ</a>
-                                        </div>
-                                        <div class="pull-right">
-                                            <a href="login.html" class="btn btn-default btn-flat">Thoát</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <a href="#" id="scrollContainer" class="navbar-custom-menu pull-left" data-toggle="modal" data-target="#noteModal">
-                        <div id="scrollBox">
-
-                        </div>
-                    </a>
-                </nav>
-            </header>
-            <aside class="main-sidebar">
-                <section class="sidebar">
-                    <div class="user-panel">
-                        <div class="pull-left image">
-                            <img src="dist/img/user.jpeg" class="img-circle" alt="User Image">
-                        </div>
-                        <div class="pull-left info">
-                            <p>Trinh Thai</p>
-                            <a href="#"><i class="fa fa-circle text-success"></i> Trực tuyến</a>
-                        </div>
-                    </div>
-
-                    <ul class="sidebar-menu" data-widget="tree">
-                        <li class="active">
-                            <a href="phanphoi_index.html">
-                                <i class="fa fa-dashboard"></i> <span>Trang chủ</span>
-                            </a>
-                        </li>
-
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-file-o"></i> <span>Đơn hàng</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class=""><a href="phanphoi_donhang_lap-phieu.html"><i class="fa fa-edit"></i> Lập Phiếu</a></li>
-
-                                <li class="">
-                                    <a href="phanphoi_donhang_danh-sach-phieu-dang-xu-ly.html">
-                                        <i class="fa fa-list-alt"></i>
-                                        <span>Phiếu đang xử lý</span>
-                                        <span class="pull-right-container">
-                                            <span class="label label-primary bg-green">1</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="phanphoi_donhang_danh-sach-phieu-hoan-thanh.html">
-                                        <i class="fa fa-files-o"></i>
-                                        <span>Phiếu đã hoàn thành</span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="phanphoi_donhang_danh-sach-phieu-giu-hang.html">
-                                        <i class="fa fa-book"></i>
-                                        <span>Phiếu giữ hàng</span>
-                                        <!--<span class="pull-right-container">-->
-                                            <!--<span class="label pull-right bg-green">new</span>-->
-                                            <!--<span class="label pull-right bg-red">2</span>-->
-                                        <!--</span>-->
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="phanphoi_donhang_lich-giao-hang-tong.html">
-                                        <i class="fa fa-calendar-minus-o"></i>
-                                        <span>Lịch giao hàng</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-folder"></i> <span>Hàng hoá</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class=""><a href="phanphoi_hanghoa_gia-hang-hoa.html"><i class="fa fa-dollar"></i> Giá hàng hóa</a></li>
-                                <li class=""><a href="phanphoi_hanghoa_ton-kho.html"><i class="fa fa-dropbox"></i> Hàng tồn kho</a></li>
-
-                                <li class="treeview">
-                                    <a href="#"><i class="fa fa-hand-o-right"></i> Nhập hàng
-                                        <span class="pull-right-container">
-                                            <i class="fa fa-angle-left pull-right"></i>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li class=""><a href="phanphoi_hanghoa_tao-dot-nhap-kho.html"><i class="fa fa-edit"></i> Tạo đợt nhập mới</a></li>
-                                        <li class=""><a href="phanphoi_hanghoa_lich-su-nhap-hang.html"><i class="fa fa-table"></i> Lịch sử nhập hàng</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-
-
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-pencil-square"></i> <span>Báo cáo</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class="">
-                                    <a href="bao-cao/phanphoi_baocao_doanh-thu.html"><i class="fa fa-line-chart"></i> Doanh thu</a>
-                                </li>
-
-
-                            </ul>
-                        </li>
-
-                        <li class="treeview ">
-                            <a href="#">
-                                <i class="fa fa-database"></i> <span>Quản trị</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class="">
-                                    <a href="phanphoi_khachhang_danh-sach-khach-hang.html"><i class="fa fa-users"></i> Danh sách khách hàng</a>
-                                </li>
-                                <li class="">
-                                    <a href="phanphoi_cungcap_danh-sach-nha-cung-cap.html"><i class="fa fa-users"></i> Danh sách nhà cung cấp</a>
-                                </li>
-
-
-                            </ul>
-                        </li>
-                        <!--<li class="">-->
-                        <!--<a href="phanphoi_quy-trinh-xu-ly.html">-->
-                        <!--<i class="fa fa-question-circle"></i> <span>Help</span>-->
-                        <!--</a>-->
-                        <!--</li>						-->
-                    </ul>
-                </section>
-                <!-- /.sidebar -->
-            </aside>
+@endsection        
+@section('content1') 
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
@@ -877,29 +649,8 @@
 
                 </section>
             </div>
-        </div>
-        <!-- ./wrapper -->
-        <footer class="main-footer">
-			<a href="#0" class="cd-top">Top</a>
-        </footer>
-
-        <!-- jQuery 3 -->
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <!-- Bootstrap 3.3.7 -->
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!-- DataTables -->
-        <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-        <!-- SlimScroll -->
-        <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-		<script src="dist/js/back-to-top.js"></script>
-        <!-- FastClick -->
-        <script src="bower_components/fastclick/lib/fastclick.js"></script>
-        <!-- AdminLTE App -->
-        <script src="dist/js/adminlte.min.js"></script>
-        <!-- AdminLTE for demo purposes -->
-        
-        <script src="dist/js/autoNumeric.min.js"></script>
+ @endsection            
+ @section('content2')       
         <!-- page script -->
        
         <script>
@@ -1004,7 +755,6 @@
                 event.preventDefault();
             });
         </script>
-
         <!--code chuyen page-->
         <script>
             function directionPage() {
@@ -1016,6 +766,7 @@
                 }
             }
         </script>
+
         <div class="modal fade" id="confirm-process" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <!-- Modal content-->
             <div class="modal-dialog">
@@ -1113,6 +864,5 @@
 
             </div>
         </div>
-    </body>
-
-</html>																														
+@endsection         
+  																													

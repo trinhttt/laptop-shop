@@ -1,32 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Tạo đợt nhập kho</title>
-        <!-- Tell the browser to be responsive to screen width -->
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <!-- Bootstrap 3.3.7 -->
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-        <!-- Ionicons -->
-        <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-        <!-- Theme style -->
-        <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-        <link rel="stylesheet" href="dist/css/animate.css">
-        <!-- AdminLTE Skins. Choose a skin from the css/skins
-             folder instead of downloading all of them to reduce the load. -->
-        <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-        <link rel="stylesheet" href="dist/css/jquery-ui.css">
-        <link rel="stylesheet" href="dist/css/back-to-top.css">
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+@extend('main')
+@section('content3')
+<title>Tạo đợt nhập kho</title>
+@endsection
+@section('content')
         <style>
             .menu-button {
                 background-color: #fcf9f9; 
@@ -62,307 +38,9 @@
                 display: none !important;
             }
         </style>
-        <!-- Google Font -->
-        <link href="dist/css/bootstrap-toggle.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="dist/css/font/GoogleFont.css">
-    </head>
-    <body class="hold-transition skin-blue-light sidebar-mini fixed">
-        <div class="wrapper">
-
-            <header class="main-header">
-
-                <!-- Logo -->
-                <a href="phanphoi_index.html" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini">LAP</span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg" style="margin-left: -15px;">
-                        <img style="width:60px; height:50px;margin-top: 5px" class="img-responsive pull-left" src="dist/img/logo.png" alt="Photo">
-                        <div style="margin-top: -5px">
-                        <b style="margin-right: 35px;margin-bottom: 20px">Quản lý</b>
-                        <span style="position: absolute; margin-top: 15px; margin-left: -100px; font-size: 14px;font-weight: bold"><small>Cửa hàng Laptop</small></span>
-                        </div>
-                    </span>
-
-                </a>
-
-                <!-- Header Navbar: style can be found in header.less -->
-                <nav class="navbar navbar-static-top">
-                    <!-- Sidebar toggle button-->
-                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                        <span class="sr-only">Toggle navigation</span>
-                    </a>
-                    <!-- Navbar Right Menu -->
-                    <div class="navbar-custom-menu">
-                        <ul class="nav navbar-nav">
-                            <!-- Notifications: style can be found in dropdown.less -->
-                            <li class="dropdown notifications-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-bell-o"></i>
-                                    <!--<span class="label label-warning">10</span>-->
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="header">Bạn có 10 thông báo mới</li>
-                                    <li>
-                                        <ul class="menu">
-                                            <!--<li>-->
-                                                <!--<a href="hanghoa_donhang_chi-tiet-don-hang.html">-->
-                                                    <!--<i class="fa fa-shopping-cart text-green"></i> Lô hàng số 81268 đang chờ xử lý-->
-                                                    <!--<div class="pull-right">3 phút trước</div>-->
-                                                <!--</a>-->
-                                            <!--</li>-->
-                                            <!---->
-                                        </ul>
-                                    </li>
-                                    <li class="footer">
-                                        <a href="hanghoa_thong-bao.html">Xem tất cả</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- User Account: style can be found in dropdown.less -->
-                            <li class="dropdown user user-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="dist/img/user.jpeg" class="user-image" alt="User Image">
-                                    <span class="hidden-xs">Thai Trinh</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <!-- User image -->
-                                    <li class="user-header">
-                                        <img src="dist/img/user.jpeg" class="img-circle" alt="User Image">
-
-                                        <p>Thai Trinh
-                                            <small>Admin</small>
-                                        </p>
-                                    </li>
-                                    <!-- Menu Footer-->
-                                    <li class="user-footer">
-                                        <div class="pull-left">
-                                            <a href="phanphoi_nguoidung_thong-tin-nguoi-dung.html" class="btn btn-default btn-flat">Hồ sơ</a>
-                                        </div>
-                                        <div class="pull-right">
-                                            <a href="login.html" class="btn btn-default btn-flat">Thoát</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
-            <!-- Left side column. contains the logo and sidebar -->
-            <aside class="main-sidebar">
-                <!-- sidebar: style can be found in sidebar.less -->
-                <section class="sidebar">
-                    <!-- Sidebar user panel -->
-                    <div class="user-panel">
-                        <div class="pull-left image">
-                            <img src="dist/img/user.jpeg" class="img-circle" alt="User Image">
-                        </div>
-                        <div class="pull-left info">
-                            <p>Thai Trinh</p>
-                            <a href="#">
-                                <i class="fa fa-circle text-success"></i> Trực tuyến</a>
-                        </div>
-                    </div>
-                    <!-- search form -->
-                    <!--<form action="#" method="get" class="sidebar-form">-->
-                        <!--<div class="input-group">-->
-                            <!--<input type="text" name="q" class="form-control" placeholder="Tìm Kiếm...">-->
-                            <!--<span class="input-group-btn">-->
-                                <!--<button type="submit" name="search" id="search-btn" class="btn btn-flat">-->
-                                    <!--<i class="fa fa-search"></i>-->
-                                <!--</button>-->
-                            <!--</span>-->
-                        <!--</div>-->
-                    <!--</form>-->
-                    <!-- /.search form -->
-                   <!-- sidebar menu: : style can be found in sidebar.less -->
-                    <ul class="sidebar-menu" data-widget="tree">
-                        <li class="">
-                            <a href="phanphoi_index.html">
-                                <i class="fa fa-dashboard"></i> <span>Trang chủ</span>
-                            </a>
-                        </li>
-
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-file-o"></i> <span>Đơn hàng</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class=""><a href="phanphoi_donhang_lap-phieu.html"><i class="fa fa-edit"></i> Lập Phiếu</a></li>
-                                <li class="">
-                                    <a href="phanphoi_donhang_danh-sach-phieu-dang-soan.html">
-                                        <i class="fa fa-file-text"></i>
-                                        <span>Phiếu đang soạn</span>
-                                        <span class="pull-right-container">
-                                            <span class="label label-primary pull-right">2</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="phanphoi_donhang_danh-sach-phieu-dang-xu-ly.html">
-                                        <i class="fa fa-list-alt"></i>
-                                        <span>Phiếu đang xử lý</span>
-                                        <span class="pull-right-container">
-                                            <span class="label label-primary bg-green">1</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="phanphoi_donhang_danh-sach-phieu-hoan-thanh.html">
-                                        <i class="fa fa-files-o"></i>
-                                        <span>Phiếu đã hoàn thành</span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="phanphoi_donhang_danh-sach-phieu-giu-hang.html">
-                                        <i class="fa fa-book"></i>
-                                        <span>Phiếu giữ hàng</span>
-                                        <!--<span class="pull-right-container">-->
-                                            <!--<span class="label pull-right bg-green">new</span>-->
-                                            <!--<span class="label pull-right bg-red">2</span>-->
-                                        <!--</span>-->
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="phanphoi_donhang_lich-giao-hang-tong.html">
-                                        <i class="fa fa-calendar-minus-o"></i>
-                                        <span>Lịch giao hàng</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        <li class="treeview menu-open active">
-                            <a href="#">
-                                <i class="fa fa-folder"></i> <span>Hàng hoá</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class=""><a href="phanphoi_hanghoa_gia-hang-hoa.html"><i class="fa fa-dollar"></i> Giá hàng hóa</a></li>
-                                <li class=""><a href="phanphoi_hanghoa_ton-kho.html"><i class="fa fa-dropbox"></i> Hàng tồn kho</a></li>
-                                <li class="treeview">
-                                    <a href="#"><i class="fa fa-hand-o-right"></i> Yêu cầu nhập
-                                        <span class="pull-right-container">
-                                            <i class="fa fa-angle-left pull-right"></i>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li class=""><a href="phanphoi_hanghoa_tao-yeu-cau-nhap.html"><i class="fa fa-edit"></i> Tạo yêu cầu nhập</a></li>
-										<li class=""><a href="phanphoi_hanghoa_nhap-hoa-don.html"><i class="fa fa-id-card-o"></i> Nhập hoá đơn</a></li>
-                                        <li class=""><a href="phanphoi_hanghoa_lich-su-yeu-cau-nhap.html"><i class="fa fa-table"></i> Lịch sử yêu cầu nhập</a></li>
-                                    </ul>
-                                </li>
-                                <li class="treeview menu-open active">
-                                    <a href="#"><i class="fa fa-hand-o-right"></i> Nhập hàng
-                                        <span class="pull-right-container">
-                                            <i class="fa fa-angle-left pull-right"></i>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li class="active"><a href="phanphoi_hanghoa_tao-dot-nhap-kho.html"><i class="fa fa-edit"></i> Tạo đợt nhập mới</a></li>
-                                        <li class=""><a href="phanphoi_hanghoa_lich-su-nhap-hang.html"><i class="fa fa-table"></i> Lịch sử nhập hàng</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <!--<li class="treeview">-->
-                            <!--<a href="#">-->
-                                <!--<i class="fa fa-table"></i> <span>Công nợ</span>-->
-                                <!--<span class="pull-right-container">-->
-                                    <!--<i class="fa fa-angle-left pull-right"></i>-->
-                                <!--</span>-->
-                            <!--</a>-->
-                            <!--<ul class="treeview-menu">-->
-                                <!--<li class=""><a href="phanphoi_congno_danh-sach-cong-no-khach-hang.html"><i class="fa fa-hand-o-right"></i> Công nợ khách hàng</a></li>-->
-                                <!--<li class=""><a href="phanphoi_congno_danh-sach-cong-no-cung-cap.html"><i class="fa fa-hand-o-right"></i> Công nợ nhà cung cấp</a></li>-->
-                            <!--</ul>-->
-                        <!--</li>-->
-
-                        <!--<li class="treeview">-->
-                            <!--<a href="#">-->
-                                <!--<i class="fa fa-truck"></i> <span>Giao hàng</span>-->
-                                <!--<span class="pull-right-container">-->
-                                    <!--<i class="fa fa-angle-left pull-right"></i>-->
-                                <!--</span>-->
-                            <!--</a>-->
-                            <!--<ul class="treeview-menu">-->
-                                <!--<li class=""><a href="phanphoi_giaohang_danh-sach-lai-xe.html"><i class="fa fa-hand-o-right"></i> Thông tin lái xe</a></li>-->
-                                <!--<li class=""><a href="phanphoi_giaohang_danh-sach-nhan-vien-giao-hang.html"><i class="fa fa-hand-o-right"></i> Nhân viên giao hàng</a></li>-->
-                                <!--<li class=""><a href="phanphoi_giaohang_danh-sach-xe-hang.html"><i class="fa fa-hand-o-right"></i> Thông tin xe hàng</a></li>-->
-                                <!--<li class=""><a href="phanphoi_giaohang_dinh-vi-xe-hang.html"><i class="fa fa-hand-o-right"></i> Định vị xe hàng</a></li>-->
-                            <!--</ul>-->
-                        <!--</li>-->
-
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-pencil-square"></i> <span>Báo cáo</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class="">
-                                    <a href="bao-cao/phanphoi_baocao_doanh-thu.html"><i class="fa fa-line-chart"></i> Doanh thu</a>
-                                </li>
-
-                                <li class="">
-                                    <a href="phanphoi_baocao_cong-no-khach-hang.html"><i class="fa fa-line-chart"></i> Công nợ khách hàng</a>
-                                </li>
-
-                                <li class="">
-                                    <a href="phanphoi_baocao_cong-no-cung-cap.html"><i class="fa fa-line-chart"></i> Công nợ nhà cung cấp</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="treeview ">
-                            <a href="#">
-                                <i class="fa fa-database"></i> <span>Quản trị</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class="">
-                                    <a href="phanphoi_khachhang_danh-sach-khach-hang.html"><i class="fa fa-users"></i> Danh sách khách hàng</a>
-                                </li>
-                                <li class="">
-                                    <a href="phanphoi_cungcap_danh-sach-nha-cung-cap.html"><i class="fa fa-users"></i> Danh sách nhà cung cấp</a>
-                                </li>
-								<li class="treeview">
-								  <a href="#"><i class="fa fa-paper-plane"></i> Hàng hoá
-									<span class="pull-right-container">
-									  <i class="fa fa-angle-left pull-right"></i>
-									</span>
-								  </a>
-								  <ul class="treeview-menu">
-									<li class=""><a href="phanphoi_hanghoa_danh-sach-danh-muc.html"><i class="fa fa-tags"></i> Danh mục</a></li>
-									<li class=""><a href="phanphoi_hanghoa_danh-sach-san-pham.html"><i class="fa fa-anchor"></i> Sản phẩm</a></li>
-								  </ul>
-								</li>
-                                <li class="">
-                                    <a href="phanphoi_cai-dat.html"><i class="fa fa-cogs"></i> Cài đặt</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!--<li class="">-->
-                            <!--<a href="phanphoi_quy-trinh-xu-ly.html">-->
-                                <!--<i class="fa fa-question-circle"></i> <span>Help</span>-->
-                            <!--</a>-->
-                        <!--</li>						-->
-                    </ul>
-                </section>
-                <!-- /.sidebar -->
-            </aside>
-
+@endsection        
+ 
+@section('content1')
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
@@ -739,12 +417,9 @@
                 </section>
                 <!-- /.content -->
             </div>
-            <!-- /.content-wrapper -->
-            <footer class="main-footer">
-                <strong>&copy; 2018 </strong>
-
-                <a href="#0" class="cd-top">Top</a>
-            </footer>
+ @endsection            
+           
+@section('content2') 
             <div class="modal fade" id="confirmComplete" role="dialog">
                 <div class="modal-dialog">
 
@@ -761,29 +436,7 @@
                     </div>
 
                 </div>
-            </div>
-        </div>
-        <!-- ./wrapper -->
-
-        <!-- jQuery 3 -->
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="dist/js/jquery-1.12.4.js"></script>
-        <script src="dist/js/jquery-ui.js"></script>
-        <script src="dist/js/back-to-top.js"></script>
-        <!-- Bootstrap 3.3.7 -->
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="dist/js/bootstrap-toggle.min.js"></script>
-        <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>       
-        <script src="dist/js/autoNumeric.min.js"></script>
-        <!-- FastClick -->
-        <script src="bower_components/fastclick/lib/fastclick.js"></script>
-		<!-- SlimScroll -->
-		<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-        <!-- AdminLTE App -->
-        <script src="dist/js/adminlte.min.js"></script>
-        <!-- AdminLTE for demo purposes -->
-        <script src="dist/js/demo.js"></script>
-        <script src="dist/js/sweetalert2.all.js"></script>
+            </div>       
         <script>
                                                                         $(document).ready(function () {
                                                                             $('.datepicker').datepicker({
@@ -791,6 +444,6 @@
                                                                             });
                                                                             $('.number').autoNumeric('init', {minimumValue: '0', maximumValue: '9999999999999', digitGroupSeparator: ',', decimalPlacesOverride: '0'});
                                                                         });
-        </script>      
-    </body>
-</html>
+        </script> 
+@endsection             
+  
