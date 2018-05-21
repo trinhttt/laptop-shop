@@ -37,6 +37,7 @@
 @endsection
 
 @section('content1')
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -154,10 +155,44 @@
                                         </div>
                                     </div>
                                 </div>
+                                @if($errors->has('TenLapTop'))
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
+{{--                                                {{Session::get('error')}}--}}
+                                               {{$errors->first('TenLapTop')}}
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                                @if($errors->has('HangSX'))
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
+                                                {{--                                                {{Session::get('error')}}--}}
+                                                {{$errors->first('HangSX')}}
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+
+                                @if(Session::has('success'))
+
+                                    <div class="row" >
+                                        <div class="col-md-12">
+                                            <div class="alert"style="background-color: #dff0d8;width: 97%;margin-left: 14px">
+                                                {{Session::get('success')}}
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 <div class="box-body">
                                     <div class="row">
                                         <div class="col-md-12">
+
+                                            @endif
                                             <fieldset>
                                                 <table id="example1" class="table table-bordered table-striped">
 
@@ -178,11 +213,12 @@
                                                     </thead>
                                                     <tbody>
                                                     <?php $stt=0?>
-
                                                     @foreach($sps as $sp)
+
+
                                                         <tr>
 
-                                                        <td class="text-center">{{$stt++}}</td>
+                                                        <td class="text-center">{{++$stt}}</td>
                                                         <td class="text-left">{{$sp->MaLapTop}}</td>
                                                         <td class="text-left">{{$sp->TenLapTop}}</td>
                                                         <td class="text-left">{{$sp->HangSX}}</td>
@@ -197,6 +233,9 @@
                                                             </a>
                                                         </td>
                                                     </tr>
+                                                    <form style="margin-left: 50px;color:black" action="{{url('edit_product/'.$sp->MaLapTop)}}" method="post">
+                                                        <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+
                                                     <tr id="row{{$stt}}" class="toggle">
 
                                                         <td colspan="10">
@@ -210,7 +249,7 @@
 																						<span class="input-group-addon">
 																							<i class="fa fa-codepen" aria-hidden="true"></i>
 																						</span>
-                                                                            <input type="text" class="form-control" value="HĐ T07-1">
+                                                                            <input type="text"  name="TenLapTop"  id="TenLapTop"class="form-control" value="{{$sp->TenLapTop}}">
                                                                         </div>
                                                                     </div>
 
@@ -220,7 +259,7 @@
 																						<span class="input-group-addon">
 																							<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
 																						</span>
-                                                                            <input type="text" class="form-control" value="{{$stt}}" >
+                                                                            <input type="text" name="HangSX"  id="HangSX"class="form-control" value="{{$sp->HangSX}}" >
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -232,7 +271,7 @@
 																						<span class="input-group-addon">
 																							<i class="fa fa-codepen" aria-hidden="true"></i>
 																						</span>
-                                                                            <input type="text" class="form-control" value="{{$stt}}">
+                                                                            <input type="text" name="ManHinh"  id="ManHinh"class="form-control" value="{{$sp->ManHinh}}">
                                                                         </div>
                                                                     </div>
 
@@ -244,7 +283,7 @@
 																						<span class="input-group-addon">
 																							<i class="fa fa-codepen" aria-hidden="true"></i>
 																						</span>
-                                                                            <input type="text" class="form-control" value="{{$stt}}">
+                                                                            <input type="text" name="RAM"  id="RAM"class="form-control" value="{{$sp->RAM}}">
                                                                         </div>
                                                                     </div>
 
@@ -257,7 +296,7 @@
 																						<span class="input-group-addon">
 																							<i class="fa fa-codepen" aria-hidden="true"></i>
 																						</span>
-                                                                            <input type="text" class="form-control" value="{{$stt}}">
+                                                                            <input type="text" name="ROM"  id="ROM"class="form-control" value="{{$sp->ROM}}">
                                                                         </div>
                                                                     </div>
 
@@ -269,7 +308,7 @@
 																						<span class="input-group-addon">
 																							<i class="fa fa-codepen" aria-hidden="true"></i>
 																						</span>
-                                                                            <input type="text" class="form-control" value="{{$stt}}">
+                                                                            <input type="text" name="CPU"  id="CPU"class="form-control" value="{{$sp->CPU}}">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -281,7 +320,7 @@
 																						<span class="input-group-addon">
 																							<i class="fa fa-codepen" aria-hidden="true"></i>
 																						</span>
-                                                                            <input type="text" class="form-control" value="{{$stt}}">
+                                                                            <input type="text" name="SoLuongConLai"  id="SoLuongConLai"class="form-control" value="{{$sp->SoLuongConLai}}">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -297,16 +336,21 @@
                                                                             <a href="" id="cancel_btn{{$stt}}" class="btn btn-default btn-block">Hủy</a>
                                                                         </div>
                                                                         <div class="col-md-1">
-                                                                            <a href="" class="btn btn-danger btn-block" data-toggle="modal" data-target="#popupConfirm">Sửa</a>
+                                                                            <button name="btnButton" value="rescheduleAction2" type="submit" data-target="#popupConfirm"style="color:white;background-color:green" class="btn btn-default" data-dismiss="modal">Sửa</button>
+
+                                                                            {{--<a href="" class="btn btn-danger btn-block" data-toggle="modal" data-target="#popupConfirm">Sửa</a>--}}
                                                                         </div>
+
                                                                     </div>
                                                                 </div>
                                                             </div>
+
                                                         </td>
                                                     </tr>
 
+                                                        </form>
 
-                                                        @endforeach
+                                                    @endforeach
 
                                                     </tbody>
                                                 </table>
@@ -330,6 +374,7 @@
     <!-- /.content-wrapper -->
 @endsection
 @section('content2')
+
 <script>
     var j;
     var size=0;
@@ -378,14 +423,17 @@
             </div>
 
 
-            <div class="modal-footer" style="margin-right:15px">
-                <div style="margin:0 auto;">
-                    <button id="btnThanhToan" type="button" style="color:white;background-color:green" class="btn btn-default" data-dismiss="modal" onclick="window.location.href = 'phanphoi_cungcap_danh-sach-nha-cung-cap.html'">OK</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-                </div>
-            </div>
+            {{--<div class="modal-footer" style="margin-right:15px">--}}
+                {{--<div style="margin:0 auto;">--}}
+
+                    {{--<button name="btnButton" value="rescheduleAction2" type="button" data-target="#"style="color:white;background-color:green" class="btn btn-default" data-dismiss="modal" onclick="window.location.href = '{{url('edit_product/'.$sp->MaLapTop)}}'">OK</button>--}}
+
+                        {{--<button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>--}}
+                {{--</div>--}}
+            {{--</div>--}}
         </div>
 
     </div>
 </div>
+
 @endsection

@@ -16,7 +16,9 @@ Route::get('/', function () {
 });
 
 //product
-Route::get('/ds_sanpham','LAPTOPController@show');
+//Route::get('/ds_sanpham','LAPTOPController@show');
+//Route::get('edit_product/{MaSP}', 'SANPHAMDIENTHOAIController@getData');
+//Route::post('edit_product/{MaSP}', 'SANPHAMDIENTHOAIController@Action');
 //////////DON HANG
 Route::get('/DonHang_LapPhieu', function () {
     return view('don-hang/lap-phieu');
@@ -48,10 +50,19 @@ Route::get('/HangHoa_TaoDotNhapHang', function () {
 Route::get('/HangHoa_TonKho', function () {
     return view('hang-hoa/ton-kho');
 });
+ /////
+//Route::get('/HangHoa_DS-HangHoa', function () {
+//    return view('hang-hoa/ds_sanpham');
+//});
+  Route::get('/HangHoa_DS-HangHoa','LAPTOPController@show');
+//
+//  Route::get('edit_product/{MaLapTop}', 'LAPTOPController@getData');
+
+  Route::post('edit_product/{MaLapTop}', 'LAPTOPController@Action');
 
 
 
-/////////QUAN TRI
+// ///////QUAN TRI
 Route::get('/QuanTri_DSKhachHang', function () {
     return view('quan-tri/DS-khach-hang');
 });
@@ -72,12 +83,12 @@ Route::get('/BaoCao_DoanhThu', function () {
 });
 
 /////CHUA DUNG
-Route::post('/insert_product','SANPHAMDIENTHOAIController@Insert');
-Route::get('/insert_product', function () {
-    return view('insert_product');
-});
-Route::post('/delete_product','SANPHAMDIENTHOAIController@Delete');
-Route::get('edit_product/{MaSP}', 'SANPHAMDIENTHOAIController@getData');
-Route::post('edit_product/{MaSP}', 'SANPHAMDIENTHOAIController@Action');
-Route::post('/Delete_product/{MaSP}', 'SANPHAMDIENTHOAIController@Delete');
+//Route::post('/insert_product','SANPHAMDIENTHOAIController@Insert');
+//Route::get('/insert_product', function () {
+//    return view('insert_product');
+//});
+//Route::post('/delete_product','SANPHAMDIENTHOAIController@Delete');
+//Route::get('edit_product/{MaSP}', 'SANPHAMDIENTHOAIController@getData');
+//Route::post('edit_product/{MaSP}', 'SANPHAMDIENTHOAIController@Action');
+//Route::post('/Delete_product/{MaSP}', 'SANPHAMDIENTHOAIController@Delete');
 ?>

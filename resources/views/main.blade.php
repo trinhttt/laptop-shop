@@ -207,6 +207,7 @@
                     <ul class="treeview-menu">
                         <li class=""><a href="HangHoa_GiaHangHoa"><i class="fa fa-dollar"></i> Giá hàng hóa</a></li>
                         <li class=""><a href="HangHoa_TonKho"><i class="fa fa-dropbox"></i> Hàng tồn kho</a></li>
+                        <li class=""><a href="HangHoa_DS-HangHoa"><i class="fa fa-dropbox"></i> Danh sách hàng hóa</a></li>
 
                         <li class="treeview">
                             <a href="#"><i class="fa fa-hand-o-right"></i> Nhập hàng
@@ -317,10 +318,5 @@
 
 @yield('content2')
 </body>
-<<<<<<< HEAD
 </html>
-        
-        
-=======
-</html>
->>>>>>> 72445c0f0dfc9e8ec767b30a082a9a1b7178eace
+

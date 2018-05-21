@@ -1,4 +1,4 @@
-@extend('main')
+@extends('main')
 @section('content3')
 <title>Lịch giao hàng</title>
 @endsection

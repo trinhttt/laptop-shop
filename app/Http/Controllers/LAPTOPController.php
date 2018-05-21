@@ -9,11 +9,13 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+
 use Input;
 use Validator;
 use Redirect;
 use App\LAPTOP;
 //use App\TAIKHOAN;
+
 use Auth;
 //use Charts;
 
@@ -23,8 +25,7 @@ class LAPTOPController extends Controller
     public function show()
     {
         $sps=LAPTOP::all();
-
-        return view('ds_sanpham', compact('sps'));
+        return view('hang-hoa.ds_sanpham', compact('sps'));
     }
 //    public function show()
 //    {
@@ -90,42 +91,56 @@ class LAPTOPController extends Controller
 //    }
 //
 //    //Edit info of bill
-//    public function getData($MaSP)
+//    public function getData($MaLapTop)
 //    {
-//        $NV = SANPHAMDIENTHOAI::where('MaSP', $MaSP)->first();
+//        $sp1 = LAPTOP::where('MaLapTop', $MaLapTop)->first();
 //
-//        if ($NV == null) {
+//        if ($sp1 == null) {
 //            return view('404');
 //        }
 //
-//        return view('product.product_list', compact('NV'));
+//        return view('hang-hoa.ds_sanpham', compact('sp1'));
 //
 //    }
-//    public function Action(Request $request, $MaSP)
-//    {
-//
-//        if ($request->btnButton== "rescheduleAction2") {
-//            $NV = SANPHAMDIENTHOAI::where('MaSP', $MaSP)->first();
-//
-//            $NV->MaSP=$request->MaSP;
-//            $NV->TenDienThoai=$request->TenDienThoai;
-//            $NV->HangSX=$request->HangSX;
-//            $NV->ThongSoKyThuat=$request->ThongSoKyThuat;
-//            $NV->SoLuongConLai=$request->SoLuongConLai;
-//            $NV->Mausac=$request->Mausac;
-//            $NV->GiaGoc=$request->GiaGoc;
-//            $NV->GiaGiam=$request->GiaGiam;
-//            $NV->KhuyenMai=$request->KhuyenMai;
-//            $NV->UuDai=$request->UuDai;
-//            $NV->Mota_urlImage=$request->Mota_urlImage;
-//            $NV->DacDiemChiTiet_urlImage=$request->DacDiemChiTiet_urlImage;
-//            $NV->save();
-//
-//
-//            return Redirect::to('product_list');
-//        } else {
-//            return view('404');
-//        }
-//    }
+    public function Action(Request $request, $MaLapTop)
+    {
+        $data=Input::except(array('_token'));
+
+
+        if ($request->btnButton== "rescheduleAction2") {
+            $NV = LAPTOP::where('MaLapTop', $MaLapTop)->first();
+            $NV->MaLapTop=$request->MaLapTop;
+            $NV->TenLapTop=$request->TenLapTop;
+            $NV->HangSX=$request->HangSX;
+            $NV->SoLuongConLai=$request->SoLuongConLai;
+//            $NV->GiaBan=$request->GiaBan;
+            $NV->ManHinh=$request->ManHinh;
+            $NV->HeDieuHanh=$request->HeDieuHanh;
+            $NV->RAM=$request->RAM;
+            $NV->ROM=$request->ROM;
+            $NV->CPU=$request->CPU;
+
+            $rule=array(
+                'MaLapTop'=>'min:1',
+                'TenLapTop'=>'min:1',
+                'HangSX'=>'min:1',
+            );
+            $message=array(
+                'MaLapTop.min'=>'Mã LapTop phải có dữ liệu, không để rỗng!',
+                'TenLapTop.min'=>'Tên LapTop phải có dữ liệu, không để rỗng!',
+                'HangSX.min'=>'Hãng sản xuất phải có dữ liệu, không để rỗng!',
+            );
+            $validator=Validator::make($data,$rule,$message);
+                if($validator->fails())
+            {
+                return Redirect::to('HangHoa_DS-HangHoa')->withErrors($validator);
+            }else{
+                    $NV->save();
+                    return Redirect::to('HangHoa_DS-HangHoa')->with('success','Cập nhật dữ liệu thành công!');
+            }
+        } else {
+            return view('404');
+        }
+    }
 
 }
