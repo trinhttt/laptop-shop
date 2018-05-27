@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +28,7 @@
     <!-- lich giao hang -->
     <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
+
     <!-- phieu dang xu lý -->
     <link rel="stylesheet" href="dist/css/font/GoogleFont.css">
     <!-- lich giao hang -->
@@ -35,16 +37,10 @@
     <link rel="stylesheet" href="bower_components/select2/dist/css/select2.min.css">
     <link href="dist/css/bootstrap-toggle.min.css" rel="stylesheet">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
 
-
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
     <!-- Google Font -->
     <link rel="stylesheet" href="dist/css/font/GoogleFont.css">
@@ -184,13 +180,13 @@
                                 <span>Phiếu đã hoàn thành</span>
                             </a>
                         </li>
-                        <li class="">
-                            <a href="DonHang_PhieuDangXuLy">
-                                <i class="fa fa-book"></i>
-                                <span>Phiếu giữ hàng</span>
+                        {{--<li class="">--}}
+                            {{--<a href="DonHang_PhieuDangXuLy">--}}
+                                {{--<i class="fa fa-book"></i>--}}
+                                {{--<span>Phiếu giữ hàng</span>--}}
 
-                            </a>
-                        </li>
+                            {{--</a>--}}
+                        {{--</li>--}}
                         <li class="">
                             <a href="DonHang_LichGiaoHang">
                                 <i class="fa fa-calendar-minus-o"></i>
@@ -210,9 +206,10 @@
                     </a>
 
                     <ul class="treeview-menu">
+                        <li class=""><a href="HangHoa_DS-HangHoa"><i class="fa fa-dropbox"></i> Danh sách hàng hóa</a></li>
+
                         <li class=""><a href="HangHoa_GiaHangHoa"><i class="fa fa-dollar"></i> Giá hàng hóa</a></li>
                         <li class=""><a href="HangHoa_TonKho"><i class="fa fa-dropbox"></i> Hàng tồn kho</a></li>
-                        <li class=""><a href="HangHoa_DS-HangHoa"><i class="fa fa-dropbox"></i> Danh sách hàng hóa</a></li>
 
                         <li class="treeview">
                             <a href="#"><i class="fa fa-hand-o-right"></i> Nhập hàng
@@ -323,8 +320,9 @@
 <script src="dist/js/bootstrap-toggle.min.js"></script>
 <!-- tao dot nhap kho -->
 <script src="dist/js/sweetalert2.all.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/fileinput.min.js"></script>
 
 @yield('content2')
 </body>
 </html>
+

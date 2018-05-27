@@ -28,10 +28,13 @@ class LAPTOP extends Model
         $GiaBan=Input::get('GiaBan');
         $ManHinh=Input::get('ManHinh');
         $HeDieuHanh=Input::get('HeDieuHanh');
+        $Pin=Input::get('Pin');
         $RAM=Input::get('RAM');
         $ROM=Input::get('ROM');
         $CPU=Input::get('CPU');
         $Khac=Input::get('Khac');
+        $VAT=Input::get('VAT');
+        $Anh=Input::get('Anh');
         $MoTa=Input::get('MoTa');
 
         $sp=new LAPTOP();
@@ -42,10 +45,13 @@ class LAPTOP extends Model
         $sp->GiaBan=$GiaBan;
         $sp->ManHinh=$ManHinh;
         $sp->HeDieuHanh=$HeDieuHanh;
+        $sp->Pin=$Pin;
         $sp->RAM=$RAM;
         $sp->ROM=$ROM;
         $sp->CPU=$CPU;
         $sp->Khac=$Khac;
+        $sp->Anh=$Anh;
+        $sp->VAT=$VAT;
         $sp->MoTa=$MoTa;
 
 

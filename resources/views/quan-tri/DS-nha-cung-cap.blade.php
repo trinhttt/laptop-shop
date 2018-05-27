@@ -1,4 +1,4 @@
-@extend('main')
+@extends('main')
 @section('content3')
 <title>Danh sách nhà cung cấp</title>
 @endsection
@@ -62,7 +62,7 @@
                                 <div class="box">
                                     <div class="box-header with-border text-center menu-button">
 										
-                                        <a class="btn btn-app custom-btn" data-toggle="tooltip" href="quanly_cungcap_tao-nha-cung-cap.html" target="_blank" title="Tạo Mới" data-placement="bottom" >
+                                        <a class="btn btn-app custom-btn" data-toggle="tooltip" href="TaoMoi_NhaCungCap" target="_blank" title="Tạo Mới" data-placement="bottom" >
                                             <i class="fa fa-plus-square text-green"></i>
                                             <span><strong>Tạo Mới</strong></span>
 										</a>

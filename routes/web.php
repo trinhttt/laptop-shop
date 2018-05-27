@@ -45,11 +45,15 @@ Route::get('/HangHoa_LichSuNhapHang', function () {
     return view('hang-hoa/lich-su-nhap-hang');
 });
 Route::get('/HangHoa_TaoDotNhapHang', function () {
-    return view('hang-hoa/tao-dot-nhap-hang');
+    return view('hang-hoa/tao-dot-nhap-kho');
 });
 Route::get('/HangHoa_TonKho', function () {
     return view('hang-hoa/ton-kho');
 });
+Route::get('/TaoMoi_SanPham', function () {
+    return view('hang-hoa/tao_san-pham');
+});
+
  /////
 //Route::get('/HangHoa_DS-HangHoa', function () {
 //    return view('hang-hoa/ds_sanpham');
@@ -59,6 +63,7 @@ Route::get('/HangHoa_TonKho', function () {
 //  Route::get('edit_product/{MaLapTop}', 'LAPTOPController@getData');
 
   Route::post('edit_product/{MaLapTop}', 'LAPTOPController@Action');
+Route::post('/insert_product','LAPTOPController@Insert');
 
 
 
@@ -69,6 +74,20 @@ Route::get('/QuanTri_DSKhachHang', function () {
 Route::get('/QuanTri_DSNhaCungCap', function () {
     return view('quan-tri/DS-nha-cung-cap');
 });
+Route::get('/TaoMoi_NhaCungCap', function () {
+    return view('quan-tri/tao-nha-cung-cap');
+});
+Route::get('/TaoMoi_KhachHang', function () {
+    return view('quan-tri/tao_khac-hang');
+});
+
+Route::get('/QuanTri_DSKhachHang','KHACHHANGController@show');
+Route::post('edit_KhachHang/{MaKhachHang}', 'KHACHHANGController@Action');
+Route::post('/insert_KhachHang','KHACHHANGController@Insert');
+
+Route::get('/QuanTri_DSNhaCungCap','NHACUNGCAPController@show');
+Route::post('edit_NhaCungCap/{idNhaCungCap}', 'NHACUNGCAPController@Action');
+Route::post('/insert_NhaCungCap','NHACUNGCAPController@Insert');
 
 ////BAO CAO
 

@@ -44,7 +44,7 @@
         <section class="content-header">
             <ol class="breadcrumb">
                 <li><a href="phanphoi_index.html"><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
-                <li><a href="phanphoi_cungcap_danh-sach-nha-cung-cap.html">Danh sách nhà cung cấp</a></li>
+                <li><a href="phanphoi_cungcap_danh-sach-nha-cung-cap.html">Danh sách sản phẩm</a></li>
             </ol>
         </section>
 
@@ -56,7 +56,7 @@
                         <div class="row" style="margin-left:0px; margin-right:0px; margin-top: 10px;">
                             <div class="col-md-12">
                                 <h4>
-                                    <b>Danh sách nhà cung cấp</b>
+                                    <b>Danh sách sản phẩm</b>
                                 </h4>
                             </div>
                         </div>
@@ -64,38 +64,11 @@
                         <div class="box">
                             <div class="box-header with-border text-center menu-button">
 
-                                <a class="btn btn-app custom-btn" data-toggle="tooltip" href="phanphoi_cungcap_tao-nha-cung-cap.html" target="_blank" title="Tạo Mới" data-placement="bottom" >
+                                <a class="btn btn-app custom-btn" data-toggle="tooltip" href="TaoMoi_SanPham" target="_blank" title="Tạo Mới" data-placement="bottom" >
                                     <i class="fa fa-plus-square text-green"></i>
                                     <span><strong>Tạo Mới</strong></span>
                                 </a>
-                                <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Sửa" data-placement="bottom">
-                                    <i class="fa fa-edit text-grey"></i>
-                                    <span><strong>Sửa</strong></span>
-                                </a>
-                                <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Lưu" data-placement="bottom">
-                                    <i class="fa fa-save text-grey"></i>
-                                    <span><strong>Lưu</strong></span>
-                                </a>
-                                <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Hủy" data-placement="bottom">
-                                    <i class="fa fa-close text-grey"></i>
-                                    <span><strong>Hủy</strong></span>
-                                </a>
-                                <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Chốt đơn" data-placement="bottom">
-                                    <i class="fa fa-check-circle text-grey"></i>
-                                    <span><strong>Chốt đơn</strong></span>
-                                </a>
-                                <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Đổi trả" data-placement="bottom">
-                                    <i class="fa fa-exchange text-grey"></i>
-                                    <span><strong>Đổi trả</strong></span>
-                                </a>
-                                <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Xem Trước" data-placement="bottom">
-                                    <i class="fa fa-eye text-grey"></i>
-                                    <span><strong>Xem Trước</strong></span>
-                                </a>
-                                <a class="btn btn-app custom-btn" data-toggle="tooltip" title="In" data-placement="bottom">
-                                    <i class="fa fa-print text-blue"></i>
-                                    <span><strong>In</strong></span>
-                                </a>
+
                                 <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Import Excel" data-placement="bottom">
                                     <i class="fa fa-download text-grey"></i>
                                     <span><strong>Import Excel</strong></span>
@@ -187,12 +160,12 @@
                                             </div>
                                         </div>
                                     </div>
+                                @endif
 
                                 <div class="box-body">
                                     <div class="row">
                                         <div class="col-md-12">
 
-                                            @endif
                                             <fieldset>
                                                 <table id="example1" class="table table-bordered table-striped">
 
@@ -222,7 +195,10 @@
                                                         <td class="text-left">{{$sp->MaLapTop}}</td>
                                                         <td class="text-left">{{$sp->TenLapTop}}</td>
                                                         <td class="text-left">{{$sp->HangSX}}</td>
-                                                            <td class="text-left">{{$sp->ManHinh}}</td>
+                                                            <td>
+                                                                <img src="img/{{ $sp->Anh }}" style="height: 60px; width:60px" alt="">
+                                                            </td>
+{{--                                                            <td class="text-left">{{$sp->Anh}}</td>--}}
                                                             <td class="text-left">{{$sp->RAM}}</td>
                                                             <td class="text-left">{{$sp->ROM}}</td>
                                                             <td class="text-left">{{$sp->CPU}}</td>
@@ -247,7 +223,7 @@
                                                                         <label>Tên laptop</label>
                                                                         <div class="input-group">
 																						<span class="input-group-addon">
-																							<i class="fa fa-codepen" aria-hidden="true"></i>
+																							<i class="fa fa-edit" aria-hidden="true"></i>
 																						</span>
                                                                             <input type="text"  name="TenLapTop"  id="TenLapTop"class="form-control" value="{{$sp->TenLapTop}}">
                                                                         </div>
@@ -257,7 +233,7 @@
                                                                         <label>Hãng sản xuất</label>
                                                                         <div class="input-group">
 																						<span class="input-group-addon">
-																							<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+																							<i class="fa fa-edit" aria-hidden="true"></i>
 																						</span>
                                                                             <input type="text" name="HangSX"  id="HangSX"class="form-control" value="{{$sp->HangSX}}" >
                                                                         </div>
@@ -269,7 +245,7 @@
                                                                         <label>Màn hình</label>
                                                                         <div class="input-group">
 																						<span class="input-group-addon">
-																							<i class="fa fa-codepen" aria-hidden="true"></i>
+																							<i class="fa fa-edit" aria-hidden="true"></i>
 																						</span>
                                                                             <input type="text" name="ManHinh"  id="ManHinh"class="form-control" value="{{$sp->ManHinh}}">
                                                                         </div>
@@ -281,7 +257,7 @@
                                                                         <label>Ram</label>
                                                                         <div class="input-group">
 																						<span class="input-group-addon">
-																							<i class="fa fa-codepen" aria-hidden="true"></i>
+																							<i class="fa fa-edit" aria-hidden="true"></i>
 																						</span>
                                                                             <input type="text" name="RAM"  id="RAM"class="form-control" value="{{$sp->RAM}}">
                                                                         </div>
@@ -294,7 +270,7 @@
                                                                         <label>Rom</label>
                                                                         <div class="input-group">
 																						<span class="input-group-addon">
-																							<i class="fa fa-codepen" aria-hidden="true"></i>
+																							<i class="fa fa-edit" aria-hidden="true"></i>
 																						</span>
                                                                             <input type="text" name="ROM"  id="ROM"class="form-control" value="{{$sp->ROM}}">
                                                                         </div>
@@ -306,7 +282,7 @@
                                                                         <label>CPU</label>
                                                                         <div class="input-group">
 																						<span class="input-group-addon">
-																							<i class="fa fa-codepen" aria-hidden="true"></i>
+																							<i class="fa fa-edit" aria-hidden="true"></i>
 																						</span>
                                                                             <input type="text" name="CPU"  id="CPU"class="form-control" value="{{$sp->CPU}}">
                                                                         </div>
@@ -318,7 +294,7 @@
                                                                         <label>SL còn lại</label>
                                                                         <div class="input-group">
 																						<span class="input-group-addon">
-																							<i class="fa fa-codepen" aria-hidden="true"></i>
+																							<i class="fa fa-edit" aria-hidden="true"></i>
 																						</span>
                                                                             <input type="text" name="SoLuongConLai"  id="SoLuongConLai"class="form-control" value="{{$sp->SoLuongConLai}}">
                                                                         </div>

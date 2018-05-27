@@ -9,7 +9,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\File;
 use Input;
 use Validator;
 use Redirect;
@@ -17,8 +17,16 @@ use App\LAPTOP;
 //use App\TAIKHOAN;
 
 use Auth;
+use Image;
 //use Charts;
 
+use Storage;
+
+use Illuminate\Http\Response;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\UploadedFile;
+use App\Advert;
+use App\Upload;
 use Carbon\Carbon;
 class LAPTOPController extends Controller
 {
@@ -27,57 +35,128 @@ class LAPTOPController extends Controller
         $sps=LAPTOP::all();
         return view('hang-hoa.ds_sanpham', compact('sps'));
     }
-//    public function show()
-//    {
-//        $nvs=LAPTOP::all();
-//        $T='No name';
-//        foreach (TAIKHOAN::all() as $r)
-//        {
-//
-//            if($r['DangNhap']==1)
-//            {
-//
-//                $T=$r['TenDN'];
-//                $LoaiTk=$r['LoaiTK'];
-//                break;
-//            }
-//        }
-//        return view('product.product_list', compact('nvs','T','LoaiTk'));
-//    }
+    public function store(Request $request)
+    {
+        $request->file('Anh')->store('img');
+        return back();
+    }
+    public function uploadFile(Request $request){
+        // Thông báo khi xảy ra lỗi
+        $messages = [
+            'image' => 'Định dạng không cho phép',
+            'max' => 'Kích thước file quá lớn',
+        ];
+        // Điều kiện cho phép upload
+        $this->validate($request, [
+            'Anh' => 'image|max:2028',
+        ], $messages);
+        // Kiểm tra file hợp lệ
+        if ($request->file('Anh')->isValid()){
+            // Lấy tên file
+            $file_name = $request->file('Anh')->getClientOriginalName();
+            // Lưu file vào thư mục upload với tên là biến $filename
+            $request->file('Anh')->move('img',$file_name);
+        }
+    }
+    public function Insert(Request $request)
+    {
+        $data=Input::except(array('_token'));
 
-//    public function Insert()
-//    {
+        $NV = new LAPTOP;
+        $NV->MaLapTop=$request->MaLapTop;
+        $NV->TenLapTop=$request->TenLapTop;
+        $NV->HangSX=$request->HangSX;
+        $NV->GiaBan=$request->GiaBan;
+        $NV->SoLuongConLai=$request->SoLuongConLai;
+        $NV->ManHinh=$request->ManHinh;
+        $NV->HeDieuHanh=$request->HeDieuHanh;
+        $NV->RAM=$request->RAM;
+        $NV->ROM=$request->ROM;
+        $NV->CPU=$request->CPU;
+        $file_name = $request->file('Anh')->getClientOriginalName();
+
+        $NV->Anh = $file_name;
+        //        exit($NV);
+//        $NV->save();
+        $rule=array(
+            'MaLapTop'=>'min:1',
+            'TenLapTop'=>'min:1',
+            'HangSX'=>'min:1',
+            'GiaBan'=>'required',
+            'ManHinh'=>'required',
+            'SoLuongConLai'=>'required',
+            'HeDieuHanh'=>'required',
+            'VAT'=>'required',
+            'Anh'=>'required',
+        );
+        $message=array(
+            'MaLapTop.required'=>'Mã LapTop phải có dữ liệu, không để rỗng!',
+            'TenLapTop.required'=>'Trường Tên laptop phải có dữ liệu, không để rỗng!',
+            'HangSX.required'=>'Trường Hãng sản xuất phải có dữ liệu, không để rỗng!',
+            'GiaBan.required'=>'Trường Giá phải có dữ liệu, không để rỗng!',
+            'ManHinh.required'=>'Trường kích thước màn hình phải có dữ liệu, không để rỗng!',
+            'SoLuongConLai.required'=>'Trường số lượng phải có dữ liệu, không để rỗng!',
+            'HeDieuHanh.required'=>'Trường hệ điều hành phải có dữ liệu, không để rỗng!',
+            'VAT.required'=>'Trường Thuế (VAT) phải có dữ liệu, không để rỗng!',
+            'Anh.required'=>'Chọn ảnh trước khi click lưu!',
+
+        );
+        $validator=Validator::make($data,$rule,$message);
+        if($validator->fails())
+        {
+            return Redirect::to('TaoMoi_SanPham')->withErrors($validator);
+        }else{
+            $NV->save();
+            return Redirect::to('TaoMoi_SanPham')->with('success','Thêm mới sản phẩm thành công!');
+        }
+
+
+// then in your view you reference the path like this:
 //
+//        <img src="{{ asset('public/images/' . $model->image) }}">
 //        $data=Input::except(array('_token'));
 //        $rule=array(
-//            'MaSP'=>'required',
-//            'TenDienThoai'=>'required',
+//        'TenLapTop'=>'required',
 //            'HangSX'=>'required',
-//            'ThongSoKyThuat'=>'required',
+//            'GiaBan'=>'required',
+//            'ManHinh'=>'required',
 //            'SoLuongConLai'=>'required',
-//
-//            'Mausac'=>'required',
-//            'GiaGoc'=>'required',
-//            'GiaGiam'=>'required',
-//            'KhuyenMai'=>'required',
-//            'UuDai'=>'required',
-//            'Mota_urlImage'=>'required',
-//            'DacDiemChiTiet_urlImage'=>'required',
+//            'HeDieuHanh'=>'required',
+//            'VAT'=>'required',
+//            'Anh'=>'required',
 //        );
+//        $message=array(
+////            'MaLapTop.required'=>'Mã LapTop phải có dữ liệu, không để rỗng!',
+//            'TenLapTop.required'=>'Trường Tên laptop phải có dữ liệu, không để rỗng!',
+//            'HangSX.required'=>'Trường Hãng sản xuất phải có dữ liệu, không để rỗng!',
+//            'GiaBan.required'=>'Trường Giá phải có dữ liệu, không để rỗng!',
+//            'ManHinh.required'=>'Trường kích thước màn hình phải có dữ liệu, không để rỗng!',
+//            'SoLuongConLai.required'=>'Trường số lượng phải có dữ liệu, không để rỗng!',
+//            'HeDieuHanh.required'=>'Trường hệ điều hành phải có dữ liệu, không để rỗng!',
+//            'VAT.required'=>'Trường Thuế (VAT) phải có dữ liệu, không để rỗng!',
+//            'Anh.required'=>'Chọn ảnh trước khi click lưu!',
+////            'Anh.image'=>'Chọn đúng định dạng!',
+//        );
+//        $file_name = $request->file('Anh')->getClientOriginalName();
 //
-//        $validator=Validator::make($data,$rule);
+//        $data['Anh'] = $file_name;
+//        $validator=Validator::make($data,$rule,$message);
 //
+//
+//        exit($data['Anh']);
 //        if($validator->fails())
 //        {
-//            return Redirect::to('product_list')->withErrors($validator);
+//            return Redirect::to('TaoMoi_SanPham')->withErrors($validator);
 //        }else{
-//            SANPHAMDIENTHOAI::formstore(Input::except('_token'));
+//            LAPTOP::formstore(Input::except('_token'));
 //
-//            return Redirect::to('product_list')->with('success','successfully inserted');
-//        }
+//
+//            return Redirect::to('TaoMoi_SanPham')->with('success','Thêm mới sản phẩm thành công!');
+//
 //
 //
 //    }
+    }
 //
 //
 //    //Delete info of bill
@@ -90,18 +169,7 @@ class LAPTOPController extends Controller
 //        return Redirect::to('product_list');
 //    }
 //
-//    //Edit info of bill
-//    public function getData($MaLapTop)
-//    {
-//        $sp1 = LAPTOP::where('MaLapTop', $MaLapTop)->first();
-//
-//        if ($sp1 == null) {
-//            return view('404');
-//        }
-//
-//        return view('hang-hoa.ds_sanpham', compact('sp1'));
-//
-//    }
+
     public function Action(Request $request, $MaLapTop)
     {
         $data=Input::except(array('_token'));
@@ -113,7 +181,6 @@ class LAPTOPController extends Controller
             $NV->TenLapTop=$request->TenLapTop;
             $NV->HangSX=$request->HangSX;
             $NV->SoLuongConLai=$request->SoLuongConLai;
-//            $NV->GiaBan=$request->GiaBan;
             $NV->ManHinh=$request->ManHinh;
             $NV->HeDieuHanh=$request->HeDieuHanh;
             $NV->RAM=$request->RAM;
@@ -126,9 +193,9 @@ class LAPTOPController extends Controller
                 'HangSX'=>'min:1',
             );
             $message=array(
-                'MaLapTop.min'=>'Mã LapTop phải có dữ liệu, không để rỗng!',
-                'TenLapTop.min'=>'Tên LapTop phải có dữ liệu, không để rỗng!',
-                'HangSX.min'=>'Hãng sản xuất phải có dữ liệu, không để rỗng!',
+                'MaLapTop.min'=>'Trường Mã LapTop phải có dữ liệu, không để rỗng!',
+                'TenLapTop.min'=>'Trường Tên LapTop phải có dữ liệu, không để rỗng!',
+                'HangSX.min'=>'Trường Hãng sản xuất phải có dữ liệu, không để rỗng!',
             );
             $validator=Validator::make($data,$rule,$message);
                 if($validator->fails())

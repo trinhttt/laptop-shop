@@ -19,8 +19,8 @@ class HOADON extends Model
         $TongTien=Input::get('TongTien');
         $DiaChiNhan=Input::get('DiaChiNhan');
         $KhachHang=Input::get('KhachHang');
-
-
+        $DonViXuatHang=Input::get('DonViXuatHang');
+        $MaSoThue=Input::get('MaSoThue');
        
 
         $hd=new HOADON();
@@ -29,7 +29,9 @@ class HOADON extends Model
         $hd->TongTien=$TongTien;
         $hd->DiaChiNhan=$DiaChiNhan;
         $hd->KhachHang=$KhachHang;
-        
+        $hd->DonViXuatHang=$DonViXuatHang;
+        $hd->MaSoThue=$MaSoThue;
+
         
         $hd->save();
     }
