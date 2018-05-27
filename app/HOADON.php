@@ -15,24 +15,32 @@ class HOADON extends Model
     public static function formstore($data)
     {
         $SoHoaDon=Input::get('SoHoaDon');
-        $NgayLapHD=Input::get('NgayLapHD');
+        $NgayGiaoHang=Input::get('NgayGiaoHang');
         $TongTien=Input::get('TongTien');
         $DiaChiNhan=Input::get('DiaChiNhan');
         $KhachHang=Input::get('KhachHang');
-        $DonViXuatHang=Input::get('DonViXuatHang');
-        $MaSoThue=Input::get('MaSoThue');
-       
+        $SoDotGiao=Input::get('SoDotGiao');
+        $SoSanPham=Input::get('SoSanPham');
+        $MucGiaNam=Input::get('MucGiaNam');
+        $NguoiTaoHD=Input::get('NguoiTaoHD');
+
+
+
+
 
         $hd=new HOADON();
         $hd->SoHoaDon=$SoHoaDon;
-        $hd->NgayLapHD=$NgayLapHD;
+        $hd->NgayGiaoHang=$NgayGiaoHang;
         $hd->TongTien=$TongTien;
         $hd->DiaChiNhan=$DiaChiNhan;
         $hd->KhachHang=$KhachHang;
-        $hd->DonViXuatHang=$DonViXuatHang;
-        $hd->MaSoThue=$MaSoThue;
+        $hd->SoDotGiao=$SoDotGiao;
+        $hd->SoSanPham=$SoSanPham;
+        $hd->MucGiaNam=$MucGiaNam;
+        $hd->NguoiTaoHD=$NguoiTaoHD;
 
-        
+
+
         $hd->save();
     }
 }

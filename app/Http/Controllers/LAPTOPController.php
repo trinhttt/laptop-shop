@@ -35,29 +35,12 @@ class LAPTOPController extends Controller
         $sps=LAPTOP::all();
         return view('hang-hoa.ds_sanpham', compact('sps'));
     }
-    public function store(Request $request)
-    {
-        $request->file('Anh')->store('img');
-        return back();
-    }
-    public function uploadFile(Request $request){
-        // Thông báo khi xảy ra lỗi
-        $messages = [
-            'image' => 'Định dạng không cho phép',
-            'max' => 'Kích thước file quá lớn',
-        ];
-        // Điều kiện cho phép upload
-        $this->validate($request, [
-            'Anh' => 'image|max:2028',
-        ], $messages);
-        // Kiểm tra file hợp lệ
-        if ($request->file('Anh')->isValid()){
-            // Lấy tên file
-            $file_name = $request->file('Anh')->getClientOriginalName();
-            // Lưu file vào thư mục upload với tên là biến $filename
-            $request->file('Anh')->move('img',$file_name);
-        }
-    }
+//    public function store(Request $request)
+//    {
+//        $request->file('Anh')->store('img');
+//        return back();
+//    }
+//
     public function Insert(Request $request)
     {
         $data=Input::except(array('_token'));
@@ -70,20 +53,18 @@ class LAPTOPController extends Controller
         $NV->SoLuongConLai=$request->SoLuongConLai;
         $NV->ManHinh=$request->ManHinh;
         $NV->HeDieuHanh=$request->HeDieuHanh;
+        $NV->Pin=$request->Pin;
+        $NV->Khac=$request->Khac;
         $NV->RAM=$request->RAM;
         $NV->ROM=$request->ROM;
         $NV->CPU=$request->CPU;
         $file_name = $request->file('Anh')->getClientOriginalName();
-
         $NV->Anh = $file_name;
-        //        exit($NV);
-//        $NV->save();
         $rule=array(
             'MaLapTop'=>'min:1',
             'TenLapTop'=>'min:1',
             'HangSX'=>'min:1',
             'GiaBan'=>'required',
-            'ManHinh'=>'required',
             'SoLuongConLai'=>'required',
             'HeDieuHanh'=>'required',
             'VAT'=>'required',
@@ -94,7 +75,6 @@ class LAPTOPController extends Controller
             'TenLapTop.required'=>'Trường Tên laptop phải có dữ liệu, không để rỗng!',
             'HangSX.required'=>'Trường Hãng sản xuất phải có dữ liệu, không để rỗng!',
             'GiaBan.required'=>'Trường Giá phải có dữ liệu, không để rỗng!',
-            'ManHinh.required'=>'Trường kích thước màn hình phải có dữ liệu, không để rỗng!',
             'SoLuongConLai.required'=>'Trường số lượng phải có dữ liệu, không để rỗng!',
             'HeDieuHanh.required'=>'Trường hệ điều hành phải có dữ liệu, không để rỗng!',
             'VAT.required'=>'Trường Thuế (VAT) phải có dữ liệu, không để rỗng!',
@@ -111,9 +91,6 @@ class LAPTOPController extends Controller
         }
 
 
-// then in your view you reference the path like this:
-//
-//        <img src="{{ asset('public/images/' . $model->image) }}">
 //        $data=Input::except(array('_token'));
 //        $rule=array(
 //        'TenLapTop'=>'required',
@@ -183,6 +160,7 @@ class LAPTOPController extends Controller
             $NV->SoLuongConLai=$request->SoLuongConLai;
             $NV->ManHinh=$request->ManHinh;
             $NV->HeDieuHanh=$request->HeDieuHanh;
+
             $NV->RAM=$request->RAM;
             $NV->ROM=$request->ROM;
             $NV->CPU=$request->CPU;

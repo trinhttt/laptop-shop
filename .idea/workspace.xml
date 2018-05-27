@@ -2,26 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70690cf-f5e9-4dda-8b8a-4ca7e86d6cfb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/KHACHHANGController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/NHACUNGCAPController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/THUE.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/quan-tri/gia-hang-hoa.blade.php" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/DONHANGController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/HOADON.php" afterPath="$PROJECT_DIR$/app/HOADON.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/LAPTOPController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/LAPTOPController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/LAPTOP.php" afterPath="$PROJECT_DIR$/app/LAPTOP.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/don-hang/lap-phieu.blade.php" afterPath="$PROJECT_DIR$/resources/views/don-hang/lap-phieu.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/hang-hoa/ds_sanpham.blade.php" afterPath="$PROJECT_DIR$/resources/views/hang-hoa/ds_sanpham.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/hang-hoa/gia-hang-hoa.blade.php" afterPath="$PROJECT_DIR$/resources/views/hang-hoa/gia-hang-hoa.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/hang-hoa/lich-giao-hang.blade.php" afterPath="$PROJECT_DIR$/resources/views/hang-hoa/lich-giao-hang.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/hang-hoa/lich-su-nhap-hang.blade.php" afterPath="$PROJECT_DIR$/resources/views/hang-hoa/lich-su-nhap-hang.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/hang-hoa/tao-dot-nhap-kho.blade.php" afterPath="$PROJECT_DIR$/resources/views/hang-hoa/tao-dot-nhap-kho.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/hang-hoa/ton-kho-sua.blade.php" afterPath="$PROJECT_DIR$/resources/views/hang-hoa/ton-kho-sua.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/hang-hoa/ton-kho-them-moi.blade.php" afterPath="$PROJECT_DIR$/resources/views/hang-hoa/ton-kho-them-moi.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/hang-hoa/ton-kho.blade.php" afterPath="$PROJECT_DIR$/resources/views/hang-hoa/ton-kho.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/hang-hoa/tao_san-pham.blade.php" afterPath="$PROJECT_DIR$/resources/views/hang-hoa/tao_san-pham.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/main.blade.php" afterPath="$PROJECT_DIR$/resources/views/main.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/quan-tri/DS-khach-hang.blade.php" afterPath="$PROJECT_DIR$/resources/views/quan-tri/DS-khach-hang.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/quan-tri/DS-nha-cung-cap.blade.php" afterPath="$PROJECT_DIR$/resources/views/quan-tri/DS-nha-cung-cap.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,36 +22,64 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LAPTOPController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LAPTOPController.php">
+      <file leaf-file-name="lap-phieu.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/don-hang/lap-phieu.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-578">
-              <caret line="106" column="74" lean-forward="false" selection-start-line="106" selection-start-column="74" selection-end-line="106" selection-end-column="74" />
+            <state relative-caret-position="57">
+              <caret line="122" column="61" lean-forward="true" selection-start-line="122" selection-start-column="61" selection-end-line="122" selection-end-column="61" />
+              <folding>
+                <element signature="e#1741#1766#0#HTML" expanded="true" />
+                <element signature="e#11636#11655#0#HTML" expanded="true" />
+                <element signature="e#12310#12335#0#HTML" expanded="true" />
+                <element signature="e#13844#13869#0#HTML" expanded="true" />
+                <element signature="e#14090#14114#0#HTML" expanded="true" />
+                <element signature="e#14498#14518#0#HTML" expanded="true" />
+                <element signature="e#14613#14634#0#HTML" expanded="true" />
+                <element signature="e#14721#14741#0#HTML" expanded="true" />
+                <element signature="e#14829#14850#0#HTML" expanded="true" />
+                <element signature="e#14942#14963#0#HTML" expanded="true" />
+                <element signature="e#15076#15096#0#HTML" expanded="true" />
+                <element signature="e#15197#15218#0#HTML" expanded="true" />
+                <element signature="e#15597#15628#0#HTML" expanded="true" />
+                <element signature="e#17338#17369#0#HTML" expanded="true" />
+                <element signature="e#17686#17717#0#HTML" expanded="true" />
+                <element signature="e#19395#19426#0#HTML" expanded="true" />
+                <element signature="e#19678#19724#0#HTML" expanded="true" />
+                <element signature="e#20278#20328#0#HTML" expanded="true" />
+                <element signature="e#20375#20414#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tao_san-pham.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/hang-hoa/tao_san-pham.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="123" column="37" lean-forward="true" selection-start-line="116" selection-start-column="28" selection-end-line="123" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DONHANGController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DONHANGController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="526">
+              <caret line="49" column="43" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="49" selection-end-column="43" />
               <folding>
                 <element signature="e#124#152#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ds_sanpham.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/hang-hoa/ds_sanpham.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="198" column="101" lean-forward="true" selection-start-line="198" selection-start-column="101" selection-end-line="198" selection-end-column="101" />
-              <folding>
-                <element signature="e#11452#11484#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tao_san-pham.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/hang-hoa/tao_san-pham.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3374">
-              <caret line="110" column="44" lean-forward="false" selection-start-line="110" selection-start-column="44" selection-end-line="110" selection-end-column="44" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -72,12 +88,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>@</find>
-      <find>NHẬP HÀNG</find>
-      <find>LẬP</find>
-      <find>nhà cung cấp</find>
-      <find>HÀNG HÓA</find>
-      <find>fa fa-</find>
       <find>tìm kiếm</find>
       <find>tạo mới</find>
       <find>danh</find>
@@ -93,7 +103,6 @@
       <find>name=&quot;Anh&quot;</find>
       <find>form</find>
       <find>Preview.pdf</find>
-      <find>mã số</find>
       <find>DonHang_LapPhieu</find>
       <find>Số lượng</find>
       <find>Anh</find>
@@ -101,7 +110,14 @@
       <find>caption</find>
       <find>success</find>
       <find>fail</find>
+      <find>giá hàng</find>
+      <find>hủy</find>
       <find>anh</find>
+      <find>content</find>
+      <find>phẩm</find>
+      <find>mã số</find>
+      <find>lưu</find>
+      <find>donhang</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,7 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/views/phanphoi_donhang_danh-sach-phieu-hoan-thanh.html" />
         <option value="$PROJECT_DIR$/views/phanphoi_donhang_danh-sach-phieu-dang-xu-ly.html" />
         <option value="$PROJECT_DIR$/views/phanphoi_donhang_danh-sach-phieu-giu-hang.html" />
@@ -149,18 +164,19 @@
         <option value="$PROJECT_DIR$/resources/views/hang-hoa/ton-kho-them-moi.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/quan-tri/DS-nha-cung-cap.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/quan-tri/tao-nha-cung-cap.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/main.blade.php" />
         <option value="$PROJECT_DIR$/app/LAPTOP.php" />
         <option value="$PROJECT_DIR$/resources/views/quan-tri/DS-khach-hang.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/hang-hoa/ds_sanpham.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/KHACHHANGController.php" />
-        <option value="$PROJECT_DIR$/app/HOADON.php" />
         <option value="$PROJECT_DIR$/app/THUE.php" />
+        <option value="$PROJECT_DIR$/storage/framework/views/107f8a466493a74234d179794b24b7866a6c4675.php" />
+        <option value="$PROJECT_DIR$/resources/views/main.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/hang-hoa/ds_sanpham.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/hang-hoa/tao_san-pham.blade.php" />
+        <option value="$PROJECT_DIR$/app/HOADON.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/LAPTOPController.php" />
         <option value="$PROJECT_DIR$/resources/views/don-hang/lap-phieu.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/storage/framework/views/107f8a466493a74234d179794b24b7866a6c4675.php" />
-        <option value="$PROJECT_DIR$/resources/views/hang-hoa/tao_san-pham.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/LAPTOPController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/DONHANGController.php" />
       </list>
     </option>
   </component>
@@ -172,8 +188,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="295" />
     <option name="y" value="22" />
-    <option name="width" value="1280" />
+    <option name="width" value="1056" />
     <option name="height" value="778" />
   </component>
   <component name="ProjectView">
@@ -434,7 +451,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="SearchEverywhereHistoryKey" value="kv-avatar&#9;null&#9;null&#10;web&#9;FILE&#9;file:///Users/tutrinh/Desktop/pttk_dack/routes/web.php&#10;we&#9;FILE&#9;file:///Users/tutrinh/Desktop/pttk_dack/routes/web.php&#10;avatar&#9;null&#9;null&#10;W&#9;FILE&#9;file:///Users/tutrinh/Desktop/pttk_dack/routes/web.php&#10;w&#9;FILE&#9;file:///Users/tutrinh/Desktop/pttk_dack/routes/web.php&#10;alert-suc&#9;null&#9;null&#10;alert-success&#9;null&#9;null&#10;alert&#9;null&#9;null&#10;app.php&#9;FILE&#9;file:///Users/tutrinh/Desktop/pttk_dack/config/app.php&#10;app.ph&#9;FILE&#9;file:///Users/tutrinh/Desktop/pttk_dack/bootstrap/app.php&#10;Inp&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="w&#9;FILE&#9;file:///Users/tutrinh/Desktop/pttk_dack/routes/web.php&#10;kv-avatar&#9;null&#9;null&#10;web&#9;FILE&#9;file:///Users/tutrinh/Desktop/pttk_dack/routes/web.php&#10;we&#9;FILE&#9;file:///Users/tutrinh/Desktop/pttk_dack/routes/web.php&#10;avatar&#9;null&#9;null&#10;W&#9;FILE&#9;file:///Users/tutrinh/Desktop/pttk_dack/routes/web.php&#10;alert-suc&#9;null&#9;null&#10;alert-success&#9;null&#9;null&#10;alert&#9;null&#9;null&#10;app.php&#9;FILE&#9;file:///Users/tutrinh/Desktop/pttk_dack/config/app.php&#10;app.ph&#9;FILE&#9;file:///Users/tutrinh/Desktop/pttk_dack/bootstrap/app.php&#10;Inp&#9;null&#9;null" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.detected.package.jscs" value="true" />
@@ -562,18 +579,18 @@
       <workItem from="1527342914238" duration="384000" />
       <workItem from="1527389867010" duration="5886000" />
       <workItem from="1527397000148" duration="339000" />
-      <workItem from="1527426989253" duration="4668000" />
+      <workItem from="1527426989253" duration="12651000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86405000" />
+    <option name="totallyTimeSpent" value="94388000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="778" extended-state="6" />
+    <frame x="295" y="22" width="1056" height="778" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13359375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19981061" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -622,8 +639,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/phanphoi_hanghoa_tao-dot-nhap-kho.html" />
-    <entry file="file://$PROJECT_DIR$/views/phanphoi_hanghoa_ton-kho.html" />
     <entry file="file://$PROJECT_DIR$/views/phanphoi_hanghoa_ton-kho-sua.html" />
     <entry file="file://$PROJECT_DIR$/views/phanphoi_hanghoa_ton-kho-them-moi.html" />
     <entry file="file://$PROJECT_DIR$/views/phanphoi_index.html" />
@@ -736,13 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/hang-hoa/ton-kho.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/hang-hoa/ton-kho-sua.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -791,13 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="64" column="119" lean-forward="false" selection-start-line="64" selection-start-column="102" selection-end-line="64" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/main.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="164" column="74" lean-forward="true" selection-start-line="164" selection-start-column="74" selection-end-line="164" selection-end-column="84" />
         </state>
       </provider>
     </entry>
@@ -868,28 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/HOADON.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/don-hang/lap-phieu.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="179" column="67" lean-forward="true" selection-start-line="179" selection-start-column="67" selection-end-line="179" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/framework/views/107f8a466493a74234d179794b24b7866a6c4675.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1590">
@@ -897,41 +876,113 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/LAPTOP.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/hang-hoa/ton-kho.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding>
-            <element signature="e#107#146#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="109" column="44" lean-forward="true" selection-start-line="106" selection-start-column="39" selection-end-line="109" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LAPTOPController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-578">
-          <caret line="106" column="74" lean-forward="false" selection-start-line="106" selection-start-column="74" selection-end-line="106" selection-end-column="74" />
-          <folding>
-            <element signature="e#124#152#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/hang-hoa/ds_sanpham.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="198" column="101" lean-forward="true" selection-start-line="198" selection-start-column="101" selection-end-line="198" selection-end-column="101" />
-          <folding>
-            <element signature="e#11452#11484#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="65">
+          <caret line="46" column="47" lean-forward="false" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/LOAITAIKHOAN.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LAPTOPController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="45" column="20" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/LAPTOP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/HOADON.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="24" column="45" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="24" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/hang-hoa/tao_san-pham.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3374">
-          <caret line="110" column="44" lean-forward="false" selection-start-line="110" selection-start-column="44" selection-end-line="110" selection-end-column="44" />
+        <state relative-caret-position="385">
+          <caret line="123" column="37" lean-forward="true" selection-start-line="116" selection-start-column="28" selection-end-line="123" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/don-hang/lap-phieu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="122" column="61" lean-forward="true" selection-start-line="122" selection-start-column="61" selection-end-line="122" selection-end-column="61" />
+          <folding>
+            <element signature="e#1741#1766#0#HTML" expanded="true" />
+            <element signature="e#11636#11655#0#HTML" expanded="true" />
+            <element signature="e#12310#12335#0#HTML" expanded="true" />
+            <element signature="e#13844#13869#0#HTML" expanded="true" />
+            <element signature="e#14090#14114#0#HTML" expanded="true" />
+            <element signature="e#14498#14518#0#HTML" expanded="true" />
+            <element signature="e#14613#14634#0#HTML" expanded="true" />
+            <element signature="e#14721#14741#0#HTML" expanded="true" />
+            <element signature="e#14829#14850#0#HTML" expanded="true" />
+            <element signature="e#14942#14963#0#HTML" expanded="true" />
+            <element signature="e#15076#15096#0#HTML" expanded="true" />
+            <element signature="e#15197#15218#0#HTML" expanded="true" />
+            <element signature="e#15597#15628#0#HTML" expanded="true" />
+            <element signature="e#17338#17369#0#HTML" expanded="true" />
+            <element signature="e#17686#17717#0#HTML" expanded="true" />
+            <element signature="e#19395#19426#0#HTML" expanded="true" />
+            <element signature="e#19678#19724#0#HTML" expanded="true" />
+            <element signature="e#20278#20328#0#HTML" expanded="true" />
+            <element signature="e#20375#20414#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DONHANGController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="49" column="43" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="49" selection-end-column="43" />
+          <folding>
+            <element signature="e#124#152#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

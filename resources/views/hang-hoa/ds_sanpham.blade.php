@@ -43,8 +43,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <ol class="breadcrumb">
-                <li><a href="phanphoi_index.html"><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
-                <li><a href="phanphoi_cungcap_danh-sach-nha-cung-cap.html">Danh sách sản phẩm</a></li>
+                <li><a href=""><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
+                <li><a href="HangHoa_DS-HangHoa">Danh sách sản phẩm</a></li>
             </ol>
         </section>
 

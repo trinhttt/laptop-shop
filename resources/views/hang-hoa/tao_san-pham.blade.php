@@ -1,7 +1,7 @@
 
 @extends('main')
 @section('content3')
-    <title>Danh sách khách hàng</title>
+    <title>Thêm sản phẩm</title>
 @endsection
 @section('content')
     <style>
@@ -50,9 +50,9 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <ol class="breadcrumb">
-                <li><a href="phanphoi_index.html"><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
-                <li>Danh sách sản phẩm</li>
-                <li><a href="phanphoi_cungcap_tao-nha-cung-cap.html">Thêm sản phẩm</a></li>
+                <li><a href="#"><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
+                <li><a href="HangHoa_DS-HangHoa"> Danh sách sản phẩm</a></li>
+                <li><a href="TaoMoi_SanPham">Thêm sản phẩm</a></li>
             </ol>
         </section>
         @if($errors->has('TenLapTop'))
@@ -122,6 +122,10 @@
                                             <strong>Lưu</strong>
                                         </span>
                             </BUTTON>
+                            <a class="btn btn-app custom-btn" data-toggle="tooltip" title="Hủy" data-placement="bottom" href=""onclick="window.location.reload(true)">
+                                <i class="fa fa-mail-reply   text-green"></i>
+                                <span><strong>Reset</strong></span>
+                            </a>
                         </div>
 
                         <hr>
@@ -327,16 +331,12 @@
 
     <!-- page script -->
     <script>
-        var btnCust = '<button type="button" class="btn btn-secondary" title="Add picture tags" ' +
-            'onclick="alert(\'Call your custom code here.\')">' +
-            '<i class="glyphicon glyphicon-tag"></i>' +
-            '</button>';
-        //var btnCust = '';
+        var btnCust = '';
         $("#Anh").fileinput({
             overwriteInitial: true,
             maxFileSize: 1500,
-            showClose: true,
-            showCaption: true,
+            showClose: false,
+            showCaption: false,
             showBrowse: true,
             browseOnZoneClick: true,
             removeLabel: '',
@@ -344,7 +344,7 @@
             removeTitle: 'Cancel or reset changes',
             elErrorContainer: '#kv-avatar-errors-2',
             msgErrorClass: 'alert alert-block alert-danger',
-            defaultPreviewContent: '<img src={{ asset('') }} style="width:130px; height:130px;" alt="Your photo" name="Anh"><h6 class="text-muted">Lựa chọn ảnh</h6>',
+            defaultPreviewContent: '<img src={{ asset('img/add.png') }} style="width:130px; height:130px;" alt="Your photo" name="Anh"><h6 class="text-muted">Lựa chọn ảnh</h6>',
             layoutTemplates: {main2: '{preview} ' + btnCust + ' {remove} {browse}'},
             allowedFileExtensions: ["jpg", "png", "gif"]
         });

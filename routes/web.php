@@ -23,6 +23,8 @@ Route::get('/', function () {
 Route::get('/DonHang_LapPhieu', function () {
     return view('don-hang/lap-phieu');
 });
+Route::post('/LapPhieu','DONHANGController@Insert');
+
 Route::get('/DonHang_LichGiaoHang', function () {
     return view('don-hang/lich-giao-hang');
 });
