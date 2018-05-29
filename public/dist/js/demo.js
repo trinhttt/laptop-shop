@@ -39,17 +39,47 @@ function create() {
 }
 
 function deliveryQtt() {
-    if(document.getElementById('delivery').value === '1') {
+    if(document.getElementById('delivery').value === '0') {
         $('#turn1').addClass('noDisplay');
         $('#turn2').addClass('noDisplay');
-    } else if(document.getElementById('delivery').value === '2') {
+        $('#turn3').addClass('noDisplay');
+        $('#turn4').addClass('noDisplay');
+        $('#turn5').addClass('noDisplay');
+        $('#turn6').addClass('noDisplay');
+        $('#turn7').addClass('noDisplay');
+    }else if(document.getElementById('delivery').value === '1') {
         $('#turn1').removeClass('noDisplay');
-        $('#turn2').removeClass('noDisplay');
         document.getElementById('lo_1').value = $('#lo').val() + '#1';
-        document.getElementById('lo_2').value = $('#lo').val() + '#2';
-    } else {
+    }
+    else if(document.getElementById('delivery').value === '2') {
+        $('#turn2').removeClass('noDisplay');
+
+    }
+    else if(document.getElementById('delivery').value === '3') {
+        $('#turn3').removeClass('noDisplay');
+
+    }
+    else if(document.getElementById('delivery').value === '4') {
+        $('#turn4').removeClass('noDisplay');
+    }
+    else if(document.getElementById('delivery').value === '5') {
+        $('#turn5').removeClass('noDisplay');
+    }
+    else if(document.getElementById('delivery').value === '6') {
+        $('#turn6').removeClass('noDisplay');
+    }
+    else if(document.getElementById('delivery').value === '7') {
+        $('#turn7').removeClass('noDisplay');
+    }
+
+    else {
         $('#turn1').addClass('noDisplay');
         $('#turn2').addClass('noDisplay');
+        $('#turn3').addClass('noDisplay');
+        $('#turn4').addClass('noDisplay');
+        $('#turn5').addClass('noDisplay');
+        $('#turn6').addClass('noDisplay');
+        $('#turn7').addClass('noDisplay');
     }
     lookup();
 }
@@ -371,6 +401,7 @@ function configCk(stt) {
     var ck = 0;
     var cai = 0;
     var dongia = 0;
+    var tien_da_ck=0;
     if (parseFloat(document.getElementById("ck_" + stt).value) > 0) {
         ck = parseFloat(document.getElementById("ck_" + stt).value);
     }
@@ -383,10 +414,26 @@ function configCk(stt) {
     if (cai > 0) {
         if (ck > 0) {
             document.getElementById("tien_da_ck_" + stt).value = (cai * dongia * (100 - ck) / 100).toLocaleString('en');
-            document.getElementById("tien_chua_ck_" + stt).value = (cai * dongia).toLocaleString('en');           
+            document.getElementById("tien_chua_ck_" + stt).value = (cai * dongia).toLocaleString('en');
+
+            tien_da_ck=($("#tien_da_ck_1").val() === '' ? 0 : parseFloat($("#tien_da_ck_1").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_2").val() === '' ? 0 : parseFloat($("#tien_da_ck_2").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_3").val() === '' ? 0 : parseFloat($("#tien_da_ck_3").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_4").val() === '' ? 0 : parseFloat($("#tien_da_ck_4").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_5").val() === '' ? 0 : parseFloat($("#tien_da_ck_5").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_6").val() === '' ? 0 : parseFloat($("#tien_da_ck_6").val().replace(new RegExp(',', 'g'), '')));
+            document.getElementById("tong_tien_da_ck").value = (tien_da_ck).toLocaleString('en');
+
         } else {
             document.getElementById("tien_da_ck_" + stt).value = (cai * dongia).toLocaleString('en');
             document.getElementById("tien_chua_ck_" + stt).value = (cai * dongia).toLocaleString('en');
+            tien_da_ck=($("#tien_da_ck_1").val() === '' ? 0 : parseFloat($("#tien_da_ck_1").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_2").val() === '' ? 0 : parseFloat($("#tien_da_ck_2").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_3").val() === '' ? 0 : parseFloat($("#tien_da_ck_3").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_4").val() === '' ? 0 : parseFloat($("#tien_da_ck_4").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_5").val() === '' ? 0 : parseFloat($("#tien_da_ck_5").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_6").val() === '' ? 0 : parseFloat($("#tien_da_ck_6").val().replace(new RegExp(',', 'g'), '')));
+            document.getElementById("tong_tien_da_ck").value = (tien_da_ck).toLocaleString('en');
         }
         if(parseInt(stt) < 7) {
             configCkAll('1');
@@ -414,26 +461,67 @@ function configThung(stt) {
 }
 
 function configSp(stt) {
+
     var cai = 0;
+    var ck = 0;
     var tong_thung = 0;
     var tong_cai = 0;
+    var dongia=0;
+    var tien_da_ck=0;
+
+    if (parseFloat(document.getElementById("ck_" + stt).value) > 0) {
+        ck = parseFloat(document.getElementById("ck_" + stt).value);
+    }
+    if (parseInt(document.getElementById("dongia_" + stt).value) > 0) {
+        dongia = parseInt(document.getElementById("dongia_" + stt).value);
+    }
     if (parseInt(document.getElementById("cai_" + stt).value) > 0) {
         cai = parseInt(document.getElementById("cai_" + stt).value);
     }
-    if (cai > 0) {    
+    if (cai > 0) {
+
         if (stt === '5') {
             checkQttTong();
         }
         if (stt === '7') {
-            checkQtt();                       
+            checkQtt();
         }
-        document.getElementById("thung_" + stt).value = parseInt(cai / 20);
+
+        if (ck > 0) {
+            document.getElementById("tien_da_ck_" + stt).value = (cai * dongia * (100 - ck) / 100).toLocaleString('en');
+            document.getElementById("tien_chua_ck_" + stt).value = (cai * dongia).toLocaleString('en');
+            tien_da_ck=($("#tien_da_ck_1").val() === '' ? 0 : parseFloat($("#tien_da_ck_1").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_2").val() === '' ? 0 : parseFloat($("#tien_da_ck_2").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_3").val() === '' ? 0 : parseFloat($("#tien_da_ck_3").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_4").val() === '' ? 0 : parseFloat($("#tien_da_ck_4").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_5").val() === '' ? 0 : parseFloat($("#tien_da_ck_5").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_6").val() === '' ? 0 : parseFloat($("#tien_da_ck_6").val().replace(new RegExp(',', 'g'), '')));
+            document.getElementById("tong_tien_da_ck").value = (tien_da_ck).toLocaleString('en');
+
+
+        } else {
+            document.getElementById("tien_da_ck_" + stt).value = (cai * dongia).toLocaleString('en');
+            document.getElementById("tien_chua_ck_" + stt).value = (cai * dongia).toLocaleString('en');
+
+                tien_da_ck=($("#tien_da_ck_1").val() === '' ? 0 : parseFloat($("#tien_da_ck_1").val().replace(new RegExp(',', 'g'), ''))) +
+                    ($("#tien_da_ck_2").val() === '' ? 0 : parseFloat($("#tien_da_ck_2").val().replace(new RegExp(',', 'g'), ''))) +
+                    ($("#tien_da_ck_3").val() === '' ? 0 : parseFloat($("#tien_da_ck_3").val().replace(new RegExp(',', 'g'), ''))) +
+                    ($("#tien_da_ck_4").val() === '' ? 0 : parseFloat($("#tien_da_ck_4").val().replace(new RegExp(',', 'g'), ''))) +
+                    ($("#tien_da_ck_5").val() === '' ? 0 : parseFloat($("#tien_da_ck_5").val().replace(new RegExp(',', 'g'), ''))) +
+                    ($("#tien_da_ck_6").val() === '' ? 0 : parseFloat($("#tien_da_ck_6").val().replace(new RegExp(',', 'g'), '')));
+            document.getElementById("tong_tien_da_ck").value = (tien_da_ck).toLocaleString('en');
+
+        }
+
+
         configCk(stt);
+
+
     } else {
-        document.getElementById("thung_" + stt).value = 0;        
-        document.getElementById("tien_chua_ck_" + stt).value = 0;        
-        document.getElementById("tien_da_ck_" + stt).value = 0;        
-        document.getElementById("cai_" + stt).value = 0; 
+        document.getElementById("thung_" + stt).value = 0;
+        document.getElementById("tien_chua_ck_" + stt).value = 0;
+        document.getElementById("tien_da_ck_" + stt).value = 0;
+        document.getElementById("cai_" + stt).value = 0;
         if(parseInt(stt) < 7) {
             configCkAll('1');
         } else if(parseInt(stt) === 9) {

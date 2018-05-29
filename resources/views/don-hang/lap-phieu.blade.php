@@ -66,7 +66,7 @@
                                     <div class="row">
                                         <div class="box-header with-border text-center menu-button" style="margin-left: 5px; margin-right: 5px;">
 
-                                            <a class="btn btn-app custom-btn" data-toggle="tooltip" title="Tạo Mới" data-placement="bottom" onclick="taomoi();">
+                                            <a class="btn btn-app custom-btn" data-toggle="tooltip" title="Tạo Mới" data-placement="bottom" href="DonHang_LapPhieu"onclick="">
                                                 <i class="fa fa-plus-square text-green"></i>
                                                 <span><strong>Tạo Mới</strong></span>
                                             </a>
@@ -108,7 +108,73 @@
                                             </div>
                                         </div>
                                     @endif
+                                    @if($errors->has('KhachHang'))
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
+                                                    {{--                                                {{Session::get('error')}}--}}
+                                                    {{$errors->first('KhachHang')}}
 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($errors->has('DiaChiNhan'))
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
+                                                    {{--                                                {{Session::get('error')}}--}}
+                                                    {{$errors->first('DiaChiNhan')}}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($errors->has('SoDotGiao'))
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
+                                                    {{--                                                {{Session::get('error')}}--}}
+                                                    {{$errors->first('SoDotGiao')}}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($errors->has('SoSanPham'))
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
+                                                    {{--                                                {{Session::get('error')}}--}}
+                                                    {{$errors->first('SoSanPham')}}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    @if($errors->has('MucGiaNam'))
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
+                                                    {{--                                                {{Session::get('error')}}--}}
+                                                    {{$errors->first('MucGiaNam')}}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($errors->has('NgayGiaoHang'))
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
+                                                    {{--                                                {{Session::get('error')}}--}}
+                                                    {{$errors->first('NgayGiaoHang')}}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
                                     @if(Session::has('success'))
 
                                         <div class="row" >
@@ -119,6 +185,7 @@
                                             </div>
                                         </div>
                                     @endif
+
                                         <div class="box-header">
                                             <div class="row">
                                                 <div class="col-sm-12">
@@ -127,10 +194,10 @@
                                                         <div class="box-header">
                                                             <div class="row">
                                                                 <div class="col-md-6">
-                                                                    <label>Người tạo</label><span style="color: red;">*</span>
+                                                                    <label >Người lập</label><span style="color: red;">*</span>
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                                                        <input type="text" class="form-control pointerCursor" id="NguoiTaoHD" name="NguoiTaoHD"value="" onclick="$(this).removeClass('pointerCursor');
+                                                                        <input placeholder="Nhập tên người lập phiếu" type="text" class="form-control pointerCursor" id="NguoiTaoHD" name="NguoiTaoHD"value="" onclick="$(this).removeClass('pointerCursor');
                                                                                 $(this).addClass('textCursor');
                                                                                 this.select();">
                                                                     </div>
@@ -139,7 +206,7 @@
                                                                     <label>Người nhận hàng</label><span style="color: red;">*</span>
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                                                        <input type="text" class="form-control pointerCursor" id="lo" value="" onclick="$(this).removeClass('pointerCursor');
+                                                                        <input name="KhachHang" placeholder="Nhập tên người nhận hàng"type="text" class="form-control pointerCursor" value="" onclick="$(this).removeClass('pointerCursor');
                                                                                 $(this).addClass('textCursor');
                                                                                 this.select();">
                                                                     </div>
@@ -151,30 +218,15 @@
                                                                     <label>Địa chỉ giao hàng</label><span style="color: red;">*</span>
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><i class="fa fa-address-book"></i></span>
-                                                                        <input type="text" class="form-control" id="AddressDeliver">
+                                                                        <input NAME="DiaChiNhan" placeholder="Nhập địa chỉ giao hàng "type="text" class="form-control" id="AddressDeliver">
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-6">
-                                                                    <label>Số đợt giao</label><span style="color: red;">*</span>
-                                                                    <div class="input-group">
-                                                                        <span class="input-group-addon"><i class="fa fa-truck"></i></span>
-                                                                        <input type="number" id="delivery" min="0" step="1" value="1" style="padding-left: 12px;" onchange="deliveryQtt();" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row" style="margin-top: 15px;">
+
                                                                 <div class="col-md-6">
                                                                     <label>Tổng số sản phẩm</label><span style="color: red;">*</span>
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><i class="fa fa-truck"></i></span>
-                                                                        <input type="number" id="tongsp" min="0" step="1" value="1" style="padding-left: 12px;" onchange="deliveryQtt();" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <label>Ngày giao hàng</label><span style="color: red;">*</span>
-                                                                    <div class="input-group">
-                                                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                                                        <input type="date" class="form-control" id="">
+                                                                        <input type="number"NAME="SoSanPham"id="delivery" min="0" max="6" step="1" value="0" style="padding-left: 12px;" onchange="deliveryQtt();" class="form-control">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -183,14 +235,21 @@
                                                                     <label>Mức giá áp dụng</label><span style="color: red;">*</span>
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                                                        <select class="form-control" style="font-family: 'FontAwesome'; cursor: pointer;">
+                                                                        <select class="form-control" NAME="MucGiaNam"style="font-family: 'FontAwesome'; cursor: pointer;">
                                                                             <option>2018</option>
                                                                             <option>2017</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
+                                                                <div class="col-md-6">
+                                                                    <label>Ngày giao hàng</label><span style="color: red;">*</span>
+                                                                    <div class="input-group">
+                                                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                                        <input type="date" class="form-control" NAME="NgayGiaoHang"id="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
 
-                                                        </div>
 
                                                         </div>
                                                     </fieldset>
@@ -201,298 +260,216 @@
                                         <div class="box-header">
                                             <div class="row" style="margin-top: 10px;">
                                                 <div class="col-xs-12 table-responsive">
-                                                    <fieldset>
+
                                                         <legend><b style="font-size: 17px;">Chi tiết đơn hàng</b></legend>                                        
                                                         <table class="table table-striped mainTable">
+                                                            <fieldset>
                                                             <thead>
                                                                 <tr>
                                                                     <th  style="width: 30px;">STT</th>
                                                                     <th  colspan="3" style="width: 300px;">Sản phẩm</th>
-                                                                    <th style="width: 60px;">Số lượng</th>
+                                                                    <th style="width: 60px;">Số lượng (cái)</th>
                                                                     <th  style="width: 170px;">Đơn giá (VNĐ)</th>
                                                                     <th style="width: 170px;">Thành tiền trước chiết khấu (VNĐ)</th>
-                                                                    <th  style="width: 70px;">Chiết khấu</th>
+                                                                    <th  style="width: 70px;">Chiết khấu (%)</th>
                                                                     <th colspan="3" style="width: 140px;">Thành tiền sau chiết khấu (VNĐ)</th>
                                                                 </tr>
 
                                                             </thead>
+                                                            </fieldset>
+
                                                             <tbody>
-                                                            <tr>
+                                                            {{--<tr>--}}
+                                                                {{--<td style="vertical-align: middle;">1</td>--}}
+                                                                {{--<td style="vertical-align: middle;">ABN 52c</td>--}}
+                                                                {{--<td style="vertical-align: middle;">15A</td>--}}
+                                                                {{--<td><input type="text" class="form-control" style="text-align: right;"--}}
+                                                                           {{--onkeyup="configSp('1');--}}
+                                                                                       {{--return false;" id="cai_1"/></td>--}}
+                                                                {{--<td><input type="text" class="form-control" style="text-align: right;"--}}
+                                                                           {{--onkeyup="configThung('1');--}}
+                                                                                       {{--return false;" id="thung_1" title="20 cái/1"/></td>--}}
+                                                                {{--<td><output id="dongia_1" class="number">590000</output></td>--}}
+                                                                {{--<td><output id="tien_chua_ck_1"></output></td>--}}
+                                                                {{--<td><input type="text" class="form-control" style="text-align: right;"--}}
+                                                                           {{--onkeyup="configCk('1');--}}
+                                                                                       {{--return false;" id="ck_1"/></td>--}}
+                                                                {{--<td><output id="tien_da_ck_1"></output></td>--}}
+                                                            {{--</tr>--}}
+
+                                                            <tr class="noDisplay" id="turn1">
                                                                 <td style="vertical-align: middle;">1</td>
-                                                                <td colspan="3"  ><input type="text" class="form-control" style="text-align: right;"
-                                                                                         onkeyup="configSp('3');
-                                                                                       return false;" id="cai_3"/></td>
-                                                                <td><input type="text" class="form-control" style="text-align: right;"
-                                                                                                           onkeyup="configSp('3');
-                                                                                       return false;" id="cai_3"/></td>
-                                                                <td><input type="text" class="form-control" style="text-align: right;"
-                                                                           onkeyup="configSp('3');
-                                                                                       return false;" id="cai_3"/></td>
-                                                                <td><input type="text" class="form-control" style="text-align: right;"
-                                                                           onkeyup="configThung('3');
-                                                                                       return false;" id="thung_3" title="20 cái/1"/></td>
-                                                                <td><output id="dongia_3" class="number">2%</output></td>
 
-                                                                <td colspan="2"  style="vertical-align: middle;">0</td>
-                                                                <td><output id="tien_da_ck_3"></output></td>
+                                                                <td colspan="3"  >
+                                                                    <select id="laptop_1" class="form-control" NAME="MaLapTop[0]"style="font-family: 'FontAwesome'; cursor: pointer;">
+                                                                        @foreach($lts as $lt)
+                                                                            <option value="{{$lt->MaLapTop}}">{{$lt->TenLapTop}}</option>
+                                                                        @endforeach
+                                                                    </select></td>
+                                                                <td><input id="cai_1"NAME="SoLuong[0]"type="text" placeholder="SL"class="form-control" style="text-align: right;"
+                                                                    /></td>
+
+                                                                <td style="text-align: right">
+                                                                    <input NAME="DonGia[0]"type="text"placeholder="Giá 1 sản phẩm" class="form-control" style="text-align: right;"
+                                                                           onkeyup="configSp('1');
+                                                                                       return false;" id="dongia_1"/>
+
+                                                                </td>
+                                                                <td><output class="number"id="tien_chua_ck_1">0</output></td>
+                                                                <td><input placeholder="CK"name="Ck[0]"type="text" class="form-control" style="text-align: right;"
+                                                                           onkeyup="configCk('1');
+                                                                                       return false;" id="ck_1"/></td>
+                                                                <td colspan="3"style="text-align: right">
+                                                                    <output class="number"id="tien_da_ck_1">0</output></td>
+
                                                             </tr>
-
-                                                            <tr>
+                                                            <tr class="noDisplay" id="turn2">
                                                                 <td style="vertical-align: middle;">2</td>
-                                                                <td colspan="3"  ><input type="text" class="form-control" style="text-align: right;"
-                                                                                         onkeyup="configSp('3');
-                                                                                       return false;" id="cai_3"/></td>
-                                                                <td><input type="text" class="form-control" style="text-align: right;"
-                                                                           onkeyup="configSp('3');
-                                                                                       return false;" id="cai_3"/></td>
-                                                                <td><input type="text" class="form-control" style="text-align: right;"
-                                                                           onkeyup="configSp('3');
-                                                                                       return false;" id="cai_3"/></td>
-                                                                <td><input type="text" class="form-control" style="text-align: right;"
-                                                                           onkeyup="configThung('3');
-                                                                                       return false;" id="thung_3" title="20 cái/1"/></td>
-                                                                <td><output id="dongia_3" class="number">2%</output></td>
 
-                                                                <td colspan="2"  style="vertical-align: middle;">0</td>
-                                                                <td><output id="tien_da_ck_3"></output></td>
+                                                                <td colspan="3"  >
+                                                                    <select id="laptop_2" class="form-control" NAME="MaLapTop[1]"style="font-family: 'FontAwesome'; cursor: pointer;">
+                                                                        @foreach($lts as $lt)
+                                                                            <option value="{{$lt->MaLapTop}}">{{$lt->TenLapTop}}</option>
+                                                                        @endforeach
+                                                                    </select></td>
+                                                                <td><input id="cai_2"NAME="SoLuong[1]"type="text" placeholder="SL"class="form-control" style="text-align: right;"
+                                                                    /></td>
+
+                                                                <td style="text-align: right">
+                                                                    <input NAME="DonGia[1]"type="text"placeholder="Giá 1 sản phẩm" class="form-control" style="text-align: right;"
+                                                                           onkeyup="configSp('2');
+                                                                                       return false;" id="dongia_2"/>
+
+                                                                </td>
+                                                                <td><output class="number"id="tien_chua_ck_2">0</output></td>
+                                                                <td><input placeholder="CK"name="Ck[1]"type="text" class="form-control" style="text-align: right;"
+                                                                           onkeyup="configCk('2');
+                                                                                       return false;" id="ck_2"/></td>
+                                                                <td colspan="3"style="text-align: right">
+                                                                    <output class="number"id="tien_da_ck_2">0</output></td>
+
                                                             </tr>
 
-                                                                <tr style="background-color: #544d61;color: #fff;">
-                                                                    <td></td>
-                                                                    <td colspan="3" style="vertical-align: middle;"><b>Tổng cộng</b></td>
-                                                                    <td></td>
-                                                                    <td></td>
-                                                                    <td></td><td></td><td colspan="2"></td>
-                                                                    <td style="text-align: right; vertical-align: middle;"><output id="tong_tien_da_ck_1" class="number" style="color: #fff; font-weight: bold;">0(VNĐ)</output></td>
-                                                                </tr>
+                                                            <tr class="noDisplay" id="turn3">
+                                                                <td style="vertical-align: middle;">3</td>
+
+                                                                <td colspan="3"  >
+                                                                    <select id="laptop_3" class="form-control" NAME="MaLapTop[2]"style="font-family: 'FontAwesome'; cursor: pointer;">
+                                                                        @foreach($lts as $lt)
+                                                                            <option value="{{$lt->MaLapTop}}">{{$lt->TenLapTop}}</option>
+                                                                        @endforeach
+                                                                    </select></td>
+                                                                <td><input id="cai_3"NAME="SoLuong[2]"type="text" placeholder="SL"class="form-control" style="text-align: right;"
+                                                                    /></td>
+
+                                                                <td style="text-align: right">
+                                                                    <input NAME="DonGia[2]"type="text"placeholder="Giá 1 sản phẩm" class="form-control" style="text-align: right;"
+                                                                           onkeyup="configSp('3');
+                                                                                       return false;" id="dongia_3"/>
+
+                                                                </td>
+                                                                <td><output class="number"id="tien_chua_ck_3">0</output></td>
+                                                                <td><input placeholder="CK"type="text" name="Ck[2]" class="form-control" style="text-align: right;"
+                                                                           onkeyup="configCk('3');
+                                                                                       return false;" id="ck_3"/></td>
+                                                                <td colspan="3"style="text-align: right">
+                                                                    <output class="number"id="tien_da_ck_3">0</output></td>
+
+                                                            </tr>
+                                                            <tr class="noDisplay" id="turn4">
+                                                                <td style="vertical-align: middle;">4</td>
+
+                                                                <td colspan="3"  >
+                                                                    <select id="laptop_4" class="form-control" NAME="MaLapTop[3]"style="font-family: 'FontAwesome'; cursor: pointer;">
+                                                                        @foreach($lts as $lt)
+                                                                            <option value="{{$lt->MaLapTop}}">{{$lt->TenLapTop}}</option>
+                                                                        @endforeach
+                                                                    </select></td>
+                                                                <td><input id="cai_4"NAME="SoLuong[3]"type="text" placeholder="SL"class="form-control" style="text-align: right;"
+                                                                    /></td>
+
+                                                                <td style="text-align: right">
+                                                                    <input NAME="DonGia[3]"type="text"placeholder="Giá 1 sản phẩm" class="form-control" style="text-align: right;"
+                                                                           onkeyup="configSp('4');
+                                                                                       return false;" id="dongia_4"/>
+
+                                                                </td>
+                                                                <td><output class="number"id="tien_chua_ck_4">0</output></td>
+                                                                <td><input placeholder="CK"name="Ck[3]"type="text" class="form-control" style="text-align: right;"
+                                                                           onkeyup="configCk('4');
+                                                                                       return false;" id="ck_4"/></td>
+                                                                <td colspan="3"style="text-align: right">
+                                                                    <output class="number"id="tien_da_ck_4">0</output></td>
+
+                                                            </tr>
+                                                            <tr class="noDisplay" id="turn5">
+                                                                <td style="vertical-align: middle;">5</td>
+
+                                                                <td colspan="3"  >
+                                                                    <select id="laptop_5" class="form-control" NAME="MaLapTop[4]"style="font-family: 'FontAwesome'; cursor: pointer;">
+                                                                        @foreach($lts as $lt)
+                                                                            <option value="{{$lt->MaLapTop}}">{{$lt->TenLapTop}}</option>
+                                                                        @endforeach
+                                                                    </select></td>
+                                                                <td><input id="cai_5"NAME="SoLuong[4]"type="text" placeholder="SL"class="form-control" style="text-align: right;"
+                                                                    /></td>
+
+                                                                <td style="text-align: right">
+                                                                    <input NAME="DonGia[4]"type="text"placeholder="Giá 1 sản phẩm" class="form-control" style="text-align: right;"
+                                                                           onkeyup="configSp('5');
+                                                                                       return false;" id="dongia_"/>
+
+                                                                </td>
+                                                                <td><output class="number"id="tien_chua_ck_5">0</output></td>
+                                                                <td><input placeholder="CK"name="Ck[4]"type="text" class="form-control" style="text-align: right;"
+                                                                           onkeyup="configCk('5');
+                                                                                       return false;" id="ck_5"/></td>
+                                                                <td colspan="3"style="text-align: right">
+                                                                    <output class="number"id="tien_da_ck_5">0</output></td>
+
+                                                            </tr>
+                                                            <tr class="noDisplay" id="turn3">
+                                                                <td style="vertical-align: middle;">3</td>
+
+                                                                <td colspan="3"  >
+                                                                    <select id="laptop_6" class="form-control" NAME="MaLapTop[5]"style="font-family: 'FontAwesome'; cursor: pointer;">
+                                                                        @foreach($lts as $lt)
+                                                                            <option value="{{$lt->MaLapTop}}">{{$lt->TenLapTop}}</option>
+                                                                        @endforeach
+                                                                    </select></td>
+                                                                <td><input id="cai_6"NAME="SoLuong[5]"type="text" placeholder="SL"class="form-control" style="text-align: right;"
+                                                                    /></td>
+
+                                                                <td style="text-align: right">
+                                                                    <input NAME="DonGia[5]"type="text"placeholder="Giá 1 sản phẩm" class="form-control" style="text-align: right;"
+                                                                           onkeyup="configSp('6');
+                                                                                       return false;" id="dongia_6"/>
+
+                                                                </td>
+                                                                <td><output class="number"id="tien_chua_ck_6">0</output></td>
+                                                                <td><input placeholder="CK"name="Ck[5]"type="text" class="form-control" style="text-align: right;"
+                                                                           onkeyup="configCk('6');
+                                                                                       return false;" id="ck_6"/></td>
+                                                                <td colspan="3"style="text-align: right">
+                                                                    <output class="number"id="tien_da_ck_6">0</output></td>
+
+                                                            </tr>
+
+
+                                                            <tr style="background-color: #544d61;color: #fff;">
+                                                                <td></td>
+                                                                <td colspan="3" style="vertical-align: middle;"><b>Tổng cộng</b></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td><td></td><td colspan="2"></td>
+                                                                <td style="text-align: right; vertical-align: middle;"><output id="tong_tien_da_ck" name="TongTien"class="number" style="color: #fff; font-weight: bold;">0</output></td>
+                                                            </tr>
+
+
                                                             </tbody>
                                                         </table>
-                                                    </fieldset>
-                                                    <fieldset id="turn1" class="noDisplay">
-                                                        <legend><b style="font-size: 17px;">Giao hàng đợt 1</b></legend>
-                                                        <div class="box-header">
-                                                            <div class="col-md-6">
-                                                                <label>Xuất ngày</label><span style="color: red;">*</span>
-                                                                <div class="input-group">
-                                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                                                    <input type="text" style="padding-left: 12px;" value="13/01/2018" class="form-control datepicker pointerCursor">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label>Lô số</label>
-                                                                <div class="input-group">
-                                                                    <span class="input-group-addon"><i class="fa fa-file"></i></span>
-                                                                    <input class="form-control" disabled id="lo_1"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>  
-                                                        <hr/>
-                                                        <table class="table table-striped mainTable">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th rowspan="2" style="width: 30px;">STT</th>
-                                                                    <th rowspan="2" colspan="2" style="width: 400px;">Sản phẩm</th>
-                                                                    <th colspan="2">Số lượng</th>
-                                                                    <th rowspan="2" style="width: 150px;">Đơn giá (VNĐ)</th>
-                                                                    <th rowspan="2" style="width: 150px;">Thành tiền trước chiết khấu (VNĐ)</th>
-                                                                    <th rowspan="2" style="width: 70px;">Chiết khấu (%)</th>
-                                                                    <th rowspan="2" style="width: 150px;">Thành tiền sau chiết khấu (VNĐ)</th>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th style="width: 70px;">Cái</th>
-                                                                    <th style="width: 70px;">Thùng</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td style="vertical-align: middle;">1</td>
-                                                                    <td style="vertical-align: middle;">ABE103-G</td>
-                                                                    <td style="vertical-align: middle;">63A</td>
-                                                                    <td><input type="text" class="form-control" id="cai_7" style="text-align: right;"
-                                                                               onkeyup="configSp('7');
-                                                                                       return false;"/></td>
-                                                                    <td><input type="text" class="form-control" id="thung_7" 
-                                                                               title="20 cái/1" style="text-align: right;" onkeyup="configThung('7');
-                                                                                       return false;"/></td>
-                                                                    <td><output id="dongia_7" class="number">8443000</output></td>
-                                                                    <td><output id="tien_chua_ck_7"></output></td>
-                                                                    <td><input type="text" class="form-control" id="ck_7" style="text-align: right;"
-                                                                               onkeyup="configCk('7');
-                                                                                       return false;"/></td>
-                                                                    <td><output id="tien_da_ck_7" class="number"></output></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td style="vertical-align: middle;">2</td>
-                                                                    <td style="vertical-align: middle; width: 24.7%;"><input type="text" class="form-control" id="name_8"/></td>
-                                                                    <td style="vertical-align: middle;"><input type="text" class="form-control ampe"/></td>
-                                                                    <td><input type="text" class="form-control" id="cai_8" style="text-align: right;"
-                                                                               onkeyup="configSp('8');
-                                                                                       return false;"/></td>
-                                                                    <td><input type="text" class="form-control" id="thung_8" 
-                                                                               title="20 cái/1" style="text-align: right;" onkeyup="configThung('8');
-                                                                                       return false;"/></td>
-                                                                    <td><output id="dongia_8"></output></td>
-                                                                    <td><output id="tien_chua_ck_8"></output></td>
-                                                                    <td><input type="text" class="form-control" id="ck_8" style="text-align: right;"
-                                                                               onkeyup="configCk('8');
-                                                                                       return false;"/></td>
-                                                                    <td><output id="tien_da_ck_8" class="number"></output></td>
-                                                                </tr>
-                                                                <tr style="background-color: #544d61;color: #fff;">
-                                                                    <td></td>
-                                                                    <td colspan="2" style="vertical-align: middle;"><b>Cộng</b></td>
-                                                                    <td style="text-align: right; vertical-align: middle;"><output id="tong_cai_2" style="color: #fff; font-weight: bold;"></output></td>
-                                                                    <td style="text-align: right; vertical-align: middle;"><output id="tong_thung_2" style="color: #fff; font-weight: bold;"></output></td>
-                                                                    <td></td><td></td><td></td>
-                                                                    <td style="text-align: right; vertical-align: middle;"><output id="tong_tien_chua_ck_2" class="number" style="color: #fff; font-weight: bold;"></output></td>
-                                                                </tr>
-                                                                <tr style="background-color: #544d61;color: #fff;">
-                                                                    <td></td>
-                                                                    <td colspan="2" style="vertical-align: middle;"><b>Chiết khấu (%)</b></td>
-                                                                    <td></td>
-                                                                    <td></td>
-                                                                    <td></td><td></td>
-                                                                    <td><input type="text" class="form-control" id="tong_ck_2" style="text-align: right; float: right; font-weight: bold;"
-                                                                               onkeyup="configCkAll('2');
-                                                                                       return false;"/></td>
-                                                                    <td style="text-align: right; vertical-align: middle;"><output id="tien_ck_2" class="number" style="color: #fff; font-weight: bold;"></output></td>
-                                                                </tr>
-                                                                <tr style="background-color: #544d61;color: #fff;">
-                                                                    <td></td>
-                                                                    <td colspan="2" style="vertical-align: middle;"><b>Còn lại</b></td>
-                                                                    <td></td>
-                                                                    <td></td>
-                                                                    <td></td><td></td><td></td>
-                                                                    <td style="text-align: right; vertical-align: middle;"><output id="con_lai_2" class="number" style="color: #fff; font-weight: bold;"></output></td>
-                                                                </tr>
-                                                                <tr style="background-color: #544d61;color: #fff;">
-                                                                    <td></td>
-                                                                    <td colspan="2" style="vertical-align: middle;"><b>VAT (%)</b></td>
-                                                                    <td></td>
-                                                                    <td></td>
-                                                                    <td></td><td></td>
-                                                                    <td>
-                                                                        <input type="text" class="form-control" id="vat_2" style="text-align: right; float: right; font-weight: bold;"
-                                                                               onkeyup="configCkAll('2');
-                                                                                       return false;"/>
-                                                                    </td>
-                                                                    <td style="text-align: right; vertical-align: middle;"><output id="tien_vat_2" class="number" style="color: #fff; font-weight: bold;"></output></td>
-                                                                </tr>
-                                                                <tr style="background-color: #544d61;color: #fff;">
-                                                                    <td></td>
-                                                                    <td colspan="2" style="vertical-align: middle;"><b>Tổng cộng</b></td>
-                                                                    <td></td>
-                                                                    <td></td>
-                                                                    <td></td><td></td><td></td>
-                                                                    <td style="text-align: right; vertical-align: middle;"><output id="tong_tien_da_ck_2" class="number" style="color: #fff; font-weight: bold;"></output></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </fieldset>
-                                                    <fieldset id="turn2" class="noDisplay">
-                                                        <legend><b style="font-size: 17px;">Giao hàng đợt 2</b></legend>
-                                                        <div class="box-header">
-                                                            <div class="col-md-6">
-                                                                <label>Xuất ngày</label><span style="color: red;">*</span>
-                                                                <div class="input-group">
-                                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                                                    <input type="text" style="padding-left: 12px;" value="15/01/2018" class="form-control datepicker pointerCursor">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label>Lô số</label>
-                                                                <div class="input-group">
-                                                                    <span class="input-group-addon"><i class="fa fa-file"></i></span>
-                                                                    <input class="form-control" disabled id="lo_2"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <hr/>
-                                                        <table class="table table-striped mainTable">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th rowspan="2" style="width: 30px;">STT</th>
-                                                                    {{--<th rowspan="2" colspan="2" style="width: 400px;">Sản phẩm</th>--}}
-                                                                    {{--<th colspan="2">Số lượng</th>--}}
-                                                                    <th rowspan="2" style="width: 150px;">Đơn giá (VNĐ)</th>
-                                                                    <th rowspan="2" style="width: 150px;">Thành tiền trước chiết khấu (VNĐ)</th>
-                                                                    <th rowspan="2" style="width: 70px;">Chiết khấu (%)</th>
-                                                                    <th rowspan="2" style="width: 150px;">Thành tiền sau chiết khấu (VNĐ)</th>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th style="width: 70px;">Cái</th>
-                                                                    <th style="width: 70px;">Thùng</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td style="vertical-align: middle;">1</td>
-                                                                    <td style="vertical-align: middle; width: 24.7%;"><input type="text" class="form-control" id="name_9"/></td>
-                                                                    <td style="vertical-align: middle;"><input type="text" class="form-control ampe"/></td>
-                                                                    <td><input type="text" class="form-control" id="cai_9" style="text-align: right;"
-                                                                               onkeyup="configSp('9');
-                                                                                       return false;"/></td>
-                                                                    <td><input type="text" class="form-control" id="thung_9" 
-                                                                               title="20 cái/1" style="text-align: right;" onkeyup="configThung('9');
-                                                                                       return false;"/></td>
-                                                                    <td><output id="dongia_9"></output></td>
-                                                                    <td><output id="tien_chua_ck_9"></output></td>
-                                                                    <td><input type="text" class="form-control" id="ck_9" style="text-align: right;"
-                                                                               onkeyup="configCk('9');
-                                                                                       return false;"/></td>
-                                                                    <td><output id="tien_da_ck_9" class="number"></output></td>
-                                                                </tr>
-                                                                <tr style="background-color: #544d61;color: #fff;">
-                                                                    <td></td>
-                                                                    <td colspan="2" style="vertical-align: middle;"><b>Cộng</b></td>
-                                                                    <td style="text-align: right; vertical-align: middle;"><output id="tong_cai_3" style="color: #fff; font-weight: bold;"></output></td>
-                                                                    <td style="text-align: right; vertical-align: middle;"><output id="tong_thung_3" style="color: #fff; font-weight: bold;"></output></td>
-                                                                    <td></td><td></td><td></td>
-                                                                    <td style="text-align: right; vertical-align: middle;"><output id="tong_tien_chua_ck_3" class="number" style="color: #fff; font-weight: bold;"></output></td>
-                                                                </tr>
-                                                                <tr style="background-color: #544d61;color: #fff;">
-                                                                    <td></td>
-                                                                    <td colspan="2" style="vertical-align: middle;"><b>Chiết khấu (%)</b></td>
-                                                                    <td></td>
-                                                                    <td></td>
-                                                                    <td></td><td></td>
-                                                                    <td><input type="text" class="form-control" id="tong_ck_3" style="text-align: right; float: right; font-weight: bold;"
-                                                                               onkeyup="configCkAll('3');
-                                                                                       return false;"/></td>
-                                                                    <td style="text-align: right; vertical-align: middle;"><output id="tien_ck_3" class="number" style="color: #fff; font-weight: bold;"></output></td>
-                                                                </tr>
-                                                                <tr style="background-color: #544d61;color: #fff;">
-                                                                    <td></td>
-                                                                    <td colspan="2" style="vertical-align: middle;"><b>Còn lại</b></td>
-                                                                    <td></td>
-                                                                    <td></td>
-                                                                    <td></td><td></td><td></td>
-                                                                    <td style="text-align: right; vertical-align: middle;"><output id="con_lai_3" class="number" style="color: #fff; font-weight: bold;"></output></td>
-                                                                </tr>
-                                                                <tr style="background-color: #544d61;color: #fff;">
-                                                                    <td></td>
-                                                                    <td colspan="2" style="vertical-align: middle;"><b>VAT (%)</b></td>
-                                                                    <td></td>
-                                                                    <td></td>
-                                                                    <td></td><td></td>
-                                                                    <td>
-                                                                        <input type="text" class="form-control" id="vat_3" style="text-align: right; float: right;; font-weight: bold;"
-                                                                               onkeyup="configCkAll('3');
-                                                                                       return false;"/>
-                                                                    </td>
-                                                                    <td style="text-align: right; vertical-align: middle;"><output id="tien_vat_3" class="number" style="color: #fff; font-weight: bold;"></output></td>
-                                                                </tr>
-                                                                <tr style="background-color: #544d61;color: #fff;">
-                                                                    <td></td>
-                                                                    <td colspan="2" style="vertical-align: middle;"><b>Tổng cộng</b></td>
-                                                                    <td></td>
-                                                                    <td></td>
-                                                                    <td></td><td></td><td></td>
-                                                                    <td style="text-align: right; vertical-align: middle;"><output id="tong_tien_da_ck_3" class="number" style="color: #fff; font-weight: bold;"></output></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </fieldset>
+
+
                                                 </div>
                                                 <!-- /.col -->
                                             </div>
@@ -509,78 +486,9 @@
                 </form>
 
             </div>
- @endsection  
+ @endsection
+
 @section('content2')                  
-        <script>
-                                $(function () {
-                                    var availableTags = [
-                                        "ABN 52c",
-                                        "TS1000N AG6 3P",
-                                        "ABS 32c",
-                                        "ABH 53c",
-                                        "ABE103-G"
-                                    ];
-                                    var ampe = [
-                                        "5A",
-                                        "15A",
-                                        "30A",
-                                        "63A",
-                                        "1000A"
-                                    ];
-                                    $("#name_6").autocomplete({
-                                        source: availableTags,
-                                        change: function () {
-                                            if ($('#name_6').val() === 'ABN 52c') {
-                                                document.getElementById('dongia_6').value = '590,000';
-                                            } else if ($('#name_6').val() === 'TS1000N AG6 3P') {
-                                                document.getElementById('dongia_6').value = '80,807,000';
-                                            } else if ($('#name_6').val() === 'ABS 32c') {
-                                                document.getElementById('dongia_6').value = '1,859,000';
-                                            } else if ($('#name_6').val() === 'ABH 53c') {
-                                                document.getElementById('dongia_6').value = '2,375,000';
-                                            } else {
-                                                document.getElementById('dongia_6').value = '8,443,000';
-                                            }
-                                        }
-                                    });
-                                    $("#name_8").autocomplete({
-                                        source: availableTags,
-                                        change: function () {
-                                            if ($('#name_8').val() === 'ABN 52c') {
-                                                document.getElementById('dongia_8').value = '590,000';
-                                            } else if ($('#name_8').val() === 'TS1000N AG6 3P') {
-                                                document.getElementById('dongia_8').value = '80,807,000';
-                                            } else if ($('#name_8').val() === 'ABS 32c') {
-                                                document.getElementById('dongia_8').value = '1,859,000';
-                                            } else if ($('#name_8').val() === 'ABH 53c') {
-                                                document.getElementById('dongia_8').value = '2,375,000';
-                                            } else {
-                                                document.getElementById('dongia_8').value = '8,443,000';
-                                            }
-                                        }
-                                    });
-                                    $("#name_9").autocomplete({
-                                        source: availableTags,
-                                        change: function () {
-                                            if ($('#name_9').val() === 'ABN 52c') {
-                                                document.getElementById('dongia_9').value = '590,000';
-                                            } else if ($('#name_9').val() === 'TS1000N AG6 3P') {
-                                                document.getElementById('dongia_9').value = '80,807,000';
-                                            } else if ($('#name_9').val() === 'ABS 32c') {
-                                                document.getElementById('dongia_9').value = '1,859,000';
-                                            } else if ($('#name_9').val() === 'ABH 53c') {
-                                                document.getElementById('dongia_9').value = '2,375,000';
-                                            } else {
-                                                document.getElementById('dongia_9').value = '8,443,000';
-                                            }
-                                        }
-                                    });
-                                    $(".ampe").autocomplete({
-                                        source: ampe
-                                    });
-                                });
-        </script>
-        
         <script>
                                 $(document).ready(function () {
                                     deliveryQtt();
@@ -589,6 +497,10 @@
                                     });
                                     $('.number').autoNumeric('init', {minimumValue: '0', maximumValue: '9999999999999', digitGroupSeparator: ',', decimalPlacesOverride: '0'});
                                 });
+
+
         </script>
-@endsection               
-  
+
+@endsection
+
+

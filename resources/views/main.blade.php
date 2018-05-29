@@ -165,16 +165,7 @@
                     <ul class="treeview-menu">
                         <li class=""><a href="DonHang_LapPhieu"><i class="fa fa-edit"></i> Lập Phiếu</a></li>
 
-                        <li class="">
 
-                            <a href="DonHang_PhieuDangXuLy">
-                                <i class="fa fa-list-alt"></i>
-                                <span>Phiếu đang xử lý</span>
-                                <span class="pull-right-container">
-                                            <span class="label label-primary bg-green">0</span>
-                                        </span>
-                            </a>
-                        </li>
                         <li class="">
                             <a href="DonHang_PhieuHoanThanh">
                                 <i class="fa fa-files-o"></i>

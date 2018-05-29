@@ -20,9 +20,11 @@ Route::get('/', function () {
 //Route::get('edit_product/{MaSP}', 'SANPHAMDIENTHOAIController@getData');
 //Route::post('edit_product/{MaSP}', 'SANPHAMDIENTHOAIController@Action');
 //////////DON HANG
-Route::get('/DonHang_LapPhieu', function () {
-    return view('don-hang/lap-phieu');
-});
+//Route::get('/DonHang_LapPhieu', function () {
+//    return view('don-hang/lap-phieu');
+//});
+Route::get('/DonHang_LapPhieu','DONHANGController@show');
+
 Route::post('/LapPhieu','DONHANGController@Insert');
 
 Route::get('/DonHang_LichGiaoHang', function () {
@@ -60,7 +62,7 @@ Route::get('/TaoMoi_SanPham', function () {
 //Route::get('/HangHoa_DS-HangHoa', function () {
 //    return view('hang-hoa/ds_sanpham');
 //});
-  Route::get('/HangHoa_DS-HangHoa','LAPTOPController@show');
+Route::get('/HangHoa_DS-HangHoa','LAPTOPController@show');
 //
 //  Route::get('edit_product/{MaLapTop}', 'LAPTOPController@getData');
 

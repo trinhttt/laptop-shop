@@ -10,25 +10,25 @@ class CHITIETHOADON extends Model
 {
 
     protected $table='CHITIETHOADON';
-    protected $primaryKey = 'SoHoaDon,MaLapTop';
+    protected $primaryKey = 'HoaDon,MaLapTop';
     public $timestamps = false;
     public static function formstore($data)
     {
-        $SoHoaDon=Input::get('SoHoaDon');
+        $HoaDon=Input::get('HoaDon');
         $MaLapTop=Input::get('MaLapTop');
         $SoLuong=Input::get('SoLuong');
         $DonGia=Input::get('DonGia');
-
+        $Ck=Input::get('Ck');
 
        
 
         $cthd=new CHITIETHOADON();
-        $cthd->SoHoaDon=$SoHoaDon;
+        $cthd->HoaDon=$HoaDon;
         $cthd->MaLapTop=$MaLapTop;
         $cthd->SoLuong=$SoLuong;
         $cthd->DonGia=$DonGia;
-        
-        
+
+        $cthd->Ck=$Ck;
         $cthd->save();
     }
 }

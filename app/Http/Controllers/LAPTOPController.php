@@ -35,12 +35,7 @@ class LAPTOPController extends Controller
         $sps=LAPTOP::all();
         return view('hang-hoa.ds_sanpham', compact('sps'));
     }
-//    public function store(Request $request)
-//    {
-//        $request->file('Anh')->store('img');
-//        return back();
-//    }
-//
+
     public function Insert(Request $request)
     {
         $data=Input::except(array('_token'));
@@ -78,7 +73,7 @@ class LAPTOPController extends Controller
             'SoLuongConLai.required'=>'Trường số lượng phải có dữ liệu, không để rỗng!',
             'HeDieuHanh.required'=>'Trường hệ điều hành phải có dữ liệu, không để rỗng!',
             'VAT.required'=>'Trường Thuế (VAT) phải có dữ liệu, không để rỗng!',
-            'Anh.required'=>'Chọn ảnh trước khi click lưu!',
+            'Anh.required'=>'Chọn ảnh trước khi lưu!',
 
         );
         $validator=Validator::make($data,$rule,$message);
