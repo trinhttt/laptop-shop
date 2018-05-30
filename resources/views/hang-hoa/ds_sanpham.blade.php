@@ -3,6 +3,7 @@
    <title>Danh sách sản phẩm</title>
 @endsection
 @section('content')
+
     <style>
         #example1 {
             background-color: rgb(240, 240, 240);
@@ -166,16 +167,14 @@
                                     <div class="row">
                                         <div class="col-md-12">
 
-                                            <fieldset>
                                                 <table id="example1" class="table table-bordered table-striped">
 
                                                     <thead>
                                                     <tr>
                                                         <th style="width: 2%">STT</th>
-                                                        <th style="width: 3%">Mã LapTop</th>
-                                                        <th style="width: 14%">Tên LapTop</th>
-                                                        <th style="width: 5%">Hãng sản xuất</th>
-                                                        <th style="width: 5%">Màn hình</th>
+                                                        <th style="width: 3%">Mã laptop</th>
+                                                        <th style="width: 14%">Tên laptop</th>
+                                                        <th style="width: 5%">Ảnh laptop</th>
                                                         <th style="width: 4%">RAM</th>
                                                         <th style="width:4%">ROM</th>
                                                         <th style="width: 4%">CPU</th>
@@ -192,16 +191,14 @@
                                                         <tr>
 
                                                         <td class="text-center">{{++$stt}}</td>
-                                                        <td class="text-left">{{$sp->MaLapTop}}</td>
+                                                        <td class="text-center">LT-{{$sp->MaLapTop}}</td>
                                                         <td class="text-left">{{$sp->TenLapTop}}</td>
-                                                        <td class="text-left">{{$sp->HangSX}}</td>
                                                             <td>
                                                                 <img src="img/{{ $sp->Anh }}" style="height: 60px; width:60px" alt="">
                                                             </td>
-{{--                                                            <td class="text-left">{{$sp->Anh}}</td>--}}
-                                                            <td class="text-left">{{$sp->RAM}}</td>
-                                                            <td class="text-left">{{$sp->ROM}}</td>
-                                                            <td class="text-left">{{$sp->CPU}}</td>
+                                                            <td class="text-center">{{$sp->RAM}}</td>
+                                                            <td class="text-center">{{$sp->ROM}}</td>
+                                                            <td class="text-center">{{$sp->CPU}}</td>
                                                         <td class="text-center">{{$sp->SoLuongConLai}}</td>
                                                         <td style="text-align: center" >
                                                             <a id="btn_row{{$stt}}" class=" btn_row btn btn-app custom-btn edit-btn" data-toggle="tooltip" title="Sửa" data-placement="bottom" name="sua">
@@ -229,13 +226,14 @@
                                                                         </div>
                                                                     </div>
 
+
                                                                     <div class="col-md-6">
-                                                                        <label>Hãng sản xuất</label>
+                                                                        <label>Số lượng còn lại</label>
                                                                         <div class="input-group">
 																						<span class="input-group-addon">
 																							<i class="fa fa-edit" aria-hidden="true"></i>
 																						</span>
-                                                                            <input type="text" name="HangSX"  id="HangSX"class="form-control" value="{{$sp->HangSX}}" >
+                                                                            <input type="text" name="SoLuongConLai"  id="SoLuongConLai"class="form-control" value="{{$sp->SoLuongConLai}}">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -291,12 +289,12 @@
 
                                                                 <div class="row">
                                                                     <div class="col-md-6">
-                                                                        <label>SL còn lại</label>
+                                                                        <label>Hãng sản xuất</label>
                                                                         <div class="input-group">
 																						<span class="input-group-addon">
 																							<i class="fa fa-edit" aria-hidden="true"></i>
 																						</span>
-                                                                            <input type="text" name="SoLuongConLai"  id="SoLuongConLai"class="form-control" value="{{$sp->SoLuongConLai}}">
+                                                                            <input type="text" name="HangSX"  id="HangSX"class="form-control" value="{{$sp->HangSX}}">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -330,7 +328,6 @@
 
                                                     </tbody>
                                                 </table>
-                                            </fieldset>
                                         </div>
                                     </div>
                                 </div>
@@ -351,6 +348,32 @@
 @endsection
 @section('content2')
 
+    <script>
+        $(document).ready(function () {
+            $('#example1').DataTable({
+                'paging': true,
+                'lengthChange': true,
+                'searching': false,
+                'ordering': true,
+                'info': true,
+                'lengthMenu': [10, 25, 50, "All"],
+                'autoWidth': true,
+                'language': {
+                    "info": "Đang hiển thị _START_ tới _END_ tổng số _TOTAL_ kết quả",
+                    "paginate": {
+                        "first": "Trang đầu",
+                        "last": "Trang cuối",
+                        "next": "Tiếp",
+                        "previous": "Trước"
+                    },
+                    'lengthMenu': "Hiển thị _MENU_ kết quả"
+                }
+            });
+            $('.datepicker').datepicker({
+                format: 'dd/mm/yyyy'
+            });
+        });
+    </script>
 <script>
     var j;
     var size=0;
@@ -389,27 +412,20 @@
 
 
 </script>
-<div class="modal fade" id="popupConfirm" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Xác nhận lưu thông tin đã sửa</h4>
-            </div>
-
-
-            {{--<div class="modal-footer" style="margin-right:15px">--}}
-                {{--<div style="margin:0 auto;">--}}
-
-                    {{--<button name="btnButton" value="rescheduleAction2" type="button" data-target="#"style="color:white;background-color:green" class="btn btn-default" data-dismiss="modal" onclick="window.location.href = '{{url('edit_product/'.$sp->MaLapTop)}}'">OK</button>--}}
-
-                        {{--<button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>--}}
-                {{--</div>--}}
+{{--<div class="modal fade" id="popupConfirm" role="dialog">--}}
+    {{--<div class="modal-dialog">--}}
+        {{--<!-- Modal content-->--}}
+        {{--<div class="modal-content">--}}
+            {{--<div class="modal-header">--}}
+                {{--<button type="button" class="close" data-dismiss="modal">&times;</button>--}}
+                {{--<h4 class="modal-title">Xác nhận lưu thông tin đã sửa</h4>--}}
             {{--</div>--}}
-        </div>
 
-    </div>
-</div>
+
+            {{----}}
+        {{--</div>--}}
+
+    {{--</div>--}}
+{{--</div>--}}
 
 @endsection

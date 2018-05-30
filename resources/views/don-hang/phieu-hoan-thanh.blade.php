@@ -1,6 +1,6 @@
 @extends('main')
 @section('content3')
-<title>Phiếu hoàn thành</title>
+<title>Danh sách hóa đơn</title>
 @endsection
 @section('content')
         <style>
@@ -59,7 +59,7 @@
                             <a href=""> Đơn hàng</a>
                         </li>
                         <li>
-                            <a class="active">Phiếu hoàn thành</a>
+                            <a class="active">Danh sách hóa đơn</a>
                         </li>
                     </ol>
                 </section>
@@ -71,7 +71,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <h4>
-                                                <b>DANH SÁCH PHIẾU HOÀN THÀNH</b>
+                                                <b>DANH SÁCH HÓA ĐƠN</b>
                                             </h4>
                                         </div>
                                         <div class="row" style="margin-left:0px; margin-right:0px">
@@ -84,36 +84,13 @@
                                                     <div class="box-body">
                                                         <table class="table">
                                                             <tbody>
+
                                                                 <tr>
-                                                                    <td style="text-align:left; width: 10%">Lô số</td>
-                                                                    <td>
-                                                                        <div class="input-group">
-                                                                            <span class="input-group-addon"><i class="fa fa-file"></i></span>
-                                                                            <input type="text" class="form-control" placeholder="Lô số...">
-                                                                        </div>
-                                                                    </td>
                                                                     <td style="width: 10%">Khách</td>
                                                                     <td>
                                                                         <div class="input-group">
                                                                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                                                             <input type="text" class="form-control" placeholder="Khách...">
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td style="text-align:left">Ngày </td>
-                                                                    <td>
-                                                                        <div class="col-sm-5 no-padding">
-                                                                            <div class="input-group date">
-                                                                                <span class="input-group-addon">Từ</span>
-                                                                                <input type="text" class="form-control" id="datepicker">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-6 col-sm-offset-1 no-padding">
-                                                                            <div class="input-group date">
-                                                                                <span class="input-group-addon">Đến</span>
-                                                                                <input type="text" class="form-control" id="datepicker2">
-                                                                            </div>
                                                                         </div>
                                                                     </td>
                                                                     <td>Tổng tiền</td>
@@ -134,30 +111,7 @@
 
 
                                                                 </tr>
-                                                                <tr>
-                                                                    <td style="text-align:left">Trạng thái</td>
-                                                                    <td>
-                                                                        <div class="input-group">
-                                                                            <span class="input-group-addon"><i class="fa fa-dot-circle-o"></i></span>
-                                                                            <select class="form-control">
-                                                                                <option>Bản nháp</option>
-                                                                                <option>Phiếu đang giao</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        Loại phiếu
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="input-group">
-                                                                            <span class="input-group-addon"><i class="fa fa-dot-circle-o"></i></span>
-                                                                            <select class="form-control">
-                                                                                <option>Giao một lần</option>
-                                                                                <option>Giao nhiều lần</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
+
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -178,31 +132,37 @@
                                                 <thead>
                                                     <tr>
                                                         <th>STT</th>
-                                                        <th>Lô số</th>
+                                                        <th>Người lập hóa đơn</th>
                                                         <th>Khách hàng</th>
-                                                        <th>Ngày</th>
-                                                        <th>Tổng tiền</th>
-                                                        <th>Trạng thái</th>
-                                                        <th>Ghi chú</th>
-                                                        <th>Số đợt giao</th>
+                                                        <th>Số điện thoại KH</th>
+                                                        <th>Địa chỉ khách hàng</th>
+                                                        <th>Tổng số sản phẩm</th>
+                                                        <th>Mức giá áp dụng</th>
+
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                <?php $stt=0?>
+
+                                                @foreach($hds as $hd)
+
                                                     <tr>
-                                                        <td>1</td>
+                                                        <td>{{++$stt}}</td>
                                                         <td>
-                                                            <a href="phanphoi_donhang_chi-tiet-phieu-giao-mot-lan.html">81266-0</a>
+                                                           {{$hd->NguoiTaoHD}}
                                                         </td>
-                                                        <td>Công ty a</td>
-                                                        <td>20-12-2017</td>
-                                                        <td>15,069,500</td>
+                                                        <td>{{$hd->KhachHang}}</td>
+                                                        <td>{{$hd->SoDienThoai}}</td>
+
+                                                        <td>{{$hd->DiaChiNhan}}</td>
+                                                        <td>{{$hd->SoSanPham}}</td>
                                                         <td>
-                                                            <span class="label label-success">Đã hoàn thành</span>
+                                                            {{$hd->MucGiaNam}}
                                                         </td>
-                                                        <td></td>
-                                                        <td>1</td>
                                                     </tr>
-                                                    <!--<tr>-->
+                                                @endforeach
+
+                                                <!--<tr>-->
                                                         <!--<td>2</td>-->
                                                         <!--<td>-->
                                                             <!--<a href="phanphoi_donhang_chi-tiet-phieu-giao-mot-lan.html">81265-0</a>-->
@@ -273,7 +233,10 @@
             </div>
 @endsection
 @section('content2')
-        <!-- page script -->
+    <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+    <!-- page script -->
         <script>
             $(function () {
                 $('#example1').DataTable({

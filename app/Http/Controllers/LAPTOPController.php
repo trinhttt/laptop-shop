@@ -35,7 +35,11 @@ class LAPTOPController extends Controller
         $sps=LAPTOP::all();
         return view('hang-hoa.ds_sanpham', compact('sps'));
     }
-
+    public function showGiaSanPham()
+    {
+        $sps=LAPTOP::all();
+        return view('hang-hoa.gia-hang-hoa', compact('sps'));
+    }
     public function Insert(Request $request)
     {
         $data=Input::except(array('_token'));

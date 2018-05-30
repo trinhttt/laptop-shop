@@ -163,13 +163,13 @@
                                 </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class=""><a href="DonHang_LapPhieu"><i class="fa fa-edit"></i> Lập Phiếu</a></li>
+                        <li class=""><a href="DonHang_LapPhieu"><i class="fa fa-edit"></i> Lập hóa đơn</a></li>
 
 
                         <li class="">
                             <a href="DonHang_PhieuHoanThanh">
                                 <i class="fa fa-files-o"></i>
-                                <span>Phiếu đã hoàn thành</span>
+                                <span>Danh sách hóa đơn</span>
                             </a>
                         </li>
                         {{--<li class="">--}}
@@ -179,12 +179,12 @@
 
                             {{--</a>--}}
                         {{--</li>--}}
-                        <li class="">
-                            <a href="DonHang_LichGiaoHang">
-                                <i class="fa fa-calendar-minus-o"></i>
-                                <span>Lịch giao hàng</span>
-                            </a>
-                        </li>
+                        {{--<li class="">--}}
+                            {{--<a href="DonHang_LichGiaoHang">--}}
+                                {{--<i class="fa fa-calendar-minus-o"></i>--}}
+                                {{--<span>Lịch giao hàng</span>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
 
                     </ul>
                 </li>
@@ -198,7 +198,7 @@
                     </a>
 
                     <ul class="treeview-menu">
-                        <li class=""><a href="HangHoa_DS-HangHoa"><i class="fa fa-dropbox"></i> Danh sách hàng hóa</a></li>
+                        <li class=""><a href="HangHoa_DS-HangHoa"><i class="fa fa-laptop"></i> Danh sách hàng hóa</a></li>
 
                         <li class=""><a href="HangHoa_GiaHangHoa"><i class="fa fa-dollar"></i> Giá hàng hóa</a></li>
                         <li class=""><a href="HangHoa_TonKho"><i class="fa fa-dropbox"></i> Hàng tồn kho</a></li>
@@ -312,9 +312,11 @@
 <script src="dist/js/bootstrap-toggle.min.js"></script>
 <!-- tao dot nhap kho -->
 <script src="dist/js/sweetalert2.all.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/fileinput.min.js"></script>
 
 @yield('content2')
+
 </body>
 </html>
 

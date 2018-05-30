@@ -16,6 +16,7 @@ use Redirect;
 use App\HOADON;
 use App\LAPTOP;
 use App\CHITIETHOADON;
+use App\KHACHHANG;
 use Auth;
 use Image;
 
@@ -28,20 +29,23 @@ class DONHANGController extends Controller
 
     public function show()
     {
-//    $lts = LAPTOP::where('MaLapTop', $dt->MaLapTop)->first();
         $lts=LAPTOP::all();
-        return view('don-hang.lap-phieu', compact('lts'));
+        $khs=KHACHHANG::all();
+        return view('don-hang.lap-phieu', compact('lts','khs'));
     }
+    public function showPhieuHoanThanh()
+    {
+        $hds=HOADON::all();
+        return view('don-hang.phieu-hoan-thanh', compact('hds'));
+    }
+
     public function Insert(Request $request)
     {
         $data=Input::except(array('_token'));
-
-
-
         $NV = new HOADON();
 
         $NV->SoHoaDon=$request->SoHoaDon;
-        $NV->NgayGiaoHang=$request->NgayGiaoHang;
+        $NV->SoDienThoai=$request->SoDienThoai;
 //        $NV->TongTien=$request->TongTien;
         $NV->DiaChiNhan=$request->DiaChiNhan;
         $NV->KhachHang=$request->KhachHang;
@@ -49,10 +53,6 @@ class DONHANGController extends Controller
         $NV->MucGiaNam=$request->MucGiaNam;
         $NV->NguoiTaoHD=$request->NguoiTaoHD;
         $rule=array(
-//            'MaLapTop'=>'required',
-//            'SoLuong'=>'required',
-//            'DonGia'=>'required',
-//            'HoaDon'=>'min:1',
             'SoHoaDon'=>'min:1',
             'NguoiTaoHD'=>'required',
             'KhachHang'=>'required',
@@ -60,14 +60,9 @@ class DONHANGController extends Controller
 //            'TongTien'=>'required',
             'SoSanPham'=>'required',
             'MucGiaNam'=>'required',
-            'NgayGiaoHang'=>'required',
+            'SoDienThoai'=>'required',
         );
         $message=array(
-//            'MaLapTop.required'=>'Chọn tên laptop, không để rỗng!',
-//            'SoLuong.required'=>'Số lượng laptop phải có dữ liệu, không để rỗng!',
-//            'DonGia.required'=>'Giá mỗi laptop phải có dữ liệu, không để rỗng!',
-//            'HoaDon.required'=>'Mã hóa đơn xuất phải có dữ liệu, không để rỗng!',
-
             'SoHoaDon.required'=>'Mã hóa đơn xuất phải có dữ liệu, không để rỗng!',
             'NguoiTaoHD.required'=>'Trường người tạo phải có dữ liệu, không để rỗng!',
             'KhachHang.required'=>'Trường tên người nhận phải có dữ liệu, không để rỗng!',
@@ -75,7 +70,7 @@ class DONHANGController extends Controller
 //            'TongTien.required'=>'Trường tổng tiền phải có dữ liệu',
             'SoSanPham.required'=>'Trường số lượng sản phẩm phải có dữ liệu, không để rỗng!',
             'MucGiaNam.required'=>'Trường mức giá năm phải có dữ liệu, không để rỗng!',
-            'NgayGiaoHang.required'=>'Trường ngày giao hàng phải có dữ liệu, không để rỗng!',
+            'SoDienThoai.required'=>'Trường số điện thoại phải có dữ liệu, không để rỗng!',
 
         );
         $validator=Validator::make($data,$rule,$message);
@@ -84,6 +79,7 @@ class DONHANGController extends Controller
         {
             return Redirect::to('DonHang_LapPhieu')->withErrors($validator);
         }else{
+            $tong_tien=0;
             $NV->save();
             for($i=0;$i<$NV['SoSanPham'];$i++)
             {
@@ -95,7 +91,7 @@ class DONHANGController extends Controller
                 $ct[$i]->DonGia=$request->DonGia[$i];
                 $ct[$i]->Ck=$request->Ck[$i];
                 $ct[$i]->save();
-                $tong_tien=$ct[$i]->SoLuong*$ct[$i]->DonGia*(100 - $ct[$i]->Ck) / 100;
+                $tong_tien=$tong_tien+$ct[$i]->SoLuong*$ct[$i]->DonGia*(100 - $ct[$i]->Ck) / 100;
             }
             $NV1 = HOADON::find($NV->SoHoaDon);
             if (isset($NV1)) {

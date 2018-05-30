@@ -36,21 +36,28 @@ Route::get('/DonHang_PhieuDangXuLy', function () {
 Route::get('/DonHang_PhieuGiuHang', function () {
     return view('don-hang/phieu-giu-hang');
 });
-Route::get('/DonHang_PhieuHoanThanh', function () {
-    return view('don-hang/phieu-hoan-thanh');
-});
-
+//Route::get('/DonHang_PhieuHoanThanh', function () {
+//    return view('don-hang/phieu-hoan-thanh');
+//});
+Route::get('/DonHang_PhieuHoanThanh','DONHANGController@showPhieuHoanThanh');
 
 /////////HANG HOA
-Route::get('/HangHoa_GiaHangHoa', function () {
-    return view('hang-hoa/gia-hang-hoa');
-});
+//Route::get('/HangHoa_GiaHangHoa', function () {
+//    return view('hang-hoa/gia-hang-hoa');
+//});
+Route::get('/HangHoa_GiaHangHoa','LAPTOPController@showGiaSanPham');
+
+
 Route::get('/HangHoa_LichSuNhapHang', function () {
     return view('hang-hoa/lich-su-nhap-hang');
 });
 Route::get('/HangHoa_TaoDotNhapHang', function () {
     return view('hang-hoa/tao-dot-nhap-kho');
 });
+Route::get('/HangHoa_TaoDotNhapHang','NHAPHANGController@show');
+
+Route::post('/LapPhieuNhapHang','NHAPHANGController@Insert');
+
 Route::get('/HangHoa_TonKho', function () {
     return view('hang-hoa/ton-kho');
 });
@@ -58,17 +65,13 @@ Route::get('/TaoMoi_SanPham', function () {
     return view('hang-hoa/tao_san-pham');
 });
 
- /////
-//Route::get('/HangHoa_DS-HangHoa', function () {
-//    return view('hang-hoa/ds_sanpham');
-//});
 Route::get('/HangHoa_DS-HangHoa','LAPTOPController@show');
-//
-//  Route::get('edit_product/{MaLapTop}', 'LAPTOPController@getData');
-
-  Route::post('edit_product/{MaLapTop}', 'LAPTOPController@Action');
+Route::post('edit_product/{MaLapTop}', 'LAPTOPController@Action');
 Route::post('/insert_product','LAPTOPController@Insert');
 
+//tonkho
+Route::get('/HangHoa_TonKho','HANGTONKHOController@show');
+Route::post('edit_TonKho/{idTonKho}', 'HANGTONKHOController@Action');
 
 
 // ///////QUAN TRI

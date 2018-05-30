@@ -15,7 +15,7 @@ class HOADON extends Model
     public static function formstore($data)
     {
         $SoHoaDon=Input::get('SoHoaDon');
-        $NgayGiaoHang=Input::get('NgayGiaoHang');
+        $SoDienThoai=Input::get('SoDienThoai');
         $TongTien=Input::get('TongTien');
         $DiaChiNhan=Input::get('DiaChiNhan');
         $KhachHang=Input::get('KhachHang');
@@ -29,7 +29,7 @@ class HOADON extends Model
 
         $hd=new HOADON();
         $hd->SoHoaDon=$SoHoaDon;
-        $hd->NgayGiaoHang=$NgayGiaoHang;
+        $hd->SoDienThoai=$SoDienThoai;
         $hd->TongTien=$TongTien;
         $hd->DiaChiNhan=$DiaChiNhan;
         $hd->KhachHang=$KhachHang;

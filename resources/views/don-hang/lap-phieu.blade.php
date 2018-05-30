@@ -1,6 +1,6 @@
 @extends('main')
 @section('content3')
-<title>Lập phiếu</title>
+<title>Lập hóa đơn xuất hàng</title>
 @endsection
 @section('content')
         <style>
@@ -47,7 +47,7 @@
                     <ol class="breadcrumb">
                         <li><a href="phanphoi_index.html"><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
                         <li>Đơn hàng</li>
-                        <li class="active">Lập phiếu</li>
+                        <li class="active">Lập hóa đơn xuất hàng</li>
                     </ol>
                 </section>
                 <form style="margin-top: 25px;" action="{{url('LapPhieu')}}" method="post">
@@ -59,7 +59,7 @@
                         <div class="col-md-12">
                             <div class="box">
                                 <div class="box-header" style="text-align: center;margin-top: 30px;">
-                                    <h3 class="box-title with-border"><b style="font-size: 25px;">Phiếu xuất hàng</b></h3>
+                                    <h3 class="box-title with-border"><b style="font-size: 25px;">Hóa đơn xuất hàng</b></h3>
                                 </div>
                                 <!-- /.box-header -->
                                 <div class="box-body pad">
@@ -194,43 +194,56 @@
                                                         <div class="box-header">
                                                             <div class="row">
                                                                 <div class="col-md-6">
-                                                                    <label >Người lập</label><span style="color: red;">*</span>
+                                                                    <label >Người lập hóa đơn</label><span style="color: red;">*</span>
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                                                        <input placeholder="Nhập tên người lập phiếu" type="text" class="form-control pointerCursor" id="NguoiTaoHD" name="NguoiTaoHD"value="" onclick="$(this).removeClass('pointerCursor');
+                                                                        <input placeholder="Nhập tên người lập hóa đơn" type="text" class="form-control pointerCursor" id="NguoiTaoHD" name="NguoiTaoHD"value="" onclick="$(this).removeClass('pointerCursor');
                                                                                 $(this).addClass('textCursor');
                                                                                 this.select();">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <label>Người nhận hàng</label><span style="color: red;">*</span>
+
+                                                                <label>Khách hàng</label><span style="color: red;">*</span>
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                                                        <input name="KhachHang" placeholder="Nhập tên người nhận hàng"type="text" class="form-control pointerCursor" value="" onclick="$(this).removeClass('pointerCursor');
-                                                                                $(this).addClass('textCursor');
-                                                                                this.select();">
+                                                                        <select class="form-control" NAME="KhachHang"style="font-family: 'FontAwesome'; cursor: pointer;">
+                                                                            @foreach($khs as $kh)
+                                                                                <option value="{{$kh->MaKhachHang}}">{{$kh->HoTenKH}}</option>
+                                                                            @endforeach
+                                                                        </select>
                                                                     </div>
-                                                                </div>
 
                                                             </div>
+                                                            </div>
+
                                                             <div class="row" style="margin-top: 15px;">
                                                                 <div class="col-md-6">
-                                                                    <label>Địa chỉ giao hàng</label><span style="color: red;">*</span>
+                                                                    <label>Số điện thoại khách hàng</label><span style="color: red;">*</span>
+                                                                    <div class="input-group">
+                                                                        <span class="input-group-addon"><i class="fa fa-mobile"></i></span>
+                                                                        <input type="text" class="form-control" NAME="SoDienThoai"id="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label>Địa chỉ khách hàng</label><span style="color: red;">*</span>
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><i class="fa fa-address-book"></i></span>
-                                                                        <input NAME="DiaChiNhan" placeholder="Nhập địa chỉ giao hàng "type="text" class="form-control" id="AddressDeliver">
+                                                                        <input NAME="DiaChiNhan" placeholder="Nhập địa chỉ khách hàng"type="text" class="form-control" id="AddressDeliver">
                                                                     </div>
                                                                 </div>
 
+
+                                                            </div>
+
+                                                            <div class="row" style="margin-top: 15px;">
                                                                 <div class="col-md-6">
                                                                     <label>Tổng số sản phẩm</label><span style="color: red;">*</span>
                                                                     <div class="input-group">
-                                                                        <span class="input-group-addon"><i class="fa fa-truck"></i></span>
+                                                                        <span class="input-group-addon"><i class="fa fa-laptop"></i></span>
                                                                         <input type="number"NAME="SoSanPham"id="delivery" min="0" max="6" step="1" value="0" style="padding-left: 12px;" onchange="deliveryQtt();" class="form-control">
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="row" style="margin-top: 15px;">
                                                                 <div class="col-md-6">
                                                                     <label>Mức giá áp dụng</label><span style="color: red;">*</span>
                                                                     <div class="input-group">
@@ -241,13 +254,7 @@
                                                                         </select>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-6">
-                                                                    <label>Ngày giao hàng</label><span style="color: red;">*</span>
-                                                                    <div class="input-group">
-                                                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                                                        <input type="date" class="form-control" NAME="NgayGiaoHang"id="">
-                                                                    </div>
-                                                                </div>
+
                                                             </div>
 
 
@@ -265,6 +272,7 @@
                                                         <table class="table table-striped mainTable">
                                                             <fieldset>
                                                             <thead>
+
                                                                 <tr>
                                                                     <th  style="width: 30px;">STT</th>
                                                                     <th  colspan="3" style="width: 300px;">Sản phẩm</th>
@@ -279,23 +287,6 @@
                                                             </fieldset>
 
                                                             <tbody>
-                                                            {{--<tr>--}}
-                                                                {{--<td style="vertical-align: middle;">1</td>--}}
-                                                                {{--<td style="vertical-align: middle;">ABN 52c</td>--}}
-                                                                {{--<td style="vertical-align: middle;">15A</td>--}}
-                                                                {{--<td><input type="text" class="form-control" style="text-align: right;"--}}
-                                                                           {{--onkeyup="configSp('1');--}}
-                                                                                       {{--return false;" id="cai_1"/></td>--}}
-                                                                {{--<td><input type="text" class="form-control" style="text-align: right;"--}}
-                                                                           {{--onkeyup="configThung('1');--}}
-                                                                                       {{--return false;" id="thung_1" title="20 cái/1"/></td>--}}
-                                                                {{--<td><output id="dongia_1" class="number">590000</output></td>--}}
-                                                                {{--<td><output id="tien_chua_ck_1"></output></td>--}}
-                                                                {{--<td><input type="text" class="form-control" style="text-align: right;"--}}
-                                                                           {{--onkeyup="configCk('1');--}}
-                                                                                       {{--return false;" id="ck_1"/></td>--}}
-                                                                {{--<td><output id="tien_da_ck_1"></output></td>--}}
-                                                            {{--</tr>--}}
 
                                                             <tr class="noDisplay" id="turn1">
                                                                 <td style="vertical-align: middle;">1</td>
