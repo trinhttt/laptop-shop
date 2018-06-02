@@ -52,38 +52,7 @@
                         <li class="active">Tạo đơn nhập mới</li>
                     </ol>
                 </section>
-                @if($errors->has('TenNhaCC'))
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
-                                {{--                                                {{Session::get('error')}}--}}
-                                {{$errors->first('TenNhaCC')}}
 
-                            </div>
-                        </div>
-                    </div>
-                @endif
-                @if($errors->has('DiaChiWebsite'))
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
-                                {{--                                                {{Session::get('error')}}--}}
-                                {{$errors->first('DiaChiWebsite')}}
-
-                            </div>
-                        </div>
-                    </div>
-                @endif
-                @if(Session::has('success'))
-
-                    <div class="row" >
-                        <div class="col-md-12">
-                            <div class="alert"style="background-color: #dff0d8;width: 97%;margin-left: 14px">
-                                {{Session::get('success')}}
-                            </div>
-                        </div>
-                    </div>
-            @endif
                 <form style="margin-top: 25px;" action="{{url('LapPhieuNhapHang')}}" method="post">
                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <!-- Main content -->
@@ -105,7 +74,7 @@
                                         </span>
                                             </a>
 
-                                            <BUTTON class="btn btn-app custom-btn " data-toggle="modal" title="Lưu" data-placement="bottom" data-target=
+                                            <BUTTON class="btn btn-app custom-btn " type="submit"data-toggle="modal" title="Lưu" data-placement="bottom" data-target=
                                             "#confirm-delete">
                                                 <i class="fa fa-save text-yellow"></i>
                                                 <span>
@@ -119,7 +88,95 @@
 
                                         </div>	
                                     </div>
-                                    <form style="margin-top: 25px;">
+                                    @if($errors->has('TenNhaCC'))
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
+                                                    {{--                                                {{Session::get('error')}}--}}
+                                                    {{$errors->first('TenNhaCC')}}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($errors->has('SDTNhaCC'))
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
+                                                    {{--                                                {{Session::get('error')}}--}}
+                                                    {{$errors->first('SDTNhaCC')}}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($errors->has('DiaChiNhaCC'))
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
+                                                    {{--                                                {{Session::get('error')}}--}}
+                                                    {{$errors->first('DiaChiNhaCC')}}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($errors->has('DiaChiWebsite'))
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
+                                                    {{--                                                {{Session::get('error')}}--}}
+                                                    {{$errors->first('DiaChiWebsite')}}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($errors->has('NgayYeuCau'))
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
+                                                    {{--                                                {{Session::get('error')}}--}}
+                                                    {{$errors->first('NgayYeuCau')}}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($errors->has('NgayNhap'))
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
+                                                    {{--                                                {{Session::get('error')}}--}}
+                                                    {{$errors->first('NgayNhap')}}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    @if($errors->has('SoLoaiSP'))
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="alert"style="background-color: #f2dede;width: 97%;margin-left: 14px">
+                                                    {{--                                                {{Session::get('error')}}--}}
+                                                    {{$errors->first('SoLoaiSP')}}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if(Session::has('success'))
+
+                                        <div class="row" >
+                                            <div class="col-md-12">
+                                                <div class="alert"style="background-color: #dff0d8;width: 97%;margin-left: 14px">
+                                                    {{Session::get('success')}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+
                                         <div class="box-header">
 
                                             <div class="row">
@@ -131,17 +188,17 @@
                                                                 <label>Nhập hàng / Đổi trả</label>
                                                                 <div class="input-group">
                                                                     <span class="input-group-addon"><i class="fa fa-exchange"></i></span>
-                                                                    <input NAME="status"type="checkbox" id="status" data-toggle="toggle" checked data-on="Nhập hàng" data-off="Đổi trả">
+                                                                    <input type="checkbox" name="nhap_or_doi"id="nhap_or_doi" data-toggle="toggle" checked data-on="Nhập hàng" data-off="Đổi trả">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="row" style="margin-top: 15px;">
 
                                                             <div class="col-md-6">
-                                                                <label>Tên nhà cung cấp</label><span style="color: red;">*</span>
+                                                                <label>Tên công ty / đơn vị:</label><span style="color: red;">*</span>
                                                                 <div class="input-group">
                                                                     <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
-                                                                    <input  name="TenNhaCC"  id="TenNhaCC"class="form-control" placeholder="Nhập tên nhà cung cấp" type="text">
+                                                                    <input  name="TenNhaCC"  id="TenNhaCC"class="form-control" placeholder="Nhập tên công ty / đơn vị" type="text">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
@@ -171,10 +228,10 @@
                                                         </div>
                                                         <div class="row" style="margin-top: 15px;">
                                                             <div class="col-md-6">
-                                                                <label>Tổng số sản phẩm</label><span style="color: red;">*</span>
+                                                                <label>Tổng số loại sản phẩm</label><span style="color: red;">*</span>
                                                                 <div class="input-group">
                                                                     <span class="input-group-addon"><i class="fa fa-laptop"></i></span>
-                                                                    <input type="number"NAME="SoSanPham"id="delivery" min="0" max="6" step="1" value="0" style="padding-left: 12px;" onchange="deliveryQtt();" class="form-control">
+                                                                    <input type="number"NAME="SoLoaiSP"id="delivery" min="0" max="6" step="1" value="0" style="padding-left: 12px;" onchange="deliveryQtt();" class="form-control">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
@@ -205,49 +262,65 @@
                                             <div class="row" style="margin-top: 10px;">
                                                 <div class="col-xs-12 table-responsive">
 
-                                                    <legend><b style="font-size: 17px;">Chi tiết đơn hàng</b></legend>
+                                                    <legend><b style="font-size: 17px;">Chi tiết đơn nhập hàng</b></legend>
                                                     <table class="table table-striped mainTable">
                                                         <fieldset>
                                                             <thead>
-                                                            {{--<tr>--}}
-                                                            {{--<th style="width: 30px;">STT</th>--}}
-                                                            {{--<th style="width: 300px;">Sản phẩm</th>--}}
-                                                            {{--<th style="width: 150px;">Mã hàng</th>--}}
-                                                            {{--<th style="width: 100px;">Số lượng</th>--}}
-                                                            {{--<th style="width: 100px;">Số lượng nhập kho</th>--}}
-                                                            {{--<th>Lý do</th>--}}
-                                                            {{--</tr>--}}
+
                                                             <tr>
                                                                 <th  style="width: 30px;">STT</th>
                                                                 <th  colspan="3" style="width: 200px;">Sản phẩm</th>
                                                                 <th style="width: 60px;">Số lượng (cái)</th>
                                                                 <th  style="width: 170px;">Đơn giá (VNĐ)</th>
                                                                 <th style="width: 170px;">Thành tiền</th>
-                                                                <th  colspan="4"style="width: 100px;">Lý do nhập hàng</th>
+                                                                <th  colspan="4"style="width: 100px;">Lý do nhập/đổi trả</th>
                                                             </tr>
 
                                                             </thead>
                                                         </fieldset>
 
                                                         <tbody>
+                                                        {{--<tr class="noDisplay" id="turn1">--}}
+                                                            {{--<td style="vertical-align: middle;">1</td>--}}
+
+                                                            {{--<td colspan="3"  >--}}
+                                                                {{--<input placeholder="Nhập tên sản phẩm"id="laptop_1"name="TenLapTop[0]"type="text" class="form-control" style="text-align: right"--}}
+                                                            {{--</td>--}}
+                                                            {{--<td><input id="cai_1"NAME="SoLuong[0]"type="text" placeholder="SL"class="form-control" style="text-align: right;"--}}
+                                                                {{--/></td>--}}
+
+                                                            {{--<td style="text-align: right">--}}
+                                                                {{--<input NAME="DonGia[0]"type="text"placeholder="Giá 1 sản phẩm" class="form-control" style="text-align: right;"--}}
+                                                                       {{--onkeyup="configSp1('1');--}}
+                                                                                       {{--return false;" id="dongia_1"/>--}}
+
+                                                            {{--</td>--}}
+                                                            {{--<td><output class="number"id="tien_chua_ck_1">0</output></td>--}}
+                                                            {{--<td><input placeholder="CK"name="Ck[0]"type="text" class="form-control" style="text-align: right;"--}}
+                                                                       {{--onkeyup="configCk('1');--}}
+                                                                                       {{--return false;" id="ck_1"/></td>--}}
+                                                            {{--<td colspan="3"style="text-align: right">--}}
+                                                                {{--<output class="number"id="tien_da_ck_1">0</output></td>--}}
+
+                                                        {{--</tr>--}}
 
                                                         <tr class="noDisplay" id="turn1">
                                                             <td style="vertical-align: middle;">1</td>
 
                                                             <td colspan="3"  >
                                                                 <input placeholder="Nhập tên sản phẩm"id="laptop_1"name="TenLapTop[0]"type="text" class="form-control" style="text-align: right"
-                                                                /></td></td>
+                                                                /></td>
                                                             <td><input id="cai_1"NAME="SoLuong[0]"type="text" placeholder="SL"class="form-control" style="text-align: right;"
                                                                 /></td>
 
                                                             <td style="text-align: right">
                                                                 <input NAME="DonGia[0]"type="text"placeholder="Giá 1 sản phẩm" class="form-control" style="text-align: right;"
-                                                                       onkeyup="configSp('1');
+                                                                       onkeyup="configSp1('1');
                                                                                        return false;" id="dongia_1"/>
 
                                                             </td>
-                                                            <td style="text-align: right"><output class="number"id="tien_chua_ck_1">0</output></td>
-                                                            <td colspan="4"><input placeholder="Lý do nhập hàng"name="status[0]"type="text" class="form-control" style="text-align: right"
+                                                            <td style="text-align: right"><output class="number"id="tien_da_ck_1">0</output></td>
+                                                            <td colspan="4"><input placeholder="Lý do nhập/đổi trả"name="status[0]"type="text" class="form-control" style="text-align: right"
                                                                       /></td>
 
 
@@ -264,12 +337,12 @@
 
                                                             <td style="text-align: right">
                                                                 <input NAME="DonGia[1]"type="text"placeholder="Giá 1 sản phẩm" class="form-control" style="text-align: right;"
-                                                                       onkeyup="configSp('2');
+                                                                       onkeyup="configSp1('2');
                                                                                        return false;" id="dongia_2"/>
 
                                                             </td>
-                                                            <td style="text-align: right"><output class="number"id="tien_chua_ck_2">0</output></td>
-                                                            <td colspan="4"><input placeholder="Lý do nhập hàng"name="status[1]"type="text" class="form-control" style="text-align: right"
+                                                            <td style="text-align: right"><output class="number"id="tien_da_ck_2">0</output></td>
+                                                            <td colspan="4"><input placeholder="Lý do nhập/đổi trả"name="status[1]"type="text" class="form-control" style="text-align: right"
                                                                 /></td>
 
 
@@ -287,12 +360,12 @@
 
                                                             <td style="text-align: right">
                                                                 <input NAME="DonGia[2]"type="text"placeholder="Giá 1 sản phẩm" class="form-control" style="text-align: right;"
-                                                                       onkeyup="configSp('3');
+                                                                       onkeyup="configSp1('3');
                                                                                        return false;" id="dongia_3"/>
 
                                                             </td>
-                                                            <td style="text-align: right"><output class="number"id="tien_chua_ck_3">0</output></td>
-                                                            <td colspan="4"><input placeholder="Lý do nhập hàng"name="status[2]"type="text" class="form-control" style="text-align: right"
+                                                            <td style="text-align: right"><output class="number"id="tien_da_ck_3">0</output></td>
+                                                            <td colspan="4"><input placeholder="Lý do nhập/đổi trả"name="status[2]"type="text" class="form-control" style="text-align: right"
                                                                 /></td>
 
 
@@ -309,12 +382,12 @@
 
                                                             <td style="text-align: right">
                                                                 <input NAME="DonGia[3]"type="text"placeholder="Giá 1 sản phẩm" class="form-control" style="text-align: right;"
-                                                                       onkeyup="configSp('4');
+                                                                       onkeyup="configSp1('4');
                                                                                        return false;" id="dongia_4"/>
 
                                                             </td>
-                                                            <td style="text-align: right"><output class="number"id="tien_chua_ck_4">0</output></td>
-                                                            <td colspan="4"><input placeholder="Lý do nhập hàng"name="status[3]"type="text" class="form-control" style="text-align: right"
+                                                            <td style="text-align: right"><output class="number"id="tien_da_ck_4">0</output></td>
+                                                            <td colspan="4"><input placeholder="Lý do nhập/đổi trả"name="status[3]"type="text" class="form-control" style="text-align: right"
                                                                 /></td>
 
 
@@ -330,12 +403,12 @@
 
                                                             <td style="text-align: right">
                                                                 <input NAME="DonGia[4]"type="text"placeholder="Giá 1 sản phẩm" class="form-control" style="text-align: right;"
-                                                                       onkeyup="configSp('5');
-                                                                                       return false;" id="dongia_"/>
+                                                                       onkeyup="configSp1('5');
+                                                                                       return false;" id="dongia_5"/>
 
                                                             </td>
-                                                            <td style="text-align: right"><output class="number"id="tien_chua_ck_5">0</output></td>
-                                                            <td colspan="4"><input placeholder="Lý do nhập hàng"name="status[4]"type="text" class="form-control" style="text-align: right"
+                                                            <td style="text-align: right"><output class="number"id="tien_da_ck_5">0</output></td>
+                                                            <td colspan="4"><input placeholder="Lý do nhập/đổi trả"name="status[4]"type="text" class="form-control" style="text-align: right"
                                                                 /></td>
 
 
@@ -351,12 +424,12 @@
 
                                                             <td style="text-align: right">
                                                                 <input NAME="DonGia[5]"type="text"placeholder="Giá 1 sản phẩm" class="form-control" style="text-align: right;"
-                                                                       onkeyup="configSp('6');
+                                                                       onkeyup="configSp1('6');
                                                                                        return false;" id="dongia_6"/>
 
                                                             </td>
-                                                            <td style="text-align: right"><output class="number"id="tien_chua_ck_6">0</output></td>
-                                                            <td colspan="4"><input placeholder="Lý do nhập hàng"name="status[5]"type="text" class="form-control" style="text-align: right"
+                                                            <td style="text-align: right"><output class="number"id="tien_da_ck_6">0</output></td>
+                                                            <td colspan="4"><input placeholder="Lý do nhập/đổi trả"name="status[5]"type="text" class="form-control" style="text-align: right"
                                                                 /></td>
 
 
@@ -383,9 +456,7 @@
                                             </div>
                                         </div>
                                         <div id="sound"></div>
-                                    </form>
-                                    <output id="temp" class="noDisplay"> Công ty Sáng Hà</output>
-                                </div>                                	
+                                </div>
                             </div>                           
                         </div>
                         <!-- /.col-->
@@ -398,23 +469,7 @@
  @endsection            
            
 @section('content2') 
-            {{--<div class="modal fade" id="confirmComplete" role="dialog">--}}
-                {{--<div class="modal-dialog">--}}
 
-                    {{--<!-- Modal content-->--}}
-                    {{--<div class="modal-content">--}}
-                        {{--<div class="modal-header">--}}
-                            {{--<button type="button" class="close" data-dismiss="modal">&times;</button>--}}
-                            {{--<h4 class="modal-title">Xác nhận chốt đơn ?</h4>--}}
-                        {{--</div>--}}
-                        {{--<div class="modal-footer">--}}
-                            {{--<a href="phanphoi_hanghoa_lich-su-nhap-hang.html"><button type="button" class="btn btn-success">Đồng ý</button></a>--}}
-                            {{--<button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-
-                {{--</div>--}}
-            {{--</div>--}}
             <script>
                 $(document).ready(function () {
                     deliveryQtt();

@@ -398,10 +398,11 @@ function configCkAll(stt) {
 }
 
 function configCk(stt) {
-    var ck = 0;
     var cai = 0;
     var dongia = 0;
     var tien_da_ck=0;
+    var ck = 0;
+
     if (parseFloat(document.getElementById("ck_" + stt).value) > 0) {
         ck = parseFloat(document.getElementById("ck_" + stt).value);
     }
@@ -529,6 +530,52 @@ function configSp(stt) {
         } else {
             configCkAll('2');
         }
+    }
+}
+function configSp1(stt) {
+
+    var cai = 0;
+    var dongia=0;
+    var tien_da_ck=0;
+
+
+    if (parseInt(document.getElementById("dongia_" + stt).value) > 0) {
+        dongia = parseInt(document.getElementById("dongia_" + stt).value);
+    }
+    if (parseInt(document.getElementById("cai_" + stt).value) > 0) {
+        cai = parseInt(document.getElementById("cai_" + stt).value);
+    }
+    if (cai > 0) {
+
+        if (stt === '5') {
+            checkQttTong();
+        }
+        if (stt === '7') {
+            checkQtt();
+        }
+
+
+            document.getElementById("tien_da_ck_" + stt).value = (cai * dongia).toLocaleString('en');
+
+            tien_da_ck=($("#tien_da_ck_1").val() === '' ? 0 : parseFloat($("#tien_da_ck_1").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_2").val() === '' ? 0 : parseFloat($("#tien_da_ck_2").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_3").val() === '' ? 0 : parseFloat($("#tien_da_ck_3").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_4").val() === '' ? 0 : parseFloat($("#tien_da_ck_4").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_5").val() === '' ? 0 : parseFloat($("#tien_da_ck_5").val().replace(new RegExp(',', 'g'), ''))) +
+                ($("#tien_da_ck_6").val() === '' ? 0 : parseFloat($("#tien_da_ck_6").val().replace(new RegExp(',', 'g'), '')));
+            document.getElementById("tong_tien_da_ck").value = (tien_da_ck).toLocaleString('en');
+
+
+
+        if(parseInt(stt) < 7) {
+            configCkAll('1');
+        } else if(parseInt(stt) === 9) {
+            configCkAll('3');
+        } else {
+            configCkAll('2');
+        }
+
+
     }
 }
 

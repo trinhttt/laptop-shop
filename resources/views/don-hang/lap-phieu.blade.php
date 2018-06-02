@@ -190,7 +190,7 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <fieldset>
-                                                        <legend><b style="font-size: 17px;">Thông tin đơn hàng</b></legend>
+                                                        <legend><b style="font-size: 17px;">Thông tin đơn xuất hàng</b></legend>
                                                         <div class="box-header">
                                                             <div class="row">
                                                                 <div class="col-md-6">
@@ -238,7 +238,7 @@
 
                                                             <div class="row" style="margin-top: 15px;">
                                                                 <div class="col-md-6">
-                                                                    <label>Tổng số sản phẩm</label><span style="color: red;">*</span>
+                                                                    <label>Tổng số loại sản phẩm</label><span style="color: red;">*</span>
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><i class="fa fa-laptop"></i></span>
                                                                         <input type="number"NAME="SoSanPham"id="delivery" min="0" max="6" step="1" value="0" style="padding-left: 12px;" onchange="deliveryQtt();" class="form-control">
@@ -268,7 +268,7 @@
                                             <div class="row" style="margin-top: 10px;">
                                                 <div class="col-xs-12 table-responsive">
 
-                                                        <legend><b style="font-size: 17px;">Chi tiết đơn hàng</b></legend>                                        
+                                                        <legend><b style="font-size: 17px;">Chi tiết đơn xuất hàng</b></legend>
                                                         <table class="table table-striped mainTable">
                                                             <fieldset>
                                                             <thead>

@@ -10,10 +10,11 @@ class NHAPHANG extends Model
 {
 
     protected $table='NHAPHANG';
-    protected $primaryKey = 'MaNhaCC';
+    protected $primaryKey = 'idNhapHang';
     public $timestamps = false;
     public static function formstore($data)
     {
+        $idNhapHang=Input::get('idNhapHang');
         $MaNhaCC=Input::get('MaNhaCC');
         $TenNhaCC=Input::get('TenNhaCC');
         $SDTNhaCC=Input::get('SDTNhaCC');
@@ -21,7 +22,7 @@ class NHAPHANG extends Model
         $DiaChiWebsite=Input::get('DiaChiWebsite');
         $NgayYeuCau=Input::get('NgayYeuCau');
         $NgayNhap=Input::get('NgayNhap');
-        $status=Input::get('status');
+        $nhap_or_doi=Input::get('nhap_or_doi');
 
 
 
@@ -29,6 +30,7 @@ class NHAPHANG extends Model
 
 
         $ncc=new NHAPHANG();
+        $ncc->idNhapHang=$idNhapHang;
         $ncc->MaNhaCC=$MaNhaCC;
         $ncc->TenNhaCC=$TenNhaCC;
         $ncc->SDTNhaCC=$SDTNhaCC;
@@ -36,7 +38,7 @@ class NHAPHANG extends Model
         $ncc->DiaChiWebsite=$DiaChiWebsite;
         $ncc->NgayYeuCau=$NgayYeuCau;
         $ncc->NgayNhap=$NgayNhap;
-        $ncc->status=$status;
+        $ncc->nhap_or_doi=$nhap_or_doi;
 
 
 

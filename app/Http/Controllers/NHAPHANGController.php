@@ -27,44 +27,60 @@ class NHAPHANGController extends Controller
         $data=Input::except(array('_token'));
         $NV = new NHAPHANG();
 
+        $NV->idNhapHang=$request->idNhapHang;
         $NV->TenNhaCC=$request->TenNhaCC;
         $NV->SDTNhaCC=$request->SDTNhaCC;
         $NV->DiaChiNhaCC=$request->DiaChiNhaCC;
         $NV->DiaChiWebsite=$request->DiaChiWebsite;
         $NV->NgayYeuCau=$request->NgayYeuCau;
+        $NV->NgayYeuCau= date('Y-m-d');
         $NV->NgayNhap=$request->NgayNhap;
-        $NV->status=$request->status;
-
+        $NV->NgayNhap = date('Y-m-d');
+        $NV->SoLoaiSP=$request->SoLoaiSP;
+        $NV->nhap_or_doi=$request->nhap_or_doi;
+        if($NV->nhap_or_doi=='on')
+        {
+            $NV->nhap_or_doi='Nhập hàng';
+        }
+        else  {
+            $NV->nhap_or_doi='Đổi trả';
+        }
         $rule=array(
             'TenNhaCC'=>'required',
             'SDTNhaCC'=>'required',
             'DiaChiNhaCC'=>'required',
             'DiaChiWebsite'=>'required',
             'NgayYeuCau'=>'required',
+            'SoLoaiSP'=>'required',
             'NgayNhap'=>'required',
-            'status'=>'required',
 
 
         );
         $message=array(
+            'SoLoaiSP.required'=>'Trường số loại sản phẩm phải có dữ liệu, không để rỗng!',
             'TenNhaCC.required'=>'Trường Tên nhà cung cấp khách hàng phải có dữ liệu, không để rỗng!',
             'SDTNhaCC.required'=>'Trường Số điện thoại nhà cung cấp phải có dữ liệu, không để rỗng!',
             'DiaChiNhaCC.required'=>'Trường Địa chỉ nhà cung cấp phải có dữ liệu, không để rỗng!',
             'DiaChiWebsite.required'=>'Trường Địa chỉ website phải có dữ liệu, không để rỗng!',
             'NgayYeuCau.required'=>'Trường ngày yêu cầu phải có dữ liệu, không để rỗng!',
             'NgayNhap.required'=>'Trường ngày nhập phải có dữ liệu, không để rỗng!',
-            'status.required'=>'Trường trạng thái nhập phải có dữ liệu, không để rỗng!',
 
 
         );
+
         $validator=Validator::make($data,$rule,$message);
         if($validator->fails())
         {
+            exit($NV);
+
             return Redirect::to('HangHoa_TaoDotNhapHang')->withErrors($validator);
         }else{
-            $tong_tien=0;
             $NV->save();
-            for($i=0;$i<$NV['SoSanPham'];$i++)
+
+            $tong_tien=0;
+
+
+            for($i=0;$i<$NV['SoLoaiSP'];$i++)
             {
                 $ct[$i]=new CHITIETNHAPHANG();
 
@@ -76,13 +92,14 @@ class NHAPHANGController extends Controller
                 $ct[$i]->save();
                 $tong_tien=$tong_tien+$ct[$i]->SoLuong*$ct[$i]->DonGia;
             }
+
             $NV1 = NHAPHANG::find($NV->idNhapHang);
             if (isset($NV1)) {
                 $NV1->TongTien=$tong_tien;
                 $NV1->save();
             }
 
-            return Redirect::to('HangHoa_TaoDotNhapHang')->with('success','Thêm mới nhà cung cấp thành công!');
+            return Redirect::to('HangHoa_TaoDotNhapHang')->with('success','Lưu thông tin đợt nhập hàng thành công!');
 
 
 
