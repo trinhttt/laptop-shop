@@ -1,4 +1,5 @@
 * linguist-vendored
+*.php linguist-vendored=true
 *.js linguist-vendored=false
 *.css linguist-vendored=false
 *.scss linguist-language=false
