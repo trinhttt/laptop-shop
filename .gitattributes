@@ -1,2 +1,6 @@
-static/* linguist-vendored
-
+* linguist-vendored
+*.js linguist-vendored=false
+*.css linguist-vendored=false
+*.scss linguist-language=false
+*.html linguist-language=false
+CHANGELOG.md export-ignore
