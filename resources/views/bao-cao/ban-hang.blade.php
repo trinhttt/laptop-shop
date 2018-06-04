@@ -56,30 +56,8 @@
                         <div class="box">
                             <div class="box-header with-border text-center menu-button">
 
-                                <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Tạo Mới" data-placement="bottom" >
-                                    <i class="fa fa-plus-square text-grey"></i>
-                                    <span><strong>Tạo Mới</strong></span>
-                                </a>
-                                <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Sửa" data-placement="bottom">
-                                    <i class="fa fa-edit text-grey"></i>
-                                    <span><strong>Sửa</strong></span>
-                                </a>
-                                <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Lưu" data-placement="bottom">
-                                    <i class="fa fa-save text-grey"></i>
-                                    <span><strong>Lưu</strong></span>
-                                </a>
-                                <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Hủy" data-placement="bottom">
-                                    <i class="fa fa-close text-grey"></i>
-                                    <span><strong>Hủy</strong></span>
-                                </a>
-                                <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Chốt đơn" data-placement="bottom">
-                                    <i class="fa fa-check-circle text-grey"></i>
-                                    <span><strong>Chốt đơn</strong></span>
-                                </a>
-                                <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Đổi trả" data-placement="bottom">
-                                    <i class="fa fa-exchange text-grey"></i>
-                                    <span><strong>Đổi trả</strong></span>
-                                </a>
+
+
                                 <a class="btn btn-app custom-btn" data-toggle="tooltip" title="Xem Trước" data-placement="bottom">
                                     <i class="fa fa-eye text-black"></i>
                                     <span><strong>Xem Trước</strong></span>
@@ -88,10 +66,7 @@
                                     <i class="fa fa-print text-blue"></i>
                                     <span><strong>In</strong></span>
                                 </a>
-                                <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Import Excel" data-placement="bottom">
-                                    <i class="fa fa-download text-grey"></i>
-                                    <span><strong>Import Excel</strong></span>
-                                </a>
+
                                 <a class="btn btn-app custom-btn" data-toggle="tooltip" title="Xuất Excel" data-placement="bottom">
                                     <i class="fa fa-file-excel-o text-green"></i>
                                     <span><strong>Xuất Excel</strong></span>
@@ -117,111 +92,63 @@
                                 </div>
                             </div>
 
-                            <!--        <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="box">
-                                                <div class="box-body">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <h4><strong>DOANH THU BÁN HÀNG</strong></h4>
-                                                            <div class="chart">
-                                                                <!-- Sales Chart Canvas -->
-                            <!--                                    <canvas id="lineChart" style="height: 300px;"></canvas>
-                                                                <small>Đơn vị :<em> chục triệu VNĐ</em></small>
-                                                            </div>
-                                                            <!-- /.chart-responsive -->
-                            <!--                            </div>
-                                                        <!-- /.col -->
-                            <!--                            <div class="col-md-6">
-                                                            <h4><strong>SỐ ĐƠN HÀNG</strong></h4>
-                                                            <div class="chart">
-                                                                <!-- Sales Chart Canvas -->
-                            <!--                                   <canvas id="lineChart2" style="height: 300px;"></canvas>
-                                                               <small>Đơn vị :<em> Số đơn</em></small>
-                                                           </div>
-                                                           <!-- /.chart-responsive -->
-                            <!--                            </div>
-                                                        <!-- /.col -->
-                            <!--                        </div>
-                                                    <!-- /.row -->
-                            <!--                    </div>
-                                                <!-- ./box-body -->
-                            <!--                    <div class="box-footer">
-                                                    <div class="col-sm-offset-5">
-                                                        <div style="width: 13px; height: 13px; background-color: rgba(221, 41, 13, 1); display: inline-block;"></div>
-                                                        <strong>Tháng 11</strong>
-                                                        <div class="col-sm-offset-1" style="width: 13px; height: 13px; background-color: rgba(15,224,15,1); display: inline-block;"></div>
-                                                        <strong>Tháng 12</strong>
-                                                    </div>
-                                                </div>
-                                                <div class="box-footer">
-                                                    <div class="row">
-                                                        <div class="col-sm-6 col-xs-6">
-                                                            <div class="description-block border-right">
-                                                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 15%</span>
-                                                                <h5 class="description-header">10,625,414</h5>
-                                                                <span class="description-text">DOANH THU BÁN HÀNG</span>
-                                                            </div>
-                                                            <!-- /.description-block -->
-                            <!--                           </div>
-                                                       <!-- /.col -->
-                            <!--                           <div class="col-sm-6 col-xs-6">
-                                                           <div class="description-block border-right">
-                                                               <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 11.25%</span>
-                                                               <h5 class="description-header">9</h5>
-                                                               <span class="description-text">SỐ ĐƠN HÀNG</span>
-                                                           </div>
-                                                           <!-- /.description-block -->
-                            <!--                            </div>
-                                                        <!-- /.col -->
-                            <!--                        </div>
-                                                    <!-- /.row -->
-                            <!--                    </div>
-                                                <!-- /.box-footer -->
-                            <!--            </div>
-                                        <!-- /.box -->
-                            <!--    </div>
-                                <!-- /.col -->
-                            <!--         </div>
-                                     <!-- /.row -->
+
 
                             <div class="row" style="margin-top: 30px;">
-                                <fieldset class="col-md-12">
+                                <fieldset class="col-md-8">
                                     <legend style="font-size: 17px"><b>Tổng quan bán hàng</b></legend>
                                     <table id="example1" class="table table-striped">
                                         <thead>
                                         <tr>
-                                            <th>STT</th>
-                                            <th>Báo cáo</th>
-                                            <th>Chỉ số đã đạt</th>
+                                            <th style="width:  5%">STT</th>
+                                            <th style="width:  30%;margin-left: 150px">Báo cáo</th>
+                                            <th style="width:  5%;margin-right: 80px">Chỉ số đã đạt</th>
 
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
+                                            <?php $dem_nhap=0?>
+                                                @foreach($nhs as $nh)
+                                                    <?php ++$dem_nhap?>
+                                                @endforeach
+
                                             <td>1</td>
-                                            <td>Tổng số đơn đã tạo</td>
-                                            <td style="text-align: right; padding-right: 30%">150</td>
+                                            <td style=" padding-left: 10%">Tổng số đơn nhập hàng</td>
+                                            <td style="text-align: right; padding-right: 10%">{{$dem_nhap}}</td>
                                         </tr>
                                         <tr>
-                                            <td>2</td>
-                                            <td>Số đơn đã hoàn thành</td>
-                                            <td style="text-align: right; padding-right: 30%">120</td>
+                                            <?php $dem_nhap=0?>
+                                            @foreach($nhs as $nh)
+                                                <?php ++$dem_nhap?>
+                                            @endforeach
+
+                                            <td>1</td>
+                                            <td style=" padding-left: 10%">Tổng số sản phẩm đã nhập</td>
+                                            <td style="text-align: right; padding-right: 10%">{{$dem_nhap}}</td>
                                         </tr>
+                                        <tr>
+                                            <?php $dem_xuat=0?>
+                                            @foreach($hds as $hd)
+                                                    <?php ++$dem_xuat?>
+
+                                            @endforeach
+                                            <td>2</td>
+                                            <td style=" padding-left: 10%">Tổng số đơn xuất hàng</td>
+                                            <td style="text-align: right; padding-right: 10%">{{$dem_xuat}}</td>
+                                        </tr>
+
                                         <tr>
                                             <td>3</td>
-                                            <td>Số đơn đang xử lý</td>
-                                            <td style="text-align: right; padding-right: 30%">120</td>
+                                            <td style="padding-left: 10%">Tổng số đơn đã tạo</td>
+                                            <td style="text-align: right; padding-right: 10%">
+                                                {{$dem_nhap+$dem_xuat}}
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
-                                            <td>Số đơn đã huỷ</td>
-                                            <td style="text-align: right; padding-right: 30%">120</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Tổng doanh thu</td>
-                                            <td style="text-align: right; padding-right: 30%">120,000,000</td>
+                                            <td style="padding-left: 10%">Tổng doanh thu</td>
+                                            <td style="text-align: right; padding-right: 10%">120,000,000</td>
                                         </tr>
                                         </tbody>
 
@@ -229,9 +156,9 @@
                                 </fieldset>
                             </div>
 
-                            <!--                <div class="row" style="margin-top: 30px;">
+                                            <div class="row" style="margin-top: 30px;">
                                                 <fieldset class="col-md-12">
-                                                    <legend style="font-size: 17px"><b>Chi tiết PO</b></legend>
+                                                    <legend style="font-size: 17px"><b>Chi tiết </b></legend>
                                                     <table id="example2" class="table table-striped">
                                                         <thead>
                                                             <tr>
@@ -305,7 +232,7 @@
                                                 </fieldset>
                                             </div>
 
-                                            -->
+
 
                             <div class="row" style="margin-top: 30px;">
                                 <fieldset class="col-md-12">

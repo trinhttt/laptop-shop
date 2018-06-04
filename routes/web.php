@@ -85,7 +85,7 @@ Route::get('/TaoMoi_NhaCungCap', function () {
     return view('quan-tri/tao-nha-cung-cap');
 });
 Route::get('/TaoMoi_KhachHang', function () {
-    return view('quan-tri/tao_khac-hang');
+    return view('quan-tri/tao-khach-hang');
 });
 
 Route::get('/QuanTri_DSKhachHang','KHACHHANGController@show');
@@ -97,10 +97,11 @@ Route::post('edit_NhaCungCap/{idNhaCungCap}', 'NHACUNGCAPController@Action');
 Route::post('/insert_NhaCungCap','NHACUNGCAPController@Insert');
 
 ////BAO CAO
+Route::get('/BaoCao_BanHang','BAOCAOController@show');
 
-Route::get('/BaoCao_BanHang', function () {
-    return view('bao-cao/ban-hang');
-});
+//Route::get('/BaoCao_BanHang', function () {
+//    return view('bao-cao/ban-hang');
+//});
 Route::get('/BaoCao_ChiTietDoanhThu', function () {
     return view('bao-cao/chi-tiet-doanh-thu');
 });
