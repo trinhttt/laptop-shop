@@ -22,6 +22,7 @@ class HOADON extends Model
         $SoSanPham=Input::get('SoSanPham');
         $MucGiaNam=Input::get('MucGiaNam');
         $NguoiTaoHD=Input::get('NguoiTaoHD');
+        $NgayTao=Input::get('NgayTao');
 
 
 
@@ -36,6 +37,7 @@ class HOADON extends Model
         $hd->SoSanPham=$SoSanPham;
         $hd->MucGiaNam=$MucGiaNam;
         $hd->NguoiTaoHD=$NguoiTaoHD;
+        $hd->NgayTao=$NgayTao;
 
 
 

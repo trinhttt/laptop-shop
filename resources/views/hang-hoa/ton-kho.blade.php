@@ -77,7 +77,7 @@
                     <ol class="breadcrumb">
                         <li><a href="hanghoa_index.html"><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
                         <li><a href="">Hàng hóa</a></li>
-                        <li class="active"><a href="phanphoi_hanghoa_ton-kho.html">Hàng tồn kho</a></li>
+                        <li class="active"><a href="phanphoi_hanghoa_ton-kho.html">Danh sách hàng tồn kho</a></li>
                     </ol>
                 </section>
                 <section class="content">
@@ -85,8 +85,8 @@
                         <div class="col-xs-12">
                             <div class="box">        
                                 <div  class="row" style="margin-right: 0px;margin-left: 0px;margin-top: 10px">
-                                    <div class="col-md-2">
-                                        <h4><b>TỒN KHO</b></h4>
+                                    <div class="col-md-4">
+                                        <h4><b>HÀNG TỒN KHO</b></h4>
                                     </div>
                                 </div>
                                 <div class="box">
@@ -102,11 +102,11 @@
                                             <span><strong>Import Excel</strong></span>
                                         </a>
                                         <a class="btn btn-app custom-btn" data-toggle="tooltip" title="Xuất Excel" data-placement="bottom">
-                                            <i class="fa fa-file-excel-o text-green"></i>
+                                            <i class="fa fa-file-excel-o text-gray"></i>
                                             <span><strong>Xuất Excel</strong></span>
                                         </a>
                                         <a class="btn btn-app custom-btn" data-toggle="tooltip" title="Xuất PDF" data-placement="bottom">
-                                            <i class="fa fa-file-pdf-o text-red"></i>
+                                            <i class="fa fa-file-pdf-o text-gray"></i>
                                             <span><strong>Xuất PDF</strong></span>
                                         </a>
                                     </div>                                </div>
@@ -167,40 +167,40 @@
                                         </div>
                                     </div>
                                 @endif
-                                <div class="box-body">
-                                    <table class="table">
-                                        <tbody>
-                                            <tr>
-                                                <td style="width:80px">Mã hàng</td>
-                                                <td style="width:400px">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                                                            <i class="fa fa-file"></i>
-                                                        </span>
-                                                        <input type="text" class="form-control" placeholder="Mã hàng...">
-                                                    </div>
-                                                </td>
+                                {{--<div class="box-body">--}}
+                                    {{--<table class="table">--}}
+                                        {{--<tbody>--}}
+                                            {{--<tr>--}}
+                                                {{--<td style="width:80px">Mã hàng</td>--}}
+                                                {{--<td style="width:400px">--}}
+                                                    {{--<div class="input-group">--}}
+                                                        {{--<span class="input-group-addon">--}}
+                                                            {{--<i class="fa fa-file"></i>--}}
+                                                        {{--</span>--}}
+                                                        {{--<input type="text" class="form-control" placeholder="Mã hàng...">--}}
+                                                    {{--</div>--}}
+                                                {{--</td>--}}
 
-                                                <td>Tổng tồn</td>
-                                                <td>
-                                                    <div class="col-sm-5 no-padding">
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">Từ</span>
-                                                            <input type="number" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-6 col-sm-offset-1 no-padding">
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">Đến</span>
-                                                            <input type="number" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                {{--<td>Tổng tồn</td>--}}
+                                                {{--<td>--}}
+                                                    {{--<div class="col-sm-5 no-padding">--}}
+                                                        {{--<div class="input-group">--}}
+                                                            {{--<span class="input-group-addon">Từ</span>--}}
+                                                            {{--<input type="number" class="form-control">--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                    {{--<div class="col-sm-6 col-sm-offset-1 no-padding">--}}
+                                                        {{--<div class="input-group">--}}
+                                                            {{--<span class="input-group-addon">Đến</span>--}}
+                                                            {{--<input type="number" class="form-control">--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                {{--</td>--}}
+                                            {{--</tr>--}}
 
-                                        </tbody>
-                                    </table>
-                                </div>
+                                        {{--</tbody>--}}
+                                    {{--</table>--}}
+                                {{--</div>--}}
                                 <hr>
                                 <div class="box-body">
                                     <div class="row">

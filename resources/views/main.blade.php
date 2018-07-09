@@ -102,23 +102,23 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="dist/img/user.jpeg" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Trinh Thai</span>
+                            <span class="hidden-xs">Admin</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
                                 <img src="dist/img/user.jpeg" class="img-circle" alt="User Image">
 
-                                <p>Trinh Thai<small>Admin</small>
+                                <p>Admin<small>Admin</small>
                                 </p>
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="phanphoi_nguoidung_thong-tin-nguoi-dung.html" class="btn btn-default btn-flat">Hồ sơ</a>
-                                </div>
+                                {{--<div class="pull-left">--}}
+                                    {{--<a href="phanphoi_nguoidung_thong-tin-nguoi-dung.html" class="btn btn-default btn-flat">Hồ sơ</a>--}}
+                                {{--</div>--}}
                                 <div class="pull-right">
-                                    <a href="login.html" class="btn btn-default btn-flat">Thoát</a>
+                                    <a href="/login" class="btn btn-default btn-flat">Thoát</a>
                                 </div>
                             </li>
                         </ul>
@@ -143,48 +143,36 @@
                     <img src="dist/img/user.jpeg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Trinh Thai</p>
+                    <p>Admin</p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Trực tuyến</a>
                 </div>
             </div>
 
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="active">
-                    <a href="phanphoi_index.html">
+                    <a href="/home">
                         <i class="fa fa-dashboard"></i> <span>Trang chủ</span>
                     </a>
                 </li>
 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-file-o"></i> <span>Đơn hàng</span>
+                        <i class="fa fa-file-o"></i> <span>Hóa đơn</span>
                         <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class=""><a href="DonHang_LapPhieu"><i class="fa fa-edit"></i> Lập hóa đơn</a></li>
+                        <li class=""><a href="DonHang_LapPhieu"><i class="fa fa-edit"></i> Lập hóa đơn bán hàng</a></li>
 
 
                         <li class="">
                             <a href="DonHang_PhieuHoanThanh">
                                 <i class="fa fa-files-o"></i>
-                                <span>Danh sách hóa đơn</span>
+                                <span>DS hóa đơn bán hàng</span>
                             </a>
                         </li>
-                        {{--<li class="">--}}
-                            {{--<a href="DonHang_PhieuDangXuLy">--}}
-                                {{--<i class="fa fa-book"></i>--}}
-                                {{--<span>Phiếu giữ hàng</span>--}}
 
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li class="">--}}
-                            {{--<a href="DonHang_LichGiaoHang">--}}
-                                {{--<i class="fa fa-calendar-minus-o"></i>--}}
-                                {{--<span>Lịch giao hàng</span>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
 
                     </ul>
                 </li>
@@ -211,7 +199,6 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li class=""><a href="HangHoa_TaoDotNhapHang"><i class="fa fa-edit"></i> Tạo đợt nhập mới</a></li>
-                                <li class=""><a href="HangHoa_LichSuNhapHang"><i class="fa fa-table"></i> Lịch sử nhập hàng</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -226,14 +213,10 @@
                     </a>
                     <ul class="treeview-menu">
                         <li class="">
-                            <a href="BaoCao_BanHang"><i class="fa fa-line-chart"></i> Bán hàng</a>
+                            <a href="BaoCao_BanHang"><i class="fa fa-line-chart"></i> Nhập & xuất hàng</a>
                         </li>
-                        <li class="">
-                            <a href="BaoCao_DoanhThu"><i class="fa fa-line-chart"></i> Doanh thu</a>
-                        </li>
-                        <li class="">
-                            <a href="BaoCao_ChiTietDoanhThu"><i class="fa fa-line-chart"></i> Chi tiết doanh thu</a>
-                        </li>
+
+
 
 
 

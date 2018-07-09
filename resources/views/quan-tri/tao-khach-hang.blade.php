@@ -237,23 +237,5 @@
         });
     </script>
 
-    {{--<div class="row">--}}
-        {{--<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">--}}
-            {{--<div class="modal-dialog">--}}
-                {{--<div class="modal-content">--}}
-                    {{--<div class="modal-header">--}}
-                        {{--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>--}}
-                        {{--<h4 class="modal-title" id="myModalLabel">Xác nhận lưu thông tin</h4>--}}
-                    {{--</div>--}}
-                    {{--<div class="modal-body">--}}
-                        {{--<label>Bạn có muốn lưu thông tin đã nhập?</label>--}}
-                    {{--</div>--}}
-                    {{--<div class="modal-footer">--}}
-                        {{--<input type="button" class="btn btn-default" data-dismiss="modal" value="Đóng"/>--}}
-                        {{--<input onclick="location.href = 'phanphoi_cungcap_chi-tiet-nha-cung-cap.html';" type="button" class="btn btn-success btn-ok" value="Có"/>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+   
 @endsection

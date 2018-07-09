@@ -1,6 +1,6 @@
 @extends('main')
 @section('content3')
-<title>Danh sách hóa đơn</title>
+<title>Danh sách hóa đơn bán hàng</title>
 @endsection
 @section('content')
         <style>
@@ -59,7 +59,7 @@
                             <a href=""> Đơn hàng</a>
                         </li>
                         <li>
-                            <a class="active">Danh sách hóa đơn</a>
+                            <a class="active">Danh sách hóa đơn bán hàng</a>
                         </li>
                     </ol>
                 </section>
@@ -71,7 +71,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <h4>
-                                                <b>DANH SÁCH HÓA ĐƠN</b>
+                                                <b>DANH SÁCH HÓA ĐƠN BÁN HÀNG</b>
                                             </h4>
                                         </div>
                                         <div class="row" style="margin-left:0px; margin-right:0px">

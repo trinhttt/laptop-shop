@@ -16,16 +16,16 @@ class HANGSANXUAT extends Model
     {
         $MaHangSX=Input::get('MaHangSX');
         $TenHangSX=Input::get('TenHangSX');
-    
 
 
-       
+
+
 
         $cthd=new HANGSANXUAT();
         $cthd->MaHangSX=$MaHangSX;
         $cthd->TenHangSX=$TenHangSX;
-        
-        
+
+
         $cthd->save();
     }
 }

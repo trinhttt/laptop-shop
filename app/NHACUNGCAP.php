@@ -19,10 +19,10 @@ class NHACUNGCAP extends Model
         $SDTNhaCC=Input::get('SDTNhaCC');
         $DiaChiNhaCC=Input::get('DiaChiNhaCC');
         $DiaChiWebsite=Input::get('DiaChiWebsite');
-    
 
 
-       
+
+
 
         $cthd=new NHACUNGCAP();
         $cthd->MaNhaCC=$MaNhaCC;
@@ -31,8 +31,8 @@ class NHACUNGCAP extends Model
         $cthd->DiaChiNhaCC=$DiaChiNhaCC;
         $cthd->DiaChiWebsite=$DiaChiWebsite;
 
-        
-        
+
+
         $cthd->save();
     }
 }

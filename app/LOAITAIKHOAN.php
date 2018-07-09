@@ -16,12 +16,12 @@ class LOAITAIKHOAN extends Model
     {
         $MaLoaiTK=Input::get('MaLoaiTK');
         $TenLoaiTK=Input::get('TenLoaiTK');
-       
+
 
         $ltk=new LOAITAIKHOAN();
         $ltk->MaLoaiTK=$MaLoaiTK;
         $ltk->TenLoaiTK=$TenLoaiTK;
-        
+
         $ltk->save();
     }
 }

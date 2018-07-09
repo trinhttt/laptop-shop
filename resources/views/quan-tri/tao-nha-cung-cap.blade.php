@@ -45,6 +45,7 @@
 
 @section('content1')
 
+
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -86,44 +87,44 @@
                 </div>
             </div>
     @endif
-        <!-- Main content -->
+    <!-- Main content -->
         <section class="content">
             <div class="row">
                 <form action="{{url('insert_NhaCungCap')}}" method="post"enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                <div class="col-md-12">
-                    <div class="box">
-                        <div class="box-header with-border text-center menu-button">
+                    <div class="col-md-12">
+                        <div class="box">
+                            <div class="box-header with-border text-center menu-button">
 
-                            <a class="btn btn-app custom-btn" target="_blank" href="TaoMoi_NhaCungCap" data-toggle="tooltip" title="Tạo Mới" data-placement="bottom">
-                                <i class="fa fa-plus-square text-green"></i>
-                                <span>
+                                <a class="btn btn-app custom-btn" target="_blank" href="TaoMoi_NhaCungCap" data-toggle="tooltip" title="Tạo Mới" data-placement="bottom">
+                                    <i class="fa fa-plus-square text-green"></i>
+                                    <span>
                                             <strong>Tạo Mới</strong>
                                         </span>
-                            </a>
+                                </a>
 
-                            <BUTTON class="btn btn-app custom-btn " data-toggle="modal" title="Lưu" data-placement="bottom" data-target=
-                            "#confirm-delete">
-                                <i class="fa fa-save text-yellow"></i>
-                                <span>
+                                <BUTTON class="btn btn-app custom-btn " data-toggle="modal" title="Lưu" data-placement="bottom" data-target=
+                                "#confirm-delete">
+                                    <i class="fa fa-save text-yellow"></i>
+                                    <span>
                                             <strong>Lưu</strong>
                                         </span>
-                            </BUTTON>
-                        </div>
+                                </BUTTON>
+                            </div>
 
-                        <hr>
+                            <hr>
 
-                        <h3 style="text-align: center; font-weight: 600;">THÊM NHÀ CUNG CẤP</h3>
+                            <h3 style="text-align: center; font-weight: 600;">THÊM NHÀ CUNG CẤP</h3>
 
-                        <div class="box-body" style="padding-bottom: 50px">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <!--<div id="kv-avatar-errors-2" class="center-block" style="width:800px;display:none"></div>-->
-                                    {{--<form class="form form-vertical"style="margin-left: 300px"action="insert_product" method="post">--}}
+                            <div class="box-body" style="padding-bottom: 50px">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <!--<div id="kv-avatar-errors-2" class="center-block" style="width:800px;display:none"></div>-->
+                                        {{--<form class="form form-vertical"style="margin-left: 300px"action="insert_product" method="post">--}}
                                         {{--<input type="hidden" name="_token" value="{{csrf_token()}}">--}}
 
                                         <div class="row" >
-                                            
+
 
 
                                             <div class="col-md-9" style="padding-top: 35px">
@@ -145,7 +146,7 @@
                                                                     <span class="input-group-addon">
                                                                         <i class="fa fa-handshake-o"></i>
                                                                     </span>
-                                                                    <input type="text" name="SDTNhaCC" class="form-control" placeholder="Số điện thoại" id="SDTNhaCC">    
+                                                            <input type="text" name="SDTNhaCC" class="form-control" placeholder="Số điện thoại" id="SDTNhaCC">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -157,7 +158,7 @@
                                                                     <span class="input-group-addon">
                                                                         <i class="fa fa-gg-circle"></i>
                                                                     </span>
-                                                                <input name="DiaChiNhaCC"  id="DiaChiNhaCC"class="form-control" placeholder="nhập địa chỉ" type="text">
+                                                            <input name="DiaChiNhaCC"  id="DiaChiNhaCC"class="form-control" placeholder="nhập địa chỉ" type="text">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -174,13 +175,12 @@
                                             </div>
 
                                         </div>
-                                    {{--</form>--}}
+                                        {{--</form>--}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                </div>
                 </form>
             </div>
 
@@ -192,5 +192,24 @@
 @section('content2')
 
     <!-- page script -->
+    <script>
+        var btnCust = '';
+        $("#Anh").fileinput({
+            overwriteInitial: true,
+            maxFileSize: 1500,
+            showClose: false,
+            showCaption: false,
+            showBrowse: false,
+            browseOnZoneClick: true,
+            removeLabel: '',
+            removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
+            removeTitle: 'Cancel or reset changes',
+            elErrorContainer: '#kv-avatar-errors-2',
+            msgErrorClass: 'alert alert-block alert-danger',
+            layoutTemplates: {main2: '{preview} ' + btnCust + ' {remove} {browse}'},
+            allowedFileExtensions: ["jpg", "png", "gif"]
+        });
+    </script>
+
 
 @endsection

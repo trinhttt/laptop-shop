@@ -71,15 +71,15 @@
                                 </a>
 
                                 <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Import Excel" data-placement="bottom">
-                                    <i class="fa fa-download text-grey"></i>
+                                    <i class="fa fa-download text-gray"></i>
                                     <span><strong>Import Excel</strong></span>
                                 </a>
                                 <a class="btn btn-app custom-btn" data-toggle="tooltip" title="Xuất Excel" data-placement="bottom">
-                                    <i class="fa fa-file-excel-o text-green"></i>
+                                    <i class="fa fa-file-excel-o text-gray"></i>
                                     <span><strong>Xuất Excel</strong></span>
                                 </a>
                                 <a class="btn btn-app custom-btn" data-toggle="tooltip" title="Xuất PDF" data-placement="bottom">
-                                    <i class="fa fa-file-pdf-o text-red"></i>
+                                    <i class="fa fa-file-pdf-o text-gray"></i>
                                     <span><strong>Xuất PDF</strong></span>
                                 </a>
                             </div>

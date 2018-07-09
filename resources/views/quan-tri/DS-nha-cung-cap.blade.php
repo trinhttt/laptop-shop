@@ -73,61 +73,61 @@
                                     <i class="fa fa-download text-grey"></i>
                                     <span><strong>Import Excel</strong></span>
                                 </a>
-                                <a class="btn btn-app custom-btn" data-toggle="tooltip" title="Xuất Excel" data-placement="bottom">
+                                <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Xuất Excel" data-placement="bottom">
                                     <i class="fa fa-file-excel-o text-green"></i>
                                     <span><strong>Xuất Excel</strong></span>
                                 </a>
-                                <a class="btn btn-app custom-btn" data-toggle="tooltip" title="Xuất PDF" data-placement="bottom">
+                                <a class="btn btn-app custom-btn disabled" data-toggle="tooltip" title="Xuất PDF" data-placement="bottom">
                                     <i class="fa fa-file-pdf-o text-red"></i>
                                     <span><strong>Xuất PDF</strong></span>
                                 </a>
                             </div>
                             <div class="box-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="box">
-                                            <div class="box-header">
-                                                <h3 class="box-title">Tìm kiếm theo</h3>
-                                            </div>
-                                            <div class="box-body">
-                                                <table class="table">
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>Tên</td>
-                                                        <td width="35%">
-                                                            <div class="input-group" >
-                                                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                                                <input type="text" class="form-control" placeholder="Tên...">
-                                                            </div>
-                                                        </td>
-                                                        <td style="padding-left: 120px;">Ngày tạo</td>
-                                                        <td>
-                                                            <div class="col-sm-5 no-padding">
-                                                                <div class="input-group">
-                                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                                                    <input style="width: 150px" type="text" class="form-control" id="datepicker" placeholder="Từ...">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-6 col-sm-offset-1 no-padding">
-                                                                <div class="input-group">
-                                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                                                    <input style="width: 150px" type="text" class="form-control" id="datepicker2" placeholder="Đến...">
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                                <div class="box-footer clearfix">
-                                                    <div class="pagination pagination-sm no-margin pull-right" style="padding-right: 19px">
-                                                        <button type="button" class="btn btn-block btn-primary">Tìm kiếm <i class="fa fa-search"></i></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--end box search-->
-                                        </div>
-                                    </div>
-                                </div>
+                                {{--<div class="row">--}}
+                                    {{--<div class="col-md-12">--}}
+                                        {{--<div class="box">--}}
+                                            {{--<div class="box-header">--}}
+                                                {{--<h3 class="box-title">Tìm kiếm theo</h3>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="box-body">--}}
+                                                {{--<table class="table">--}}
+                                                    {{--<tbody>--}}
+                                                    {{--<tr>--}}
+                                                        {{--<td>Tên</td>--}}
+                                                        {{--<td width="35%">--}}
+                                                            {{--<div class="input-group" >--}}
+                                                                {{--<span class="input-group-addon"><i class="fa fa-user"></i></span>--}}
+                                                                {{--<input type="text" class="form-control" placeholder="Tên...">--}}
+                                                            {{--</div>--}}
+                                                        {{--</td>--}}
+                                                        {{--<td style="padding-left: 120px;">Ngày tạo</td>--}}
+                                                        {{--<td>--}}
+                                                            {{--<div class="col-sm-5 no-padding">--}}
+                                                                {{--<div class="input-group">--}}
+                                                                    {{--<span class="input-group-addon"><i class="fa fa-calendar"></i></span>--}}
+                                                                    {{--<input style="width: 150px" type="text" class="form-control" id="datepicker" placeholder="Từ...">--}}
+                                                                {{--</div>--}}
+                                                            {{--</div>--}}
+                                                            {{--<div class="col-sm-6 col-sm-offset-1 no-padding">--}}
+                                                                {{--<div class="input-group">--}}
+                                                                    {{--<span class="input-group-addon"><i class="fa fa-calendar"></i></span>--}}
+                                                                    {{--<input style="width: 150px" type="text" class="form-control" id="datepicker2" placeholder="Đến...">--}}
+                                                                {{--</div>--}}
+                                                            {{--</div>--}}
+                                                        {{--</td>--}}
+                                                    {{--</tr>--}}
+                                                    {{--</tbody>--}}
+                                                {{--</table>--}}
+                                                {{--<div class="box-footer clearfix">--}}
+                                                    {{--<div class="pagination pagination-sm no-margin pull-right" style="padding-right: 19px">--}}
+                                                        {{--<button type="button" class="btn btn-block btn-primary">Tìm kiếm <i class="fa fa-search"></i></button>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                            {{--<!--end box search-->--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 @if($errors->has('TenNhaCC'))
                                     <div class="row">
                                         <div class="col-md-12">

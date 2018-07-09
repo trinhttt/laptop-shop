@@ -15,7 +15,7 @@ use App\NHAPHANG;
 use App\HOADON;
 use App\CHITIETHOADON;
 use App\CHITIETNHAPHANG;
-
+use App\LAPTOP;
 use Auth;
 use Image;
 //use Charts;
@@ -26,25 +26,76 @@ class BAOCAOController extends Controller
     public function show()
 
     {
+        //xuat
+        $sl_xuat=0;
+        $tong_tien_xuat=0;
         $hds=HOADON::all();
         $cthd=CHITIETHOADON::all();
+        $cthd1=[];
+        for($i=0;$i<sizeof($cthd);$i++) {
+            $sl_xuat += $cthd[$i]['SoLuong'];
+            array_push($cthd1, $cthd[$i]['MaLapTop']);
+        }
+        $cthd2=[];
+        array_push($cthd2, $cthd1[0]);
+        for($i=0;$i<sizeof($cthd1);$i++) {
+            $demc=0;
 
-        $nhs=NHAPHANG::all();
-        $ctnh=CHITIETNHAPHANG::all();
+            for ($j = 0; $j < sizeof($cthd2); $j++) {
+                if($cthd2[$j]===$cthd1[$i])
+                {
+                    $demc++;
+                }
+            }
+            if($demc===0)
+            {
+                array_push($cthd2, $cthd1[$i]);
+            }
+        }
+//        var_dump($cthd2);
 
         for($i=0;$i<sizeof($hds);$i++)
         {
-            for($j=0;$j<sizeof($nhs);$j++)
-            {
-                if($hds[$i]['idHoaDon'])
-                $tong_xuat=$hds[$i]['SoSanPham'];
-            }
-                $tong_xuat=$hds[$i]['SoSanPham'];
-                $tong_xuat=$hds[$i]['SoSanPham'];
-                $tong_xuat=$hds[$i]['SoSanPham'];
-                $tong_xuat=$hds[$i]['SoSanPham'];
+            $tong_tien_xuat+=$hds[$i]['TongTien'];
         }
-        return view('bao-cao/ban-hang',compact('hds','nhs'));
+        //nhap
+        $sl_nhap=0;
+        $tong_tien_nhap=0;
+        $nhs=NHAPHANG::all();
+        $ctnh=CHITIETNHAPHANG::all();
+        $ctnh1=[];
+        for($i=0;$i<sizeof($ctnh);$i++) {
+            $sl_nhap+=$ctnh[$i]['SoLuong'];
+            array_push($ctnh1, $ctnh[$i]['TenLapTop']);
+        }
+        $ctnh2=[];
+        array_push($ctnh2, $ctnh1[0]);
+        for($i=0;$i<sizeof($ctnh1);$i++) {
+            $demc=0;
+
+            for ($j = 0; $j < sizeof($ctnh2); $j++) {
+                if($ctnh2[$j]===$ctnh1[$i])
+                {
+                    $demc++;
+                }
+            }
+            if($demc===0)
+            {
+                array_push($ctnh2, $ctnh1[$i]);
+            }
+        }
+//                var_dump($ctnh2);
+//        exit();
+
+        for($i=0;$i<sizeof($nhs);$i++)
+        {
+            $tong_tien_nhap+=$nhs[$i]['TongTien'];
+        }
+
+        $sps=LAPTOP::all();
+
+
+        return view('bao-cao/ban-hang',compact('hds','nhs','sps','cthd','cthd2','ctnh','ctnh2','sl_nhap','sl_xuat','tong_tien_nhap','tong_tien_xuat'));
     }
 
     public function Insert(Request $request)

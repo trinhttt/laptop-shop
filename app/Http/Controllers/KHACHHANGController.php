@@ -25,14 +25,14 @@ class KHACHHANGController extends Controller
         $destinatonPath = '';
         $filename = '';
 
-            $data=Input::except(array('_token'));
+        $data=Input::except(array('_token'));
         $rule=array(
-        	'HoTenKH'=>'required',
-        	'GioiTinhKH'=>'required',
-        	'NgaySinhKH'=>'required',
-        	'SDTKH'=>'required',
-        	'DiaChiKH'=>'required',
-        	'TaiKhoanKH'=>'required',
+            'HoTenKH'=>'required',
+            'GioiTinhKH'=>'required',
+            'NgaySinhKH'=>'required',
+            'SDTKH'=>'required',
+            'DiaChiKH'=>'required',
+            'TaiKhoanKH'=>'required',
         );
         $message=array(
             'HoTenKH.required'=>'Trường Họ tên khách hàng phải có dữ liệu, không để rỗng!',
@@ -53,7 +53,7 @@ class KHACHHANGController extends Controller
 
 
 
-    }
+        }
     }
     public function Action(Request $request, $MaKhachHang)
     {
@@ -81,12 +81,12 @@ class KHACHHANGController extends Controller
                 'TaiKhoanKH.min'=>'Trường Email khách hàng phải có dữ liệu, không để rỗng!',
             );
             $validator=Validator::make($data,$rule,$message);
-                if($validator->fails())
+            if($validator->fails())
             {
                 return Redirect::to('QuanTri_DSKhachHang')->withErrors($validator);
             }else{
-                    $NV->save();
-                    return Redirect::to('QuanTri_DSKhachHang')->with('success','Cập nhật dữ liệu thành công!');
+                $NV->save();
+                return Redirect::to('QuanTri_DSKhachHang')->with('success','Cập nhật dữ liệu thành công!');
             }
         } else {
             return view('404');

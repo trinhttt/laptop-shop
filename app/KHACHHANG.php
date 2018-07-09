@@ -24,7 +24,7 @@ class KHACHHANG extends Model
 
 
 
-       
+
 
         $kh=new KHACHHANG();
         $kh->MaKhachHang=$MaKhachHang;
@@ -34,8 +34,8 @@ class KHACHHANG extends Model
         $kh->SDTKH=$SDTKH;
         $kh->DiaChiKH=$DiaChiKH;
         $kh->TaiKhoanKH=$TaiKhoanKH;
-        
-        
+
+
         $kh->save();
     }
 }

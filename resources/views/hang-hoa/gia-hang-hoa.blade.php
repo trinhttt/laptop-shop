@@ -63,75 +63,75 @@
                                 <div class="box-body">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="box">
-                                                <div class="row" style="margin-top: 10px;margin-left: 0px;margin-right: 0px">
-                                                    <div class="col-md-12">
-                                                        <h4>Tìm kiếm theo</h4>
-                                                    </div>
-                                                </div>
-                                                <!-- /.box-header -->
-                                                <table class="table">
-                                                    <tbody>
-                                                    <tr>
-                                                        <td style="width:80px">Mã hàng</td>
-                                                        <td style="width:400px">
-                                                            <div class="input-group">
-                                                                    <span class="input-group-addon">
-                                                                        <i class="fa fa-file"></i>
-                                                                    </span>
-                                                                <input type="text" class="form-control" placeholder="Mã hàng...">
-                                                            </div>
-                                                        </td>
+                                            {{--<div class="box">--}}
+                                                {{--<div class="row" style="margin-top: 10px;margin-left: 0px;margin-right: 0px">--}}
+                                                    {{--<div class="col-md-12">--}}
+                                                        {{--<h4>Tìm kiếm theo</h4>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                                {{--<!-- /.box-header -->--}}
+                                                {{--<table class="table">--}}
+                                                    {{--<tbody>--}}
+                                                    {{--<tr>--}}
+                                                        {{--<td style="width:80px">Mã hàng</td>--}}
+                                                        {{--<td style="width:400px">--}}
+                                                            {{--<div class="input-group">--}}
+                                                                    {{--<span class="input-group-addon">--}}
+                                                                        {{--<i class="fa fa-file"></i>--}}
+                                                                    {{--</span>--}}
+                                                                {{--<input type="text" class="form-control" placeholder="Mã hàng...">--}}
+                                                            {{--</div>--}}
+                                                        {{--</td>--}}
 
-                                                        <td style="width:80px">Danh mục</td>
-                                                        <td style="width:400px">
-                                                            <div class="input-group">
-                                                                    <span class="input-group-addon">
-                                                                        <i class="fa fa-sliders"></i>
-                                                                    </span>
-                                                                <input type="text" class="form-control" placeholder="Danh mục...">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Giá</td>
-                                                        <td>
-                                                            <div class="col-sm-5 no-padding">
-                                                                <div class="input-group">
-                                                                    <span class="input-group-addon">Từ</span>
-                                                                    <input type="number" class="form-control" placeholder="100,000">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-6 col-sm-offset-1 no-padding">
-                                                                <div class="input-group">
-                                                                    <span class="input-group-addon">Đến</span>
-                                                                    <input type="number" class="form-control" placeholder="999,999,999">
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>VAT</td>
-                                                        <td>
-                                                            <label style="padding-right : 20px;">
-                                                                <input type="checkbox"  checked>
-                                                                Trước VAT
-                                                            </label>
-                                                            <label class="custom-chk">
-                                                                <input type="checkbox" >
-                                                                Sau VAT
-                                                            </label>
-                                                        </td>
-                                                    </tr>
+                                                        {{--<td style="width:80px">Danh mục</td>--}}
+                                                        {{--<td style="width:400px">--}}
+                                                            {{--<div class="input-group">--}}
+                                                                    {{--<span class="input-group-addon">--}}
+                                                                        {{--<i class="fa fa-sliders"></i>--}}
+                                                                    {{--</span>--}}
+                                                                {{--<input type="text" class="form-control" placeholder="Danh mục...">--}}
+                                                            {{--</div>--}}
+                                                        {{--</td>--}}
+                                                    {{--</tr>--}}
+                                                    {{--<tr>--}}
+                                                        {{--<td>Giá</td>--}}
+                                                        {{--<td>--}}
+                                                            {{--<div class="col-sm-5 no-padding">--}}
+                                                                {{--<div class="input-group">--}}
+                                                                    {{--<span class="input-group-addon">Từ</span>--}}
+                                                                    {{--<input type="number" class="form-control" placeholder="100,000">--}}
+                                                                {{--</div>--}}
+                                                            {{--</div>--}}
+                                                            {{--<div class="col-sm-6 col-sm-offset-1 no-padding">--}}
+                                                                {{--<div class="input-group">--}}
+                                                                    {{--<span class="input-group-addon">Đến</span>--}}
+                                                                    {{--<input type="number" class="form-control" placeholder="999,999,999">--}}
+                                                                {{--</div>--}}
+                                                            {{--</div>--}}
+                                                        {{--</td>--}}
+                                                        {{--<td>VAT</td>--}}
+                                                        {{--<td>--}}
+                                                            {{--<label style="padding-right : 20px;">--}}
+                                                                {{--<input type="checkbox"  checked>--}}
+                                                                {{--Trước VAT--}}
+                                                            {{--</label>--}}
+                                                            {{--<label class="custom-chk">--}}
+                                                                {{--<input type="checkbox" >--}}
+                                                                {{--Sau VAT--}}
+                                                            {{--</label>--}}
+                                                        {{--</td>--}}
+                                                    {{--</tr>--}}
 
 
-                                                    </tbody>
-                                                </table>
-                                                <!-- /.box-body -->
-                                                <div class="box-footer clearfix">
-                                                    <div class="pagination pagination-sm no-margin pull-right">
-                                                        <button type="button" class="btn btn-block btn-primary">Tìm kiếm <i class="fa fa-search"></i></button>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                    {{--</tbody>--}}
+                                                {{--</table>--}}
+                                                {{--<!-- /.box-body -->--}}
+                                                {{--<div class="box-footer clearfix">--}}
+                                                    {{--<div class="pagination pagination-sm no-margin pull-right">--}}
+                                                        {{--<button type="button" class="btn btn-block btn-primary">Tìm kiếm <i class="fa fa-search"></i></button>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
                                         </div>
                                     </div>
                                 </div>

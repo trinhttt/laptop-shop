@@ -175,12 +175,12 @@ class LAPTOPController extends Controller
                 'HangSX.min'=>'Trường Hãng sản xuất phải có dữ liệu, không để rỗng!',
             );
             $validator=Validator::make($data,$rule,$message);
-                if($validator->fails())
+            if($validator->fails())
             {
                 return Redirect::to('HangHoa_DS-HangHoa')->withErrors($validator);
             }else{
-                    $NV->save();
-                    return Redirect::to('HangHoa_DS-HangHoa')->with('success','Cập nhật dữ liệu thành công!');
+                $NV->save();
+                return Redirect::to('HangHoa_DS-HangHoa')->with('success','Cập nhật dữ liệu thành công!');
             }
         } else {
             return view('404');

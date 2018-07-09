@@ -1,6 +1,6 @@
 @extends('main')
 @section('content3')
-<title>Lập hóa đơn xuất hàng</title>
+<title>Lập hóa đơn bán hàng</title>
 @endsection
 @section('content')
         <style>
@@ -47,7 +47,7 @@
                     <ol class="breadcrumb">
                         <li><a href="phanphoi_index.html"><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
                         <li>Đơn hàng</li>
-                        <li class="active">Lập hóa đơn xuất hàng</li>
+                        <li class="active">Lập hóa đơn bán hàng</li>
                     </ol>
                 </section>
                 <form style="margin-top: 25px;" action="{{url('LapPhieu')}}" method="post">
@@ -59,7 +59,7 @@
                         <div class="col-md-12">
                             <div class="box">
                                 <div class="box-header" style="text-align: center;margin-top: 30px;">
-                                    <h3 class="box-title with-border"><b style="font-size: 25px;">Hóa đơn xuất hàng</b></h3>
+                                    <h3 class="box-title with-border"><b style="font-size: 25px;">Hóa đơn bán hàng</b></h3>
                                 </div>
                                 <!-- /.box-header -->
                                 <div class="box-body pad">
@@ -82,17 +82,14 @@
 
 
 
-                                            <a class="btn btn-app custom-btn" data-toggle="tooltip" title="Xem Trước" data-placement="bottom" onclick="openNewTab();">
-                                                <i class="fa fa-eye text-black"></i>
-                                                <span><strong>Xem Trước</strong></span>
-                                            </a>
+
                                             <a class="btn btn-app custom-btn" data-toggle="tooltip" title="In" data-placement="bottom" onclick="openNewTab();">
-                                                <i class="fa fa-print text-blue"></i>
+                                                <i class="fa fa-print text-gray"></i>
                                                 <span><strong>In</strong></span>
                                             </a>
 
                                             <a class="btn btn-app custom-btn" data-toggle="tooltip" title="Xuất PDF" data-placement="bottom">
-                                                <i class="fa fa-file-pdf-o text-blue"></i>
+                                                <i class="fa fa-file-pdf-o text-gray"></i>
                                                 <span><strong>Xuất PDF</strong></span>
                                             </a>
                                         </div>
@@ -190,7 +187,7 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <fieldset>
-                                                        <legend><b style="font-size: 17px;">Thông tin đơn xuất hàng</b></legend>
+                                                        <legend><b style="font-size: 17px;">Thông tin hóa đơn bán hàng</b></legend>
                                                         <div class="box-header">
                                                             <div class="row">
                                                                 <div class="col-md-6">
@@ -268,7 +265,7 @@
                                             <div class="row" style="margin-top: 10px;">
                                                 <div class="col-xs-12 table-responsive">
 
-                                                        <legend><b style="font-size: 17px;">Chi tiết đơn xuất hàng</b></legend>
+                                                        <legend><b style="font-size: 17px;">Chi tiết hóa đơn bán hàng</b></legend>
                                                         <table class="table table-striped mainTable">
                                                             <fieldset>
                                                             <thead>

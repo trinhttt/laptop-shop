@@ -25,7 +25,7 @@ class ADMIN extends Model
 
 
 
-       
+
 
         $ad=new ADMIN();
         $ad->MaAdmin=$MaAdmin;
@@ -35,9 +35,9 @@ class ADMIN extends Model
         $ad->SDTAdmin=$SDTAdmin;
         $ad->DiaChiAdmin=$DiaChiAdmin;
         $ad->TaiKhoanAdmin=$TaiKhoanAdmin;
-        
-        
-        
+
+
+
         $ad->save();
     }
 }

@@ -20,7 +20,7 @@ class CHITIETHOADON extends Model
         $DonGia=Input::get('DonGia');
         $Ck=Input::get('Ck');
 
-       
+
 
         $cthd=new CHITIETHOADON();
         $cthd->HoaDon=$HoaDon;

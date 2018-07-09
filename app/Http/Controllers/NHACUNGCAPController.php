@@ -25,7 +25,7 @@ class NHACUNGCAPController extends Controller
         $destinatonPath = '';
         $filename = '';
 
-            $data=Input::except(array('_token'));
+        $data=Input::except(array('_token'));
         $rule=array(
             'TenNhaCC'=>'required',
             'SDTNhaCC'=>'required',
@@ -49,7 +49,7 @@ class NHACUNGCAPController extends Controller
 
 
 
-    }
+        }
     }
     public function Action(Request $request, $MaNhaCC)
     {
@@ -70,12 +70,12 @@ class NHACUNGCAPController extends Controller
                 'MaNhaCC.min'=>'Trường Mã nhà cung cấp phải có dữ liệu, không để rỗng!',
             );
             $validator=Validator::make($data,$rule,$message);
-                if($validator->fails())
+            if($validator->fails())
             {
                 return Redirect::to('QuanTri_DSNhaCungCap')->withErrors($validator);
             }else{
-                    $NV->save();
-                    return Redirect::to('QuanTri_DSNhaCungCap')->with('success','Cập nhật dữ liệu thành công!');
+                $NV->save();
+                return Redirect::to('QuanTri_DSNhaCungCap')->with('success','Cập nhật dữ liệu thành công!');
             }
         } else {
             return view('404');

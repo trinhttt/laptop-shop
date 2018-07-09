@@ -26,7 +26,7 @@ class NHANVIEN extends Model
 
 
 
-       
+
 
         $nv=new NHANVIEN();
         $nv->MaNhanVien=$MaNhanVien;
@@ -37,9 +37,9 @@ class NHANVIEN extends Model
         $nv->DiaChiNV=$DiaChiNV;
         $nv->ChucVu=$ChucVu;
         $nv->TaiKhoanNV=$TaiKhoanNV;
-        
-        
-        
+
+
+
         $nv->save();
     }
 }
